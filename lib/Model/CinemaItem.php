@@ -58,7 +58,17 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'name' => 'string',
-'chain_id' => 'int'    ];
+'name_short' => 'string',
+'chain_id' => 'int',
+'city' => 'string',
+'zip' => 'string',
+'street' => 'string',
+'country' => 'string',
+'latitude' => 'BigDecimal',
+'longitude' => 'BigDecimal',
+'phone' => 'string',
+'email' => 'string',
+'website' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,7 +78,17 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'name' => null,
-'chain_id' => null    ];
+'name_short' => null,
+'chain_id' => null,
+'city' => null,
+'zip' => null,
+'street' => null,
+'country' => null,
+'latitude' => null,
+'longitude' => null,
+'phone' => null,
+'email' => null,
+'website' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,7 +119,17 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'name' => 'name',
-'chain_id' => 'chainId'    ];
+'name_short' => 'name_short',
+'chain_id' => 'chainId',
+'city' => 'city',
+'zip' => 'zip',
+'street' => 'street',
+'country' => 'country',
+'latitude' => 'latitude',
+'longitude' => 'longitude',
+'phone' => 'phone',
+'email' => 'email',
+'website' => 'website'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -109,7 +139,17 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'name' => 'setName',
-'chain_id' => 'setChainId'    ];
+'name_short' => 'setNameShort',
+'chain_id' => 'setChainId',
+'city' => 'setCity',
+'zip' => 'setZip',
+'street' => 'setStreet',
+'country' => 'setCountry',
+'latitude' => 'setLatitude',
+'longitude' => 'setLongitude',
+'phone' => 'setPhone',
+'email' => 'setEmail',
+'website' => 'setWebsite'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -119,7 +159,17 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'name' => 'getName',
-'chain_id' => 'getChainId'    ];
+'name_short' => 'getNameShort',
+'chain_id' => 'getChainId',
+'city' => 'getCity',
+'zip' => 'getZip',
+'street' => 'getStreet',
+'country' => 'getCountry',
+'latitude' => 'getLatitude',
+'longitude' => 'getLongitude',
+'phone' => 'getPhone',
+'email' => 'getEmail',
+'website' => 'getWebsite'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -181,7 +231,17 @@ class CinemaItem implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['name_short'] = isset($data['name_short']) ? $data['name_short'] : null;
         $this->container['chain_id'] = isset($data['chain_id']) ? $data['chain_id'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['zip'] = isset($data['zip']) ? $data['zip'] : null;
+        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
+        $this->container['longitude'] = isset($data['longitude']) ? $data['longitude'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['website'] = isset($data['website']) ? $data['website'] : null;
     }
 
     /**
@@ -266,6 +326,30 @@ class CinemaItem implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets name_short
+     *
+     * @return string
+     */
+    public function getNameShort()
+    {
+        return $this->container['name_short'];
+    }
+
+    /**
+     * Sets name_short
+     *
+     * @param string $name_short name_short
+     *
+     * @return $this
+     */
+    public function setNameShort($name_short)
+    {
+        $this->container['name_short'] = $name_short;
+
+        return $this;
+    }
+
+    /**
      * Gets chain_id
      *
      * @return int
@@ -285,6 +369,222 @@ class CinemaItem implements ModelInterface, ArrayAccess
     public function setChainId($chain_id)
     {
         $this->container['chain_id'] = $chain_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets zip
+     *
+     * @return string
+     */
+    public function getZip()
+    {
+        return $this->container['zip'];
+    }
+
+    /**
+     * Sets zip
+     *
+     * @param string $zip zip
+     *
+     * @return $this
+     */
+    public function setZip($zip)
+    {
+        $this->container['zip'] = $zip;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string $street street
+     *
+     * @return $this
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string $country country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets latitude
+     *
+     * @return BigDecimal
+     */
+    public function getLatitude()
+    {
+        return $this->container['latitude'];
+    }
+
+    /**
+     * Sets latitude
+     *
+     * @param BigDecimal $latitude latitude
+     *
+     * @return $this
+     */
+    public function setLatitude($latitude)
+    {
+        $this->container['latitude'] = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets longitude
+     *
+     * @return BigDecimal
+     */
+    public function getLongitude()
+    {
+        return $this->container['longitude'];
+    }
+
+    /**
+     * Sets longitude
+     *
+     * @param BigDecimal $longitude longitude
+     *
+     * @return $this
+     */
+    public function setLongitude($longitude)
+    {
+        $this->container['longitude'] = $longitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     *
+     * @param string $phone phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets website
+     *
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->container['website'];
+    }
+
+    /**
+     * Sets website
+     *
+     * @param string $website website
+     *
+     * @return $this
+     */
+    public function setWebsite($website)
+    {
+        $this->container['website'] = $website;
 
         return $this;
     }

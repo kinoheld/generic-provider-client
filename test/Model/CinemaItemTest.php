@@ -90,9 +90,79 @@ class CinemaItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "name_short"
+     */
+    public function testPropertyNameShort()
+    {
+    }
+
+    /**
      * Test attribute "chain_id"
      */
     public function testPropertyChainId()
+    {
+    }
+
+    /**
+     * Test attribute "city"
+     */
+    public function testPropertyCity()
+    {
+    }
+
+    /**
+     * Test attribute "zip"
+     */
+    public function testPropertyZip()
+    {
+    }
+
+    /**
+     * Test attribute "street"
+     */
+    public function testPropertyStreet()
+    {
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "latitude"
+     */
+    public function testPropertyLatitude()
+    {
+    }
+
+    /**
+     * Test attribute "longitude"
+     */
+    public function testPropertyLongitude()
+    {
+    }
+
+    /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "website"
+     */
+    public function testPropertyWebsite()
     {
     }
 }
