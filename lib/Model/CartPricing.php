@@ -57,9 +57,9 @@ class CartPricing implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'total_amount' => 'BigDecimal',
-'discounted_amount' => 'BigDecimal',
-'payment_amount' => 'BigDecimal'    ];
+        'total_amount' => 'float',
+'discounted_amount' => 'float',
+'payment_amount' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization

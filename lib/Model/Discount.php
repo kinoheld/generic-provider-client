@@ -57,8 +57,8 @@ class Discount implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-'remaining_amount' => 'BigDecimal',
-'initial_amount' => 'BigDecimal'    ];
+'remaining_amount' => 'float',
+'initial_amount' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization

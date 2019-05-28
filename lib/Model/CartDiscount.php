@@ -54,7 +54,7 @@ class CartDiscount extends Discount
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'applied_amount' => 'BigDecimal'    ];
+        'applied_amount' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization

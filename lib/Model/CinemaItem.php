@@ -64,8 +64,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
 'zip' => 'string',
 'street' => 'string',
 'country' => 'string',
-'latitude' => 'BigDecimal',
-'longitude' => 'BigDecimal',
+'latitude' => 'float',
+'longitude' => 'float',
 'phone' => 'string',
 'email' => 'string',
 'website' => 'string'    ];

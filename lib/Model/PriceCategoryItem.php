@@ -58,7 +58,7 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'name' => 'string',
-'amount' => 'BigDecimal',
+'amount' => 'float',
 'is_default_price' => 'bool',
 'sales_channel' => 'string'    ];
 
