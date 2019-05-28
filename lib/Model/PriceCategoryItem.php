@@ -60,7 +60,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'string',
 'amount' => 'float',
 'is_default_price' => 'bool',
-'sales_channels' => 'string[]'    ];
+'sales_channels' => 'string[]',
+'color' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,7 +73,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => null,
 'amount' => null,
 'is_default_price' => null,
-'sales_channels' => null    ];
+'sales_channels' => null,
+'color' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,7 +107,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'name',
 'amount' => 'amount',
 'is_default_price' => 'isDefaultPrice',
-'sales_channels' => 'salesChannels'    ];
+'sales_channels' => 'salesChannels',
+'color' => 'color'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -117,7 +120,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'setName',
 'amount' => 'setAmount',
 'is_default_price' => 'setIsDefaultPrice',
-'sales_channels' => 'setSalesChannels'    ];
+'sales_channels' => 'setSalesChannels',
+'color' => 'setColor'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -129,7 +133,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'getName',
 'amount' => 'getAmount',
 'is_default_price' => 'getIsDefaultPrice',
-'sales_channels' => 'getSalesChannels'    ];
+'sales_channels' => 'getSalesChannels',
+'color' => 'getColor'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -207,6 +212,7 @@ self::SALES_CHANNELS_CALL,        ];
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['is_default_price'] = isset($data['is_default_price']) ? $data['is_default_price'] : null;
         $this->container['sales_channels'] = isset($data['sales_channels']) ? $data['sales_channels'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
     }
 
     /**
@@ -370,6 +376,30 @@ self::SALES_CHANNELS_CALL,        ];
             );
         }
         $this->container['sales_channels'] = $sales_channels;
+
+        return $this;
+    }
+
+    /**
+     * Gets color
+     *
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     * @param string $color color
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
 
         return $this;
     }

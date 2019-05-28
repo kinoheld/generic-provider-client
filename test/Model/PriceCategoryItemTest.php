@@ -109,4 +109,11 @@ class PriceCategoryItemTest extends \PHPUnit_Framework_TestCase
     public function testPropertySalesChannels()
     {
     }
+
+    /**
+     * Test attribute "color"
+     */
+    public function testPropertyColor()
+    {
+    }
 }

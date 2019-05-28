@@ -90,6 +90,13 @@ class PriceAreaItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "color"
+     */
+    public function testPropertyColor()
+    {
+    }
+
+    /**
      * Test attribute "price_categories"
      */
     public function testPropertyPriceCategories()

@@ -58,6 +58,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'name' => 'string',
+'color' => 'string',
 'price_categories' => '\kinoheld\GenericProviderClient\Model\PriceCategoryItem[]'    ];
 
     /**
@@ -68,6 +69,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'name' => null,
+'color' => null,
 'price_categories' => null    ];
 
     /**
@@ -99,6 +101,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'name' => 'name',
+'color' => 'color',
 'price_categories' => 'priceCategories'    ];
 
     /**
@@ -109,6 +112,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'name' => 'setName',
+'color' => 'setColor',
 'price_categories' => 'setPriceCategories'    ];
 
     /**
@@ -119,6 +123,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'name' => 'getName',
+'color' => 'getColor',
 'price_categories' => 'getPriceCategories'    ];
 
     /**
@@ -181,6 +186,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['price_categories'] = isset($data['price_categories']) ? $data['price_categories'] : null;
     }
 
@@ -261,6 +267,30 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets color
+     *
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     * @param string $color color
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
 
         return $this;
     }
