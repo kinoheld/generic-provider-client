@@ -104,9 +104,9 @@ class PriceCategoryItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "sales_channel"
+     * Test attribute "sales_channels"
      */
-    public function testPropertySalesChannel()
+    public function testPropertySalesChannels()
     {
     }
 }

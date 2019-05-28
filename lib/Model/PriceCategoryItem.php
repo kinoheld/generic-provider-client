@@ -60,7 +60,7 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'string',
 'amount' => 'float',
 'is_default_price' => 'bool',
-'sales_channel' => 'string'    ];
+'sales_channels' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,7 +72,7 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => null,
 'amount' => null,
 'is_default_price' => null,
-'sales_channel' => null    ];
+'sales_channels' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,7 +105,7 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'name',
 'amount' => 'amount',
 'is_default_price' => 'isDefaultPrice',
-'sales_channel' => 'salesChannel'    ];
+'sales_channels' => 'salesChannels'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -117,7 +117,7 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'setName',
 'amount' => 'setAmount',
 'is_default_price' => 'setIsDefaultPrice',
-'sales_channel' => 'setSalesChannel'    ];
+'sales_channels' => 'setSalesChannels'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -129,7 +129,7 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
 'name' => 'getName',
 'amount' => 'getAmount',
 'is_default_price' => 'getIsDefaultPrice',
-'sales_channel' => 'getSalesChannel'    ];
+'sales_channels' => 'getSalesChannels'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -172,19 +172,19 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const SALES_CHANNEL_WWW = 'WWW';
-const SALES_CHANNEL_CALL = 'CALL';
+    const SALES_CHANNELS_WWW = 'WWW';
+const SALES_CHANNELS_CALL = 'CALL';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getSalesChannelAllowableValues()
+    public function getSalesChannelsAllowableValues()
     {
         return [
-            self::SALES_CHANNEL_WWW,
-self::SALES_CHANNEL_CALL,        ];
+            self::SALES_CHANNELS_WWW,
+self::SALES_CHANNELS_CALL,        ];
     }
 
     /**
@@ -206,7 +206,7 @@ self::SALES_CHANNEL_CALL,        ];
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['is_default_price'] = isset($data['is_default_price']) ? $data['is_default_price'] : null;
-        $this->container['sales_channel'] = isset($data['sales_channel']) ? $data['sales_channel'] : 'WWW,';
+        $this->container['sales_channels'] = isset($data['sales_channels']) ? $data['sales_channels'] : null;
     }
 
     /**
@@ -230,17 +230,6 @@ self::SALES_CHANNEL_CALL,        ];
         if ($this->container['is_default_price'] === null) {
             $invalidProperties[] = "'is_default_price' can't be null";
         }
-        if ($this->container['sales_channel'] === null) {
-            $invalidProperties[] = "'sales_channel' can't be null";
-        }
-        $allowedValues = $this->getSalesChannelAllowableValues();
-        if (!is_null($this->container['sales_channel']) && !in_array($this->container['sales_channel'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'sales_channel', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -353,34 +342,34 @@ self::SALES_CHANNEL_CALL,        ];
     }
 
     /**
-     * Gets sales_channel
+     * Gets sales_channels
      *
-     * @return string
+     * @return string[]
      */
-    public function getSalesChannel()
+    public function getSalesChannels()
     {
-        return $this->container['sales_channel'];
+        return $this->container['sales_channels'];
     }
 
     /**
-     * Sets sales_channel
+     * Sets sales_channels
      *
-     * @param string $sales_channel WWW for internet sales, CALL for callcenter sales
+     * @param string[] $sales_channels sales_channels
      *
      * @return $this
      */
-    public function setSalesChannel($sales_channel)
+    public function setSalesChannels($sales_channels)
     {
-        $allowedValues = $this->getSalesChannelAllowableValues();
-        if (!in_array($sales_channel, $allowedValues, true)) {
+        $allowedValues = $this->getSalesChannelsAllowableValues();
+        if (!is_null($sales_channels) && array_diff($sales_channels, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'sales_channel', must be one of '%s'",
+                    "Invalid value for 'sales_channels', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['sales_channel'] = $sales_channel;
+        $this->container['sales_channels'] = $sales_channels;
 
         return $this;
     }
