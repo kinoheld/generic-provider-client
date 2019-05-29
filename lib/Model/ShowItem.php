@@ -58,17 +58,17 @@ class ShowItem implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'name' => 'string',
-'movie_id' => 'int',
+'movieId' => 'int',
 'duration' => 'int',
 'beginning' => 'string',
-'sale_start' => 'string',
-'sale_end' => 'string',
-'auditorium_id' => 'int',
-'seat_selection_available' => 'bool',
-'icaa_id' => 'int',
-'language_audio' => 'string',
-'language_subtitle' => 'string',
-'price_areas' => '\kinoheld\GenericProviderClient\Model\PriceAreaItem[]'    ];
+'saleStart' => 'string',
+'saleEnd' => 'string',
+'auditoriumId' => 'int',
+'seatSelectionAvailable' => 'bool',
+'icaaId' => 'int',
+'languageAudio' => 'string',
+'languageSubtitle' => 'string',
+'priceAreas' => '\kinoheld\GenericProviderClient\Model\PriceAreaItem[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -78,17 +78,17 @@ class ShowItem implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'name' => null,
-'movie_id' => null,
+'movieId' => null,
 'duration' => null,
 'beginning' => null,
-'sale_start' => null,
-'sale_end' => null,
-'auditorium_id' => null,
-'seat_selection_available' => null,
-'icaa_id' => null,
-'language_audio' => null,
-'language_subtitle' => null,
-'price_areas' => null    ];
+'saleStart' => null,
+'saleEnd' => null,
+'auditoriumId' => null,
+'seatSelectionAvailable' => null,
+'icaaId' => null,
+'languageAudio' => null,
+'languageSubtitle' => null,
+'priceAreas' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -119,17 +119,17 @@ class ShowItem implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'name' => 'name',
-'movie_id' => 'movieId',
+'movieId' => 'movieId',
 'duration' => 'duration',
 'beginning' => 'beginning',
-'sale_start' => 'saleStart',
-'sale_end' => 'saleEnd',
-'auditorium_id' => 'auditoriumId',
-'seat_selection_available' => 'seatSelectionAvailable',
-'icaa_id' => 'icaaId',
-'language_audio' => 'languageAudio',
-'language_subtitle' => 'languageSubtitle',
-'price_areas' => 'priceAreas'    ];
+'saleStart' => 'saleStart',
+'saleEnd' => 'saleEnd',
+'auditoriumId' => 'auditoriumId',
+'seatSelectionAvailable' => 'seatSelectionAvailable',
+'icaaId' => 'icaaId',
+'languageAudio' => 'languageAudio',
+'languageSubtitle' => 'languageSubtitle',
+'priceAreas' => 'priceAreas'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -139,17 +139,17 @@ class ShowItem implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'name' => 'setName',
-'movie_id' => 'setMovieId',
+'movieId' => 'setMovieId',
 'duration' => 'setDuration',
 'beginning' => 'setBeginning',
-'sale_start' => 'setSaleStart',
-'sale_end' => 'setSaleEnd',
-'auditorium_id' => 'setAuditoriumId',
-'seat_selection_available' => 'setSeatSelectionAvailable',
-'icaa_id' => 'setIcaaId',
-'language_audio' => 'setLanguageAudio',
-'language_subtitle' => 'setLanguageSubtitle',
-'price_areas' => 'setPriceAreas'    ];
+'saleStart' => 'setSaleStart',
+'saleEnd' => 'setSaleEnd',
+'auditoriumId' => 'setAuditoriumId',
+'seatSelectionAvailable' => 'setSeatSelectionAvailable',
+'icaaId' => 'setIcaaId',
+'languageAudio' => 'setLanguageAudio',
+'languageSubtitle' => 'setLanguageSubtitle',
+'priceAreas' => 'setPriceAreas'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -159,17 +159,17 @@ class ShowItem implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'name' => 'getName',
-'movie_id' => 'getMovieId',
+'movieId' => 'getMovieId',
 'duration' => 'getDuration',
 'beginning' => 'getBeginning',
-'sale_start' => 'getSaleStart',
-'sale_end' => 'getSaleEnd',
-'auditorium_id' => 'getAuditoriumId',
-'seat_selection_available' => 'getSeatSelectionAvailable',
-'icaa_id' => 'getIcaaId',
-'language_audio' => 'getLanguageAudio',
-'language_subtitle' => 'getLanguageSubtitle',
-'price_areas' => 'getPriceAreas'    ];
+'saleStart' => 'getSaleStart',
+'saleEnd' => 'getSaleEnd',
+'auditoriumId' => 'getAuditoriumId',
+'seatSelectionAvailable' => 'getSeatSelectionAvailable',
+'icaaId' => 'getIcaaId',
+'languageAudio' => 'getLanguageAudio',
+'languageSubtitle' => 'getLanguageSubtitle',
+'priceAreas' => 'getPriceAreas'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -231,17 +231,17 @@ class ShowItem implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['movie_id'] = isset($data['movie_id']) ? $data['movie_id'] : null;
+        $this->container['movieId'] = isset($data['movieId']) ? $data['movieId'] : null;
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
         $this->container['beginning'] = isset($data['beginning']) ? $data['beginning'] : null;
-        $this->container['sale_start'] = isset($data['sale_start']) ? $data['sale_start'] : null;
-        $this->container['sale_end'] = isset($data['sale_end']) ? $data['sale_end'] : null;
-        $this->container['auditorium_id'] = isset($data['auditorium_id']) ? $data['auditorium_id'] : null;
-        $this->container['seat_selection_available'] = isset($data['seat_selection_available']) ? $data['seat_selection_available'] : null;
-        $this->container['icaa_id'] = isset($data['icaa_id']) ? $data['icaa_id'] : null;
-        $this->container['language_audio'] = isset($data['language_audio']) ? $data['language_audio'] : null;
-        $this->container['language_subtitle'] = isset($data['language_subtitle']) ? $data['language_subtitle'] : null;
-        $this->container['price_areas'] = isset($data['price_areas']) ? $data['price_areas'] : null;
+        $this->container['saleStart'] = isset($data['saleStart']) ? $data['saleStart'] : null;
+        $this->container['saleEnd'] = isset($data['saleEnd']) ? $data['saleEnd'] : null;
+        $this->container['auditoriumId'] = isset($data['auditoriumId']) ? $data['auditoriumId'] : null;
+        $this->container['seatSelectionAvailable'] = isset($data['seatSelectionAvailable']) ? $data['seatSelectionAvailable'] : null;
+        $this->container['icaaId'] = isset($data['icaaId']) ? $data['icaaId'] : null;
+        $this->container['languageAudio'] = isset($data['languageAudio']) ? $data['languageAudio'] : null;
+        $this->container['languageSubtitle'] = isset($data['languageSubtitle']) ? $data['languageSubtitle'] : null;
+        $this->container['priceAreas'] = isset($data['priceAreas']) ? $data['priceAreas'] : null;
     }
 
     /**
@@ -259,8 +259,8 @@ class ShowItem implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['movie_id'] === null) {
-            $invalidProperties[] = "'movie_id' can't be null";
+        if ($this->container['movieId'] === null) {
+            $invalidProperties[] = "'movieId' can't be null";
         }
         if ($this->container['duration'] === null) {
             $invalidProperties[] = "'duration' can't be null";
@@ -268,29 +268,29 @@ class ShowItem implements ModelInterface, ArrayAccess
         if ($this->container['beginning'] === null) {
             $invalidProperties[] = "'beginning' can't be null";
         }
-        if ($this->container['sale_start'] === null) {
-            $invalidProperties[] = "'sale_start' can't be null";
+        if ($this->container['saleStart'] === null) {
+            $invalidProperties[] = "'saleStart' can't be null";
         }
-        if ($this->container['sale_end'] === null) {
-            $invalidProperties[] = "'sale_end' can't be null";
+        if ($this->container['saleEnd'] === null) {
+            $invalidProperties[] = "'saleEnd' can't be null";
         }
-        if ($this->container['auditorium_id'] === null) {
-            $invalidProperties[] = "'auditorium_id' can't be null";
+        if ($this->container['auditoriumId'] === null) {
+            $invalidProperties[] = "'auditoriumId' can't be null";
         }
-        if ($this->container['seat_selection_available'] === null) {
-            $invalidProperties[] = "'seat_selection_available' can't be null";
+        if ($this->container['seatSelectionAvailable'] === null) {
+            $invalidProperties[] = "'seatSelectionAvailable' can't be null";
         }
-        if ($this->container['icaa_id'] === null) {
-            $invalidProperties[] = "'icaa_id' can't be null";
+        if ($this->container['icaaId'] === null) {
+            $invalidProperties[] = "'icaaId' can't be null";
         }
-        if ($this->container['language_audio'] === null) {
-            $invalidProperties[] = "'language_audio' can't be null";
+        if ($this->container['languageAudio'] === null) {
+            $invalidProperties[] = "'languageAudio' can't be null";
         }
-        if ($this->container['language_subtitle'] === null) {
-            $invalidProperties[] = "'language_subtitle' can't be null";
+        if ($this->container['languageSubtitle'] === null) {
+            $invalidProperties[] = "'languageSubtitle' can't be null";
         }
-        if ($this->container['price_areas'] === null) {
-            $invalidProperties[] = "'price_areas' can't be null";
+        if ($this->container['priceAreas'] === null) {
+            $invalidProperties[] = "'priceAreas' can't be null";
         }
         return $invalidProperties;
     }
@@ -356,25 +356,25 @@ class ShowItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets movie_id
+     * Gets movieId
      *
      * @return int
      */
     public function getMovieId()
     {
-        return $this->container['movie_id'];
+        return $this->container['movieId'];
     }
 
     /**
-     * Sets movie_id
+     * Sets movieId
      *
-     * @param int $movie_id movie_id
+     * @param int $movieId movieId
      *
      * @return $this
      */
-    public function setMovieId($movie_id)
+    public function setMovieId($movieId)
     {
-        $this->container['movie_id'] = $movie_id;
+        $this->container['movieId'] = $movieId;
 
         return $this;
     }
@@ -428,193 +428,193 @@ class ShowItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets sale_start
+     * Gets saleStart
      *
      * @return string
      */
     public function getSaleStart()
     {
-        return $this->container['sale_start'];
+        return $this->container['saleStart'];
     }
 
     /**
-     * Sets sale_start
+     * Sets saleStart
      *
-     * @param string $sale_start sale_start
+     * @param string $saleStart saleStart
      *
      * @return $this
      */
-    public function setSaleStart($sale_start)
+    public function setSaleStart($saleStart)
     {
-        $this->container['sale_start'] = $sale_start;
+        $this->container['saleStart'] = $saleStart;
 
         return $this;
     }
 
     /**
-     * Gets sale_end
+     * Gets saleEnd
      *
      * @return string
      */
     public function getSaleEnd()
     {
-        return $this->container['sale_end'];
+        return $this->container['saleEnd'];
     }
 
     /**
-     * Sets sale_end
+     * Sets saleEnd
      *
-     * @param string $sale_end sale_end
+     * @param string $saleEnd saleEnd
      *
      * @return $this
      */
-    public function setSaleEnd($sale_end)
+    public function setSaleEnd($saleEnd)
     {
-        $this->container['sale_end'] = $sale_end;
+        $this->container['saleEnd'] = $saleEnd;
 
         return $this;
     }
 
     /**
-     * Gets auditorium_id
+     * Gets auditoriumId
      *
      * @return int
      */
     public function getAuditoriumId()
     {
-        return $this->container['auditorium_id'];
+        return $this->container['auditoriumId'];
     }
 
     /**
-     * Sets auditorium_id
+     * Sets auditoriumId
      *
-     * @param int $auditorium_id auditorium_id
+     * @param int $auditoriumId auditoriumId
      *
      * @return $this
      */
-    public function setAuditoriumId($auditorium_id)
+    public function setAuditoriumId($auditoriumId)
     {
-        $this->container['auditorium_id'] = $auditorium_id;
+        $this->container['auditoriumId'] = $auditoriumId;
 
         return $this;
     }
 
     /**
-     * Gets seat_selection_available
+     * Gets seatSelectionAvailable
      *
      * @return bool
      */
     public function getSeatSelectionAvailable()
     {
-        return $this->container['seat_selection_available'];
+        return $this->container['seatSelectionAvailable'];
     }
 
     /**
-     * Sets seat_selection_available
+     * Sets seatSelectionAvailable
      *
-     * @param bool $seat_selection_available seat_selection_available
+     * @param bool $seatSelectionAvailable seatSelectionAvailable
      *
      * @return $this
      */
-    public function setSeatSelectionAvailable($seat_selection_available)
+    public function setSeatSelectionAvailable($seatSelectionAvailable)
     {
-        $this->container['seat_selection_available'] = $seat_selection_available;
+        $this->container['seatSelectionAvailable'] = $seatSelectionAvailable;
 
         return $this;
     }
 
     /**
-     * Gets icaa_id
+     * Gets icaaId
      *
      * @return int
      */
     public function getIcaaId()
     {
-        return $this->container['icaa_id'];
+        return $this->container['icaaId'];
     }
 
     /**
-     * Sets icaa_id
+     * Sets icaaId
      *
-     * @param int $icaa_id icaa_id
+     * @param int $icaaId icaaId
      *
      * @return $this
      */
-    public function setIcaaId($icaa_id)
+    public function setIcaaId($icaaId)
     {
-        $this->container['icaa_id'] = $icaa_id;
+        $this->container['icaaId'] = $icaaId;
 
         return $this;
     }
 
     /**
-     * Gets language_audio
+     * Gets languageAudio
      *
      * @return string
      */
     public function getLanguageAudio()
     {
-        return $this->container['language_audio'];
+        return $this->container['languageAudio'];
     }
 
     /**
-     * Sets language_audio
+     * Sets languageAudio
      *
-     * @param string $language_audio language_audio
+     * @param string $languageAudio languageAudio
      *
      * @return $this
      */
-    public function setLanguageAudio($language_audio)
+    public function setLanguageAudio($languageAudio)
     {
-        $this->container['language_audio'] = $language_audio;
+        $this->container['languageAudio'] = $languageAudio;
 
         return $this;
     }
 
     /**
-     * Gets language_subtitle
+     * Gets languageSubtitle
      *
      * @return string
      */
     public function getLanguageSubtitle()
     {
-        return $this->container['language_subtitle'];
+        return $this->container['languageSubtitle'];
     }
 
     /**
-     * Sets language_subtitle
+     * Sets languageSubtitle
      *
-     * @param string $language_subtitle language_subtitle
+     * @param string $languageSubtitle languageSubtitle
      *
      * @return $this
      */
-    public function setLanguageSubtitle($language_subtitle)
+    public function setLanguageSubtitle($languageSubtitle)
     {
-        $this->container['language_subtitle'] = $language_subtitle;
+        $this->container['languageSubtitle'] = $languageSubtitle;
 
         return $this;
     }
 
     /**
-     * Gets price_areas
+     * Gets priceAreas
      *
      * @return \kinoheld\GenericProviderClient\Model\PriceAreaItem[]
      */
     public function getPriceAreas()
     {
-        return $this->container['price_areas'];
+        return $this->container['priceAreas'];
     }
 
     /**
-     * Sets price_areas
+     * Sets priceAreas
      *
-     * @param \kinoheld\GenericProviderClient\Model\PriceAreaItem[] $price_areas price_areas
+     * @param \kinoheld\GenericProviderClient\Model\PriceAreaItem[] $priceAreas priceAreas
      *
      * @return $this
      */
-    public function setPriceAreas($price_areas)
+    public function setPriceAreas($priceAreas)
     {
-        $this->container['price_areas'] = $price_areas;
+        $this->container['priceAreas'] = $priceAreas;
 
         return $this;
     }

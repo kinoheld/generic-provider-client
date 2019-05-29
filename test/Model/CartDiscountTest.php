@@ -76,7 +76,7 @@ class CartDiscountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "applied_amount"
+     * Test attribute "appliedAmount"
      */
     public function testPropertyAppliedAmount()
     {

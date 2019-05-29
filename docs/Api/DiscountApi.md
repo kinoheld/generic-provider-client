@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**discountGet**](DiscountApi.md#discountGet) | **GET** /discount | get the discount
 
 # **discountGet**
-> \kinoheld\GenericProviderClient\Model\Discount discountGet($chain_id, $cinema_id, $code)
+> \kinoheld\GenericProviderClient\Model\Discount discountGet($chainId, $cinemaId, $code)
 
 get the discount
 
@@ -28,12 +28,12 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\DiscountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | The chain ID the cinema belongs to.
-$cinema_id = 56; // int | The cinema ID the show/event belongs to.
+$chainId = 56; // int | The chain ID the cinema belongs to.
+$cinemaId = 56; // int | The cinema ID the show/event belongs to.
 $code = "code_example"; // string | discount code
 
 try {
-    $result = $apiInstance->discountGet($chain_id, $cinema_id, $code);
+    $result = $apiInstance->discountGet($chainId, $cinemaId, $code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountApi->discountGet: ', $e->getMessage(), PHP_EOL;
@@ -45,8 +45,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chain_id** | **int**| The chain ID the cinema belongs to. |
- **cinema_id** | **int**| The cinema ID the show/event belongs to. |
+ **chainId** | **int**| The chain ID the cinema belongs to. |
+ **cinemaId** | **int**| The cinema ID the show/event belongs to. |
  **code** | **string**| discount code |
 
 ### Return type

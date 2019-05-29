@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**orderGet**](OrderApi.md#orderGet) | **GET** /order | get the order
 
 # **orderCancel**
-> \kinoheld\GenericProviderClient\Model\Order orderCancel($order_id)
+> \kinoheld\GenericProviderClient\Model\Order orderCancel($orderId)
 
 cancel the order
 
@@ -29,10 +29,10 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order_id = 56; // int | order ID
+$orderId = 56; // int | order ID
 
 try {
-    $result = $apiInstance->orderCancel($order_id);
+    $result = $apiInstance->orderCancel($orderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCancel: ', $e->getMessage(), PHP_EOL;
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**| order ID |
+ **orderId** | **int**| order ID |
 
 ### Return type
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderGet**
-> \kinoheld\GenericProviderClient\Model\Order orderGet($order_id)
+> \kinoheld\GenericProviderClient\Model\Order orderGet($orderId)
 
 get the order
 
@@ -83,10 +83,10 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order_id = 56; // int | order ID
+$orderId = 56; // int | order ID
 
 try {
-    $result = $apiInstance->orderGet($order_id);
+    $result = $apiInstance->orderGet($orderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderGet: ', $e->getMessage(), PHP_EOL;
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_id** | **int**| order ID |
+ **orderId** | **int**| order ID |
 
 ### Return type
 

@@ -55,11 +55,11 @@ class Order extends Cart
       */
     protected static $swaggerTypes = [
         'id' => '',
-'show_id' => '',
+'showId' => '',
 'items' => '\kinoheld\GenericProviderClient\Model\OrderItem[]',
 'discounts' => '',
 'pricing' => '',
-'admission_code' => 'string',
+'admissionCode' => 'string',
 'state' => 'string'    ];
 
     /**
@@ -69,11 +69,11 @@ class Order extends Cart
       */
     protected static $swaggerFormats = [
         'id' => null,
-'show_id' => null,
+'showId' => null,
 'items' => null,
 'discounts' => null,
 'pricing' => null,
-'admission_code' => null,
+'admissionCode' => null,
 'state' => null    ];
 
     /**
@@ -104,11 +104,11 @@ class Order extends Cart
      */
     protected static $attributeMap = [
         'id' => 'id',
-'show_id' => 'showId',
+'showId' => 'showId',
 'items' => 'items',
 'discounts' => 'discounts',
 'pricing' => 'pricing',
-'admission_code' => 'admissionCode',
+'admissionCode' => 'admissionCode',
 'state' => 'state'    ];
 
     /**
@@ -118,11 +118,11 @@ class Order extends Cart
      */
     protected static $setters = [
         'id' => 'setId',
-'show_id' => 'setShowId',
+'showId' => 'setShowId',
 'items' => 'setItems',
 'discounts' => 'setDiscounts',
 'pricing' => 'setPricing',
-'admission_code' => 'setAdmissionCode',
+'admissionCode' => 'setAdmissionCode',
 'state' => 'setState'    ];
 
     /**
@@ -132,11 +132,11 @@ class Order extends Cart
      */
     protected static $getters = [
         'id' => 'getId',
-'show_id' => 'getShowId',
+'showId' => 'getShowId',
 'items' => 'getItems',
 'discounts' => 'getDiscounts',
 'pricing' => 'getPricing',
-'admission_code' => 'getAdmissionCode',
+'admissionCode' => 'getAdmissionCode',
 'state' => 'getState'    ];
 
     /**
@@ -207,11 +207,11 @@ self::STATE_CANCELLED,        ];
         parent::__construct($data);
 
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['show_id'] = isset($data['show_id']) ? $data['show_id'] : null;
+        $this->container['showId'] = isset($data['showId']) ? $data['showId'] : null;
         $this->container['items'] = isset($data['items']) ? $data['items'] : null;
         $this->container['discounts'] = isset($data['discounts']) ? $data['discounts'] : null;
         $this->container['pricing'] = isset($data['pricing']) ? $data['pricing'] : null;
-        $this->container['admission_code'] = isset($data['admission_code']) ? $data['admission_code'] : null;
+        $this->container['admissionCode'] = isset($data['admissionCode']) ? $data['admissionCode'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : 'ORDER_STATE_CONFIRMED';
     }
 
@@ -224,8 +224,8 @@ self::STATE_CANCELLED,        ];
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['admission_code'] === null) {
-            $invalidProperties[] = "'admission_code' can't be null";
+        if ($this->container['admissionCode'] === null) {
+            $invalidProperties[] = "'admissionCode' can't be null";
         }
         if ($this->container['state'] === null) {
             $invalidProperties[] = "'state' can't be null";
@@ -278,25 +278,25 @@ self::STATE_CANCELLED,        ];
     }
 
     /**
-     * Gets show_id
+     * Gets showId
      *
      * @return 
      */
     public function getShowId()
     {
-        return $this->container['show_id'];
+        return $this->container['showId'];
     }
 
     /**
-     * Sets show_id
+     * Sets showId
      *
-     * @param  $show_id Show ID the order is attached to.
+     * @param  $showId Show ID the order is attached to.
      *
      * @return $this
      */
-    public function setShowId($show_id)
+    public function setShowId($showId)
     {
-        $this->container['show_id'] = $show_id;
+        $this->container['showId'] = $showId;
 
         return $this;
     }
@@ -374,25 +374,25 @@ self::STATE_CANCELLED,        ];
     }
 
     /**
-     * Gets admission_code
+     * Gets admissionCode
      *
      * @return string
      */
     public function getAdmissionCode()
     {
-        return $this->container['admission_code'];
+        return $this->container['admissionCode'];
     }
 
     /**
-     * Sets admission_code
+     * Sets admissionCode
      *
-     * @param string $admission_code The code that can be scanned by cinema staff to confirm entry to the show/event.
+     * @param string $admissionCode The code that can be scanned by cinema staff to confirm entry to the show/event.
      *
      * @return $this
      */
-    public function setAdmissionCode($admission_code)
+    public function setAdmissionCode($admissionCode)
     {
-        $this->container['admission_code'] = $admission_code;
+        $this->container['admissionCode'] = $admissionCode;
 
         return $this;
     }

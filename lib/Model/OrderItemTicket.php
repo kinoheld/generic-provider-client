@@ -58,8 +58,8 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'name' => 'string',
-'admission_code' => 'string',
-'seat_id' => 'int'    ];
+'admissionCode' => 'string',
+'seatId' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,8 +69,8 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'name' => null,
-'admission_code' => null,
-'seat_id' => null    ];
+'admissionCode' => null,
+'seatId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,8 +101,8 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'name' => 'name',
-'admission_code' => 'admissionCode',
-'seat_id' => 'seatId'    ];
+'admissionCode' => 'admissionCode',
+'seatId' => 'seatId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -112,8 +112,8 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'name' => 'setName',
-'admission_code' => 'setAdmissionCode',
-'seat_id' => 'setSeatId'    ];
+'admissionCode' => 'setAdmissionCode',
+'seatId' => 'setSeatId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -123,8 +123,8 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'name' => 'getName',
-'admission_code' => 'getAdmissionCode',
-'seat_id' => 'getSeatId'    ];
+'admissionCode' => 'getAdmissionCode',
+'seatId' => 'getSeatId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -186,8 +186,8 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['admission_code'] = isset($data['admission_code']) ? $data['admission_code'] : null;
-        $this->container['seat_id'] = isset($data['seat_id']) ? $data['seat_id'] : null;
+        $this->container['admissionCode'] = isset($data['admissionCode']) ? $data['admissionCode'] : null;
+        $this->container['seatId'] = isset($data['seatId']) ? $data['seatId'] : null;
     }
 
     /**
@@ -205,8 +205,8 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['admission_code'] === null) {
-            $invalidProperties[] = "'admission_code' can't be null";
+        if ($this->container['admissionCode'] === null) {
+            $invalidProperties[] = "'admissionCode' can't be null";
         }
         return $invalidProperties;
     }
@@ -272,49 +272,49 @@ class OrderItemTicket implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets admission_code
+     * Gets admissionCode
      *
      * @return string
      */
     public function getAdmissionCode()
     {
-        return $this->container['admission_code'];
+        return $this->container['admissionCode'];
     }
 
     /**
-     * Sets admission_code
+     * Sets admissionCode
      *
-     * @param string $admission_code The code that can be scanned by cinema staff to confirm entry to the show/event.
+     * @param string $admissionCode The code that can be scanned by cinema staff to confirm entry to the show/event.
      *
      * @return $this
      */
-    public function setAdmissionCode($admission_code)
+    public function setAdmissionCode($admissionCode)
     {
-        $this->container['admission_code'] = $admission_code;
+        $this->container['admissionCode'] = $admissionCode;
 
         return $this;
     }
 
     /**
-     * Gets seat_id
+     * Gets seatId
      *
      * @return int
      */
     public function getSeatId()
     {
-        return $this->container['seat_id'];
+        return $this->container['seatId'];
     }
 
     /**
-     * Sets seat_id
+     * Sets seatId
      *
-     * @param int $seat_id If the order is attached to a show/event with seat selection, this field is required and must contain the seat ID that this ticket applies to.
+     * @param int $seatId If the order is attached to a show/event with seat selection, this field is required and must contain the seat ID that this ticket applies to.
      *
      * @return $this
      */
-    public function setSeatId($seat_id)
+    public function setSeatId($seatId)
     {
-        $this->container['seat_id'] = $seat_id;
+        $this->container['seatId'] = $seatId;
 
         return $this;
     }

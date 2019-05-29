@@ -59,7 +59,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
         'id' => 'int',
 'name' => 'string',
 'color' => 'string',
-'price_categories' => '\kinoheld\GenericProviderClient\Model\PriceCategoryItem[]'    ];
+'priceCategories' => '\kinoheld\GenericProviderClient\Model\PriceCategoryItem[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,7 +70,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
         'id' => null,
 'name' => null,
 'color' => null,
-'price_categories' => null    ];
+'priceCategories' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -102,7 +102,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
         'id' => 'id',
 'name' => 'name',
 'color' => 'color',
-'price_categories' => 'priceCategories'    ];
+'priceCategories' => 'priceCategories'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,7 +113,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
         'id' => 'setId',
 'name' => 'setName',
 'color' => 'setColor',
-'price_categories' => 'setPriceCategories'    ];
+'priceCategories' => 'setPriceCategories'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -124,7 +124,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
         'id' => 'getId',
 'name' => 'getName',
 'color' => 'getColor',
-'price_categories' => 'getPriceCategories'    ];
+'priceCategories' => 'getPriceCategories'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -187,7 +187,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['price_categories'] = isset($data['price_categories']) ? $data['price_categories'] : null;
+        $this->container['priceCategories'] = isset($data['priceCategories']) ? $data['priceCategories'] : null;
     }
 
     /**
@@ -205,8 +205,8 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['price_categories'] === null) {
-            $invalidProperties[] = "'price_categories' can't be null";
+        if ($this->container['priceCategories'] === null) {
+            $invalidProperties[] = "'priceCategories' can't be null";
         }
         return $invalidProperties;
     }
@@ -296,25 +296,25 @@ class PriceAreaItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets price_categories
+     * Gets priceCategories
      *
      * @return \kinoheld\GenericProviderClient\Model\PriceCategoryItem[]
      */
     public function getPriceCategories()
     {
-        return $this->container['price_categories'];
+        return $this->container['priceCategories'];
     }
 
     /**
-     * Sets price_categories
+     * Sets priceCategories
      *
-     * @param \kinoheld\GenericProviderClient\Model\PriceCategoryItem[] $price_categories price_categories
+     * @param \kinoheld\GenericProviderClient\Model\PriceCategoryItem[] $priceCategories priceCategories
      *
      * @return $this
      */
-    public function setPriceCategories($price_categories)
+    public function setPriceCategories($priceCategories)
     {
-        $this->container['price_categories'] = $price_categories;
+        $this->container['priceCategories'] = $priceCategories;
 
         return $this;
     }

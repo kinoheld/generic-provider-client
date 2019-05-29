@@ -56,9 +56,9 @@ class CartItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'price_category_id' => 'int',
+        'priceCategoryId' => 'int',
 'count' => 'int',
-'seat_ids' => 'int[]'    ];
+'seatIds' => 'int[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class CartItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'price_category_id' => null,
+        'priceCategoryId' => null,
 'count' => null,
-'seat_ids' => null    ];
+'seatIds' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class CartItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'price_category_id' => 'priceCategoryId',
+        'priceCategoryId' => 'priceCategoryId',
 'count' => 'count',
-'seat_ids' => 'seatIds'    ];
+'seatIds' => 'seatIds'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class CartItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'price_category_id' => 'setPriceCategoryId',
+        'priceCategoryId' => 'setPriceCategoryId',
 'count' => 'setCount',
-'seat_ids' => 'setSeatIds'    ];
+'seatIds' => 'setSeatIds'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class CartItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'price_category_id' => 'getPriceCategoryId',
+        'priceCategoryId' => 'getPriceCategoryId',
 'count' => 'getCount',
-'seat_ids' => 'getSeatIds'    ];
+'seatIds' => 'getSeatIds'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class CartItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['price_category_id'] = isset($data['price_category_id']) ? $data['price_category_id'] : null;
+        $this->container['priceCategoryId'] = isset($data['priceCategoryId']) ? $data['priceCategoryId'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['seat_ids'] = isset($data['seat_ids']) ? $data['seat_ids'] : null;
+        $this->container['seatIds'] = isset($data['seatIds']) ? $data['seatIds'] : null;
     }
 
     /**
@@ -193,8 +193,8 @@ class CartItem implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['price_category_id'] === null) {
-            $invalidProperties[] = "'price_category_id' can't be null";
+        if ($this->container['priceCategoryId'] === null) {
+            $invalidProperties[] = "'priceCategoryId' can't be null";
         }
         if ($this->container['count'] === null) {
             $invalidProperties[] = "'count' can't be null";
@@ -215,25 +215,25 @@ class CartItem implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets price_category_id
+     * Gets priceCategoryId
      *
      * @return int
      */
     public function getPriceCategoryId()
     {
-        return $this->container['price_category_id'];
+        return $this->container['priceCategoryId'];
     }
 
     /**
-     * Sets price_category_id
+     * Sets priceCategoryId
      *
-     * @param int $price_category_id The price category the seats/tickets should be selected for.
+     * @param int $priceCategoryId The price category the seats/tickets should be selected for.
      *
      * @return $this
      */
-    public function setPriceCategoryId($price_category_id)
+    public function setPriceCategoryId($priceCategoryId)
     {
-        $this->container['price_category_id'] = $price_category_id;
+        $this->container['priceCategoryId'] = $priceCategoryId;
 
         return $this;
     }
@@ -263,25 +263,25 @@ class CartItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets seat_ids
+     * Gets seatIds
      *
      * @return int[]
      */
     public function getSeatIds()
     {
-        return $this->container['seat_ids'];
+        return $this->container['seatIds'];
     }
 
     /**
-     * Sets seat_ids
+     * Sets seatIds
      *
-     * @param int[] $seat_ids If the cart is attached to a show/event with seat selection, this field is required and will contain the seat IDs that have been selected by the user for the given price category.
+     * @param int[] $seatIds If the cart is attached to a show/event with seat selection, this field is required and will contain the seat IDs that have been selected by the user for the given price category.
      *
      * @return $this
      */
-    public function setSeatIds($seat_ids)
+    public function setSeatIds($seatIds)
     {
-        $this->container['seat_ids'] = $seat_ids;
+        $this->container['seatIds'] = $seatIds;
 
         return $this;
     }

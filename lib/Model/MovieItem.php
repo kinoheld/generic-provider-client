@@ -62,8 +62,8 @@ class MovieItem implements ModelInterface, ArrayAccess
 'duration' => 'int',
 'description' => 'string',
 'distributor' => 'string',
-'thumb_url' => 'string',
-'trailer_url' => 'string'    ];
+'thumbUrl' => 'string',
+'trailerUrl' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -77,8 +77,8 @@ class MovieItem implements ModelInterface, ArrayAccess
 'duration' => null,
 'description' => null,
 'distributor' => null,
-'thumb_url' => 'uri',
-'trailer_url' => 'uri'    ];
+'thumbUrl' => 'uri',
+'trailerUrl' => 'uri'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -113,8 +113,8 @@ class MovieItem implements ModelInterface, ArrayAccess
 'duration' => 'duration',
 'description' => 'description',
 'distributor' => 'distributor',
-'thumb_url' => 'thumbUrl',
-'trailer_url' => 'trailerUrl'    ];
+'thumbUrl' => 'thumbUrl',
+'trailerUrl' => 'trailerUrl'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -128,8 +128,8 @@ class MovieItem implements ModelInterface, ArrayAccess
 'duration' => 'setDuration',
 'description' => 'setDescription',
 'distributor' => 'setDistributor',
-'thumb_url' => 'setThumbUrl',
-'trailer_url' => 'setTrailerUrl'    ];
+'thumbUrl' => 'setThumbUrl',
+'trailerUrl' => 'setTrailerUrl'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -143,8 +143,8 @@ class MovieItem implements ModelInterface, ArrayAccess
 'duration' => 'getDuration',
 'description' => 'getDescription',
 'distributor' => 'getDistributor',
-'thumb_url' => 'getThumbUrl',
-'trailer_url' => 'getTrailerUrl'    ];
+'thumbUrl' => 'getThumbUrl',
+'trailerUrl' => 'getTrailerUrl'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -210,8 +210,8 @@ class MovieItem implements ModelInterface, ArrayAccess
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['distributor'] = isset($data['distributor']) ? $data['distributor'] : null;
-        $this->container['thumb_url'] = isset($data['thumb_url']) ? $data['thumb_url'] : null;
-        $this->container['trailer_url'] = isset($data['trailer_url']) ? $data['trailer_url'] : null;
+        $this->container['thumbUrl'] = isset($data['thumbUrl']) ? $data['thumbUrl'] : null;
+        $this->container['trailerUrl'] = isset($data['trailerUrl']) ? $data['trailerUrl'] : null;
     }
 
     /**
@@ -241,11 +241,11 @@ class MovieItem implements ModelInterface, ArrayAccess
         if ($this->container['distributor'] === null) {
             $invalidProperties[] = "'distributor' can't be null";
         }
-        if ($this->container['thumb_url'] === null) {
-            $invalidProperties[] = "'thumb_url' can't be null";
+        if ($this->container['thumbUrl'] === null) {
+            $invalidProperties[] = "'thumbUrl' can't be null";
         }
-        if ($this->container['trailer_url'] === null) {
-            $invalidProperties[] = "'trailer_url' can't be null";
+        if ($this->container['trailerUrl'] === null) {
+            $invalidProperties[] = "'trailerUrl' can't be null";
         }
         return $invalidProperties;
     }
@@ -407,49 +407,49 @@ class MovieItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets thumb_url
+     * Gets thumbUrl
      *
      * @return string
      */
     public function getThumbUrl()
     {
-        return $this->container['thumb_url'];
+        return $this->container['thumbUrl'];
     }
 
     /**
-     * Sets thumb_url
+     * Sets thumbUrl
      *
-     * @param string $thumb_url thumb_url
+     * @param string $thumbUrl thumbUrl
      *
      * @return $this
      */
-    public function setThumbUrl($thumb_url)
+    public function setThumbUrl($thumbUrl)
     {
-        $this->container['thumb_url'] = $thumb_url;
+        $this->container['thumbUrl'] = $thumbUrl;
 
         return $this;
     }
 
     /**
-     * Gets trailer_url
+     * Gets trailerUrl
      *
      * @return string
      */
     public function getTrailerUrl()
     {
-        return $this->container['trailer_url'];
+        return $this->container['trailerUrl'];
     }
 
     /**
-     * Sets trailer_url
+     * Sets trailerUrl
      *
-     * @param string $trailer_url trailer_url
+     * @param string $trailerUrl trailerUrl
      *
      * @return $this
      */
-    public function setTrailerUrl($trailer_url)
+    public function setTrailerUrl($trailerUrl)
     {
-        $this->container['trailer_url'] = $trailer_url;
+        $this->container['trailerUrl'] = $trailerUrl;
 
         return $this;
     }

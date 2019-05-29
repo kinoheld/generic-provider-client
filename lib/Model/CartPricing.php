@@ -57,9 +57,9 @@ class CartPricing implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'total_amount' => 'float',
-'discounted_amount' => 'float',
-'payment_amount' => 'float'    ];
+        'totalAmount' => 'float',
+'discountedAmount' => 'float',
+'paymentAmount' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,9 +67,9 @@ class CartPricing implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'total_amount' => null,
-'discounted_amount' => null,
-'payment_amount' => null    ];
+        'totalAmount' => null,
+'discountedAmount' => null,
+'paymentAmount' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -98,9 +98,9 @@ class CartPricing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'total_amount' => 'totalAmount',
-'discounted_amount' => 'discountedAmount',
-'payment_amount' => 'paymentAmount'    ];
+        'totalAmount' => 'totalAmount',
+'discountedAmount' => 'discountedAmount',
+'paymentAmount' => 'paymentAmount'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -108,9 +108,9 @@ class CartPricing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'total_amount' => 'setTotalAmount',
-'discounted_amount' => 'setDiscountedAmount',
-'payment_amount' => 'setPaymentAmount'    ];
+        'totalAmount' => 'setTotalAmount',
+'discountedAmount' => 'setDiscountedAmount',
+'paymentAmount' => 'setPaymentAmount'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,9 +118,9 @@ class CartPricing implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'total_amount' => 'getTotalAmount',
-'discounted_amount' => 'getDiscountedAmount',
-'payment_amount' => 'getPaymentAmount'    ];
+        'totalAmount' => 'getTotalAmount',
+'discountedAmount' => 'getDiscountedAmount',
+'paymentAmount' => 'getPaymentAmount'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -180,9 +180,9 @@ class CartPricing implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
-        $this->container['discounted_amount'] = isset($data['discounted_amount']) ? $data['discounted_amount'] : null;
-        $this->container['payment_amount'] = isset($data['payment_amount']) ? $data['payment_amount'] : null;
+        $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
+        $this->container['discountedAmount'] = isset($data['discountedAmount']) ? $data['discountedAmount'] : null;
+        $this->container['paymentAmount'] = isset($data['paymentAmount']) ? $data['paymentAmount'] : null;
     }
 
     /**
@@ -210,73 +210,73 @@ class CartPricing implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets total_amount
+     * Gets totalAmount
      *
      * @return BigDecimal
      */
     public function getTotalAmount()
     {
-        return $this->container['total_amount'];
+        return $this->container['totalAmount'];
     }
 
     /**
-     * Sets total_amount
+     * Sets totalAmount
      *
-     * @param BigDecimal $total_amount The total amount of the cart, the sum of all items without discounts.
+     * @param BigDecimal $totalAmount The total amount of the cart, the sum of all items without discounts.
      *
      * @return $this
      */
-    public function setTotalAmount($total_amount)
+    public function setTotalAmount($totalAmount)
     {
-        $this->container['total_amount'] = $total_amount;
+        $this->container['totalAmount'] = $totalAmount;
 
         return $this;
     }
 
     /**
-     * Gets discounted_amount
+     * Gets discountedAmount
      *
      * @return BigDecimal
      */
     public function getDiscountedAmount()
     {
-        return $this->container['discounted_amount'];
+        return $this->container['discountedAmount'];
     }
 
     /**
-     * Sets discounted_amount
+     * Sets discountedAmount
      *
-     * @param BigDecimal $discounted_amount The amount discounted by attached discounts.
+     * @param BigDecimal $discountedAmount The amount discounted by attached discounts.
      *
      * @return $this
      */
-    public function setDiscountedAmount($discounted_amount)
+    public function setDiscountedAmount($discountedAmount)
     {
-        $this->container['discounted_amount'] = $discounted_amount;
+        $this->container['discountedAmount'] = $discountedAmount;
 
         return $this;
     }
 
     /**
-     * Gets payment_amount
+     * Gets paymentAmount
      *
      * @return BigDecimal
      */
     public function getPaymentAmount()
     {
-        return $this->container['payment_amount'];
+        return $this->container['paymentAmount'];
     }
 
     /**
-     * Sets payment_amount
+     * Sets paymentAmount
      *
-     * @param BigDecimal $payment_amount The amount to pay by user for this cart.
+     * @param BigDecimal $paymentAmount The amount to pay by user for this cart.
      *
      * @return $this
      */
-    public function setPaymentAmount($payment_amount)
+    public function setPaymentAmount($paymentAmount)
     {
-        $this->container['payment_amount'] = $payment_amount;
+        $this->container['paymentAmount'] = $paymentAmount;
 
         return $this;
     }

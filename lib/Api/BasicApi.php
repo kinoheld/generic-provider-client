@@ -91,16 +91,16 @@ class BasicApi
      *
      * list of auditoriums for the given cinema
      *
-     * @param  int $chain_id chain/company ID (required)
-     * @param  int $cinema_id pass a cinema id to retrieve the associated auditoriums (required)
+     * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated auditoriums (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\AuditoriumItem[]
      */
-    public function searchAuditoriums($chain_id, $cinema_id)
+    public function searchAuditoriums($chainId, $cinemaId)
     {
-        list($response) = $this->searchAuditoriumsWithHttpInfo($chain_id, $cinema_id);
+        list($response) = $this->searchAuditoriumsWithHttpInfo($chainId, $cinemaId);
         return $response;
     }
 
@@ -109,17 +109,17 @@ class BasicApi
      *
      * list of auditoriums for the given cinema
      *
-     * @param  int $chain_id chain/company ID (required)
-     * @param  int $cinema_id pass a cinema id to retrieve the associated auditoriums (required)
+     * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated auditoriums (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\AuditoriumItem[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchAuditoriumsWithHttpInfo($chain_id, $cinema_id)
+    public function searchAuditoriumsWithHttpInfo($chainId, $cinemaId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\AuditoriumItem[]';
-        $request = $this->searchAuditoriumsRequest($chain_id, $cinema_id);
+        $request = $this->searchAuditoriumsRequest($chainId, $cinemaId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -185,15 +185,15 @@ class BasicApi
      *
      * list of auditoriums for the given cinema
      *
-     * @param  int $chain_id chain/company ID (required)
-     * @param  int $cinema_id pass a cinema id to retrieve the associated auditoriums (required)
+     * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated auditoriums (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAuditoriumsAsync($chain_id, $cinema_id)
+    public function searchAuditoriumsAsync($chainId, $cinemaId)
     {
-        return $this->searchAuditoriumsAsyncWithHttpInfo($chain_id, $cinema_id)
+        return $this->searchAuditoriumsAsyncWithHttpInfo($chainId, $cinemaId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -206,16 +206,16 @@ class BasicApi
      *
      * list of auditoriums for the given cinema
      *
-     * @param  int $chain_id chain/company ID (required)
-     * @param  int $cinema_id pass a cinema id to retrieve the associated auditoriums (required)
+     * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated auditoriums (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAuditoriumsAsyncWithHttpInfo($chain_id, $cinema_id)
+    public function searchAuditoriumsAsyncWithHttpInfo($chainId, $cinemaId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\AuditoriumItem[]';
-        $request = $this->searchAuditoriumsRequest($chain_id, $cinema_id);
+        $request = $this->searchAuditoriumsRequest($chainId, $cinemaId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -257,24 +257,24 @@ class BasicApi
     /**
      * Create request for operation 'searchAuditoriums'
      *
-     * @param  int $chain_id chain/company ID (required)
-     * @param  int $cinema_id pass a cinema id to retrieve the associated auditoriums (required)
+     * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated auditoriums (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchAuditoriumsRequest($chain_id, $cinema_id)
+    protected function searchAuditoriumsRequest($chainId, $cinemaId)
     {
-        // verify the required parameter 'chain_id' is set
-        if ($chain_id === null || (is_array($chain_id) && count($chain_id) === 0)) {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $chain_id when calling searchAuditoriums'
+                'Missing the required parameter $chainId when calling searchAuditoriums'
             );
         }
-        // verify the required parameter 'cinema_id' is set
-        if ($cinema_id === null || (is_array($cinema_id) && count($cinema_id) === 0)) {
+        // verify the required parameter 'cinemaId' is set
+        if ($cinemaId === null || (is_array($cinemaId) && count($cinemaId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cinema_id when calling searchAuditoriums'
+                'Missing the required parameter $cinemaId when calling searchAuditoriums'
             );
         }
 
@@ -286,12 +286,12 @@ class BasicApi
         $multipart = false;
 
         // query params
-        if ($chain_id !== null) {
-            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chain_id);
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
         }
         // query params
-        if ($cinema_id !== null) {
-            $queryParams['cinemaId'] = ObjectSerializer::toQueryValue($cinema_id);
+        if ($cinemaId !== null) {
+            $queryParams['cinemaId'] = ObjectSerializer::toQueryValue($cinemaId);
         }
 
 
@@ -626,16 +626,16 @@ class BasicApi
      *
      * list of cinemas
      *
-     * @param  int $chain_id chain/company ID (required)
+     * @param  int $chainId chain/company ID (required)
      * @param  int $id pass an optional cinema id to retrieve just the cinema details of the given cinema (optional)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\CinemaItem[]
      */
-    public function searchCinemas($chain_id, $id = null)
+    public function searchCinemas($chainId, $id = null)
     {
-        list($response) = $this->searchCinemasWithHttpInfo($chain_id, $id);
+        list($response) = $this->searchCinemasWithHttpInfo($chainId, $id);
         return $response;
     }
 
@@ -644,17 +644,17 @@ class BasicApi
      *
      * list of cinemas
      *
-     * @param  int $chain_id chain/company ID (required)
+     * @param  int $chainId chain/company ID (required)
      * @param  int $id pass an optional cinema id to retrieve just the cinema details of the given cinema (optional)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\CinemaItem[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchCinemasWithHttpInfo($chain_id, $id = null)
+    public function searchCinemasWithHttpInfo($chainId, $id = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\CinemaItem[]';
-        $request = $this->searchCinemasRequest($chain_id, $id);
+        $request = $this->searchCinemasRequest($chainId, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -720,15 +720,15 @@ class BasicApi
      *
      * list of cinemas
      *
-     * @param  int $chain_id chain/company ID (required)
+     * @param  int $chainId chain/company ID (required)
      * @param  int $id pass an optional cinema id to retrieve just the cinema details of the given cinema (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchCinemasAsync($chain_id, $id = null)
+    public function searchCinemasAsync($chainId, $id = null)
     {
-        return $this->searchCinemasAsyncWithHttpInfo($chain_id, $id)
+        return $this->searchCinemasAsyncWithHttpInfo($chainId, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -741,16 +741,16 @@ class BasicApi
      *
      * list of cinemas
      *
-     * @param  int $chain_id chain/company ID (required)
+     * @param  int $chainId chain/company ID (required)
      * @param  int $id pass an optional cinema id to retrieve just the cinema details of the given cinema (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchCinemasAsyncWithHttpInfo($chain_id, $id = null)
+    public function searchCinemasAsyncWithHttpInfo($chainId, $id = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\CinemaItem[]';
-        $request = $this->searchCinemasRequest($chain_id, $id);
+        $request = $this->searchCinemasRequest($chainId, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -792,18 +792,18 @@ class BasicApi
     /**
      * Create request for operation 'searchCinemas'
      *
-     * @param  int $chain_id chain/company ID (required)
+     * @param  int $chainId chain/company ID (required)
      * @param  int $id pass an optional cinema id to retrieve just the cinema details of the given cinema (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function searchCinemasRequest($chain_id, $id = null)
+    protected function searchCinemasRequest($chainId, $id = null)
     {
-        // verify the required parameter 'chain_id' is set
-        if ($chain_id === null || (is_array($chain_id) && count($chain_id) === 0)) {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $chain_id when calling searchCinemas'
+                'Missing the required parameter $chainId when calling searchCinemas'
             );
         }
 
@@ -815,8 +815,8 @@ class BasicApi
         $multipart = false;
 
         // query params
-        if ($chain_id !== null) {
-            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chain_id);
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
         }
         // query params
         if ($id !== null) {

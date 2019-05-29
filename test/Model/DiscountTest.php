@@ -83,14 +83,14 @@ class DiscountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "remaining_amount"
+     * Test attribute "remainingAmount"
      */
     public function testPropertyRemainingAmount()
     {
     }
 
     /**
-     * Test attribute "initial_amount"
+     * Test attribute "initialAmount"
      */
     public function testPropertyInitialAmount()
     {

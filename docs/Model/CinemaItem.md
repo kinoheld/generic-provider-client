@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **name** | **string** |  | 
-**name_short** | **string** |  | [optional] 
-**chain_id** | **int** |  | 
+**nameShort** | **string** |  | [optional] 
+**chainId** | **int** |  | 
 **city** | **string** |  | [optional] 
 **zip** | **string** |  | [optional] 
 **street** | **string** |  | [optional] 

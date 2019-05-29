@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**price_category_id** | **int** | The price category the seats/tickets should be selected for. | 
+**priceCategoryId** | **int** | The price category the seats/tickets should be selected for. | 
 **count** | **int** | The Amount of seats/tickets that should be selected for the given price category. | 
 **tickets** | [**\kinoheld\GenericProviderClient\Model\OrderItemTicket[]**](OrderItemTicket.md) |  | [optional] 
 

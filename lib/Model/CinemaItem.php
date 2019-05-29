@@ -58,8 +58,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'name' => 'string',
-'name_short' => 'string',
-'chain_id' => 'int',
+'nameShort' => 'string',
+'chainId' => 'int',
 'city' => 'string',
 'zip' => 'string',
 'street' => 'string',
@@ -78,8 +78,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'name' => null,
-'name_short' => null,
-'chain_id' => null,
+'nameShort' => null,
+'chainId' => null,
 'city' => null,
 'zip' => null,
 'street' => null,
@@ -119,8 +119,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'name' => 'name',
-'name_short' => 'name_short',
-'chain_id' => 'chainId',
+'nameShort' => 'name_short',
+'chainId' => 'chainId',
 'city' => 'city',
 'zip' => 'zip',
 'street' => 'street',
@@ -139,8 +139,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'name' => 'setName',
-'name_short' => 'setNameShort',
-'chain_id' => 'setChainId',
+'nameShort' => 'setNameShort',
+'chainId' => 'setChainId',
 'city' => 'setCity',
 'zip' => 'setZip',
 'street' => 'setStreet',
@@ -159,8 +159,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'name' => 'getName',
-'name_short' => 'getNameShort',
-'chain_id' => 'getChainId',
+'nameShort' => 'getNameShort',
+'chainId' => 'getChainId',
 'city' => 'getCity',
 'zip' => 'getZip',
 'street' => 'getStreet',
@@ -231,8 +231,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['name_short'] = isset($data['name_short']) ? $data['name_short'] : null;
-        $this->container['chain_id'] = isset($data['chain_id']) ? $data['chain_id'] : null;
+        $this->container['nameShort'] = isset($data['nameShort']) ? $data['nameShort'] : null;
+        $this->container['chainId'] = isset($data['chainId']) ? $data['chainId'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['zip'] = isset($data['zip']) ? $data['zip'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
@@ -259,8 +259,8 @@ class CinemaItem implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['chain_id'] === null) {
-            $invalidProperties[] = "'chain_id' can't be null";
+        if ($this->container['chainId'] === null) {
+            $invalidProperties[] = "'chainId' can't be null";
         }
         return $invalidProperties;
     }
@@ -326,49 +326,49 @@ class CinemaItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets name_short
+     * Gets nameShort
      *
      * @return string
      */
     public function getNameShort()
     {
-        return $this->container['name_short'];
+        return $this->container['nameShort'];
     }
 
     /**
-     * Sets name_short
+     * Sets nameShort
      *
-     * @param string $name_short name_short
+     * @param string $nameShort nameShort
      *
      * @return $this
      */
-    public function setNameShort($name_short)
+    public function setNameShort($nameShort)
     {
-        $this->container['name_short'] = $name_short;
+        $this->container['nameShort'] = $nameShort;
 
         return $this;
     }
 
     /**
-     * Gets chain_id
+     * Gets chainId
      *
      * @return int
      */
     public function getChainId()
     {
-        return $this->container['chain_id'];
+        return $this->container['chainId'];
     }
 
     /**
-     * Sets chain_id
+     * Sets chainId
      *
-     * @param int $chain_id chain_id
+     * @param int $chainId chainId
      *
      * @return $this
      */
-    public function setChainId($chain_id)
+    public function setChainId($chainId)
     {
-        $this->container['chain_id'] = $chain_id;
+        $this->container['chainId'] = $chainId;
 
         return $this;
     }

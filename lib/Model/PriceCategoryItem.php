@@ -59,8 +59,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
         'id' => 'int',
 'name' => 'string',
 'amount' => 'float',
-'is_default_price' => 'bool',
-'sales_channels' => 'string[]',
+'isDefaultPrice' => 'bool',
+'salesChannels' => 'string[]',
 'color' => 'string'    ];
 
     /**
@@ -72,8 +72,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
         'id' => null,
 'name' => null,
 'amount' => null,
-'is_default_price' => null,
-'sales_channels' => null,
+'isDefaultPrice' => null,
+'salesChannels' => null,
 'color' => null    ];
 
     /**
@@ -106,8 +106,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
         'id' => 'id',
 'name' => 'name',
 'amount' => 'amount',
-'is_default_price' => 'isDefaultPrice',
-'sales_channels' => 'salesChannels',
+'isDefaultPrice' => 'isDefaultPrice',
+'salesChannels' => 'salesChannels',
 'color' => 'color'    ];
 
     /**
@@ -119,8 +119,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
         'id' => 'setId',
 'name' => 'setName',
 'amount' => 'setAmount',
-'is_default_price' => 'setIsDefaultPrice',
-'sales_channels' => 'setSalesChannels',
+'isDefaultPrice' => 'setIsDefaultPrice',
+'salesChannels' => 'setSalesChannels',
 'color' => 'setColor'    ];
 
     /**
@@ -132,8 +132,8 @@ class PriceCategoryItem implements ModelInterface, ArrayAccess
         'id' => 'getId',
 'name' => 'getName',
 'amount' => 'getAmount',
-'is_default_price' => 'getIsDefaultPrice',
-'sales_channels' => 'getSalesChannels',
+'isDefaultPrice' => 'getIsDefaultPrice',
+'salesChannels' => 'getSalesChannels',
 'color' => 'getColor'    ];
 
     /**
@@ -210,8 +210,8 @@ self::SALES_CHANNELS_CALL,        ];
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['is_default_price'] = isset($data['is_default_price']) ? $data['is_default_price'] : null;
-        $this->container['sales_channels'] = isset($data['sales_channels']) ? $data['sales_channels'] : null;
+        $this->container['isDefaultPrice'] = isset($data['isDefaultPrice']) ? $data['isDefaultPrice'] : null;
+        $this->container['salesChannels'] = isset($data['salesChannels']) ? $data['salesChannels'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
     }
 
@@ -233,8 +233,8 @@ self::SALES_CHANNELS_CALL,        ];
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if ($this->container['is_default_price'] === null) {
-            $invalidProperties[] = "'is_default_price' can't be null";
+        if ($this->container['isDefaultPrice'] === null) {
+            $invalidProperties[] = "'isDefaultPrice' can't be null";
         }
         return $invalidProperties;
     }
@@ -324,58 +324,58 @@ self::SALES_CHANNELS_CALL,        ];
     }
 
     /**
-     * Gets is_default_price
+     * Gets isDefaultPrice
      *
      * @return bool
      */
     public function getIsDefaultPrice()
     {
-        return $this->container['is_default_price'];
+        return $this->container['isDefaultPrice'];
     }
 
     /**
-     * Sets is_default_price
+     * Sets isDefaultPrice
      *
-     * @param bool $is_default_price is_default_price
+     * @param bool $isDefaultPrice isDefaultPrice
      *
      * @return $this
      */
-    public function setIsDefaultPrice($is_default_price)
+    public function setIsDefaultPrice($isDefaultPrice)
     {
-        $this->container['is_default_price'] = $is_default_price;
+        $this->container['isDefaultPrice'] = $isDefaultPrice;
 
         return $this;
     }
 
     /**
-     * Gets sales_channels
+     * Gets salesChannels
      *
      * @return string[]
      */
     public function getSalesChannels()
     {
-        return $this->container['sales_channels'];
+        return $this->container['salesChannels'];
     }
 
     /**
-     * Sets sales_channels
+     * Sets salesChannels
      *
-     * @param string[] $sales_channels sales_channels
+     * @param string[] $salesChannels salesChannels
      *
      * @return $this
      */
-    public function setSalesChannels($sales_channels)
+    public function setSalesChannels($salesChannels)
     {
         $allowedValues = $this->getSalesChannelsAllowableValues();
-        if (!is_null($sales_channels) && array_diff($sales_channels, $allowedValues)) {
+        if (!is_null($salesChannels) && array_diff($salesChannels, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'sales_channels', must be one of '%s'",
+                    "Invalid value for 'salesChannels', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['sales_channels'] = $sales_channels;
+        $this->container['salesChannels'] = $salesChannels;
 
         return $this;
     }

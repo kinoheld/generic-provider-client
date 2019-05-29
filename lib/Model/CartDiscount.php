@@ -54,7 +54,7 @@ class CartDiscount extends Discount
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'applied_amount' => 'float'    ];
+        'appliedAmount' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -62,7 +62,7 @@ class CartDiscount extends Discount
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'applied_amount' => null    ];
+        'appliedAmount' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -91,7 +91,7 @@ class CartDiscount extends Discount
      * @var string[]
      */
     protected static $attributeMap = [
-        'applied_amount' => 'appliedAmount'    ];
+        'appliedAmount' => 'appliedAmount'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,7 +99,7 @@ class CartDiscount extends Discount
      * @var string[]
      */
     protected static $setters = [
-        'applied_amount' => 'setAppliedAmount'    ];
+        'appliedAmount' => 'setAppliedAmount'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -107,7 +107,7 @@ class CartDiscount extends Discount
      * @var string[]
      */
     protected static $getters = [
-        'applied_amount' => 'getAppliedAmount'    ];
+        'appliedAmount' => 'getAppliedAmount'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -163,7 +163,7 @@ class CartDiscount extends Discount
     {
         parent::__construct($data);
 
-        $this->container['applied_amount'] = isset($data['applied_amount']) ? $data['applied_amount'] : null;
+        $this->container['appliedAmount'] = isset($data['appliedAmount']) ? $data['appliedAmount'] : null;
     }
 
     /**
@@ -191,25 +191,25 @@ class CartDiscount extends Discount
 
 
     /**
-     * Gets applied_amount
+     * Gets appliedAmount
      *
      * @return BigDecimal
      */
     public function getAppliedAmount()
     {
-        return $this->container['applied_amount'];
+        return $this->container['appliedAmount'];
     }
 
     /**
-     * Sets applied_amount
+     * Sets appliedAmount
      *
-     * @param BigDecimal $applied_amount The amount of the discount applied to the cart.
+     * @param BigDecimal $appliedAmount The amount of the discount applied to the cart.
      *
      * @return $this
      */
-    public function setAppliedAmount($applied_amount)
+    public function setAppliedAmount($appliedAmount)
     {
-        $this->container['applied_amount'] = $applied_amount;
+        $this->container['appliedAmount'] = $appliedAmount;
 
         return $this;
     }

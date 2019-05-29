@@ -91,15 +91,15 @@ class OrderApi
      *
      * cancel the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Order
      */
-    public function orderCancel($order_id)
+    public function orderCancel($orderId)
     {
-        list($response) = $this->orderCancelWithHttpInfo($order_id);
+        list($response) = $this->orderCancelWithHttpInfo($orderId);
         return $response;
     }
 
@@ -108,16 +108,16 @@ class OrderApi
      *
      * cancel the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderCancelWithHttpInfo($order_id)
+    public function orderCancelWithHttpInfo($orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderCancelRequest($order_id);
+        $request = $this->orderCancelRequest($orderId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -183,14 +183,14 @@ class OrderApi
      *
      * cancel the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCancelAsync($order_id)
+    public function orderCancelAsync($orderId)
     {
-        return $this->orderCancelAsyncWithHttpInfo($order_id)
+        return $this->orderCancelAsyncWithHttpInfo($orderId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -203,15 +203,15 @@ class OrderApi
      *
      * cancel the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCancelAsyncWithHttpInfo($order_id)
+    public function orderCancelAsyncWithHttpInfo($orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderCancelRequest($order_id);
+        $request = $this->orderCancelRequest($orderId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -253,17 +253,17 @@ class OrderApi
     /**
      * Create request for operation 'orderCancel'
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderCancelRequest($order_id)
+    protected function orderCancelRequest($orderId)
     {
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $order_id when calling orderCancel'
+                'Missing the required parameter $orderId when calling orderCancel'
             );
         }
 
@@ -275,8 +275,8 @@ class OrderApi
         $multipart = false;
 
         // query params
-        if ($order_id !== null) {
-            $queryParams['orderId'] = ObjectSerializer::toQueryValue($order_id);
+        if ($orderId !== null) {
+            $queryParams['orderId'] = ObjectSerializer::toQueryValue($orderId);
         }
 
 
@@ -354,15 +354,15 @@ class OrderApi
      *
      * get the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Order
      */
-    public function orderGet($order_id)
+    public function orderGet($orderId)
     {
-        list($response) = $this->orderGetWithHttpInfo($order_id);
+        list($response) = $this->orderGetWithHttpInfo($orderId);
         return $response;
     }
 
@@ -371,16 +371,16 @@ class OrderApi
      *
      * get the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderGetWithHttpInfo($order_id)
+    public function orderGetWithHttpInfo($orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderGetRequest($order_id);
+        $request = $this->orderGetRequest($orderId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -446,14 +446,14 @@ class OrderApi
      *
      * get the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetAsync($order_id)
+    public function orderGetAsync($orderId)
     {
-        return $this->orderGetAsyncWithHttpInfo($order_id)
+        return $this->orderGetAsyncWithHttpInfo($orderId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -466,15 +466,15 @@ class OrderApi
      *
      * get the order
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetAsyncWithHttpInfo($order_id)
+    public function orderGetAsyncWithHttpInfo($orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderGetRequest($order_id);
+        $request = $this->orderGetRequest($orderId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -516,17 +516,17 @@ class OrderApi
     /**
      * Create request for operation 'orderGet'
      *
-     * @param  int $order_id order ID (required)
+     * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderGetRequest($order_id)
+    protected function orderGetRequest($orderId)
     {
-        // verify the required parameter 'order_id' is set
-        if ($order_id === null || (is_array($order_id) && count($order_id) === 0)) {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $order_id when calling orderGet'
+                'Missing the required parameter $orderId when calling orderGet'
             );
         }
 
@@ -538,8 +538,8 @@ class OrderApi
         $multipart = false;
 
         // query params
-        if ($order_id !== null) {
-            $queryParams['orderId'] = ObjectSerializer::toQueryValue($order_id);
+        if ($orderId !== null) {
+            $queryParams['orderId'] = ObjectSerializer::toQueryValue($orderId);
         }
 
 

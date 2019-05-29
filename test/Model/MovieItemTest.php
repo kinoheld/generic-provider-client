@@ -118,14 +118,14 @@ class MovieItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "thumb_url"
+     * Test attribute "thumbUrl"
      */
     public function testPropertyThumbUrl()
     {
     }
 
     /**
-     * Test attribute "trailer_url"
+     * Test attribute "trailerUrl"
      */
     public function testPropertyTrailerUrl()
     {

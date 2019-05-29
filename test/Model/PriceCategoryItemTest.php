@@ -97,14 +97,14 @@ class PriceCategoryItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "is_default_price"
+     * Test attribute "isDefaultPrice"
      */
     public function testPropertyIsDefaultPrice()
     {
     }
 
     /**
-     * Test attribute "sales_channels"
+     * Test attribute "salesChannels"
      */
     public function testPropertySalesChannels()
     {

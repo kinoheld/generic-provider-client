@@ -57,8 +57,8 @@ class Discount implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'code' => 'string',
-'remaining_amount' => 'float',
-'initial_amount' => 'float'    ];
+'remainingAmount' => 'float',
+'initialAmount' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,8 +67,8 @@ class Discount implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'code' => null,
-'remaining_amount' => null,
-'initial_amount' => null    ];
+'remainingAmount' => null,
+'initialAmount' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -98,8 +98,8 @@ class Discount implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'code' => 'code',
-'remaining_amount' => 'remainingAmount',
-'initial_amount' => 'initialAmount'    ];
+'remainingAmount' => 'remainingAmount',
+'initialAmount' => 'initialAmount'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -108,8 +108,8 @@ class Discount implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'code' => 'setCode',
-'remaining_amount' => 'setRemainingAmount',
-'initial_amount' => 'setInitialAmount'    ];
+'remainingAmount' => 'setRemainingAmount',
+'initialAmount' => 'setInitialAmount'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,8 +118,8 @@ class Discount implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'code' => 'getCode',
-'remaining_amount' => 'getRemainingAmount',
-'initial_amount' => 'getInitialAmount'    ];
+'remainingAmount' => 'getRemainingAmount',
+'initialAmount' => 'getInitialAmount'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -180,8 +180,8 @@ class Discount implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['remaining_amount'] = isset($data['remaining_amount']) ? $data['remaining_amount'] : null;
-        $this->container['initial_amount'] = isset($data['initial_amount']) ? $data['initial_amount'] : null;
+        $this->container['remainingAmount'] = isset($data['remainingAmount']) ? $data['remainingAmount'] : null;
+        $this->container['initialAmount'] = isset($data['initialAmount']) ? $data['initialAmount'] : null;
     }
 
     /**
@@ -236,49 +236,49 @@ class Discount implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets remaining_amount
+     * Gets remainingAmount
      *
      * @return BigDecimal
      */
     public function getRemainingAmount()
     {
-        return $this->container['remaining_amount'];
+        return $this->container['remainingAmount'];
     }
 
     /**
-     * Sets remaining_amount
+     * Sets remainingAmount
      *
-     * @param BigDecimal $remaining_amount The remaining amount of the discount.
+     * @param BigDecimal $remainingAmount The remaining amount of the discount.
      *
      * @return $this
      */
-    public function setRemainingAmount($remaining_amount)
+    public function setRemainingAmount($remainingAmount)
     {
-        $this->container['remaining_amount'] = $remaining_amount;
+        $this->container['remainingAmount'] = $remainingAmount;
 
         return $this;
     }
 
     /**
-     * Gets initial_amount
+     * Gets initialAmount
      *
      * @return BigDecimal
      */
     public function getInitialAmount()
     {
-        return $this->container['initial_amount'];
+        return $this->container['initialAmount'];
     }
 
     /**
-     * Sets initial_amount
+     * Sets initialAmount
      *
-     * @param BigDecimal $initial_amount The initial amount of the discount.
+     * @param BigDecimal $initialAmount The initial amount of the discount.
      *
      * @return $this
      */
-    public function setInitialAmount($initial_amount)
+    public function setInitialAmount($initialAmount)
     {
-        $this->container['initial_amount'] = $initial_amount;
+        $this->container['initialAmount'] = $initialAmount;
 
         return $this;
     }

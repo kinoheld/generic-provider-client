@@ -90,7 +90,7 @@ class SeatItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "price_area_id"
+     * Test attribute "priceAreaId"
      */
     public function testPropertyPriceAreaId()
     {

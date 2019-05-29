@@ -90,14 +90,14 @@ class CinemaItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name_short"
+     * Test attribute "nameShort"
      */
     public function testPropertyNameShort()
     {
     }
 
     /**
-     * Test attribute "chain_id"
+     * Test attribute "chainId"
      */
     public function testPropertyChainId()
     {

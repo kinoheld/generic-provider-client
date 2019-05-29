@@ -83,7 +83,7 @@ class CartTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "show_id"
+     * Test attribute "showId"
      */
     public function testPropertyShowId()
     {

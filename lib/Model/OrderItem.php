@@ -56,7 +56,7 @@ class OrderItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'price_category_id' => 'int',
+        'priceCategoryId' => 'int',
 'count' => 'int',
 'tickets' => '\kinoheld\GenericProviderClient\Model\OrderItemTicket[]'    ];
 
@@ -66,7 +66,7 @@ class OrderItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'price_category_id' => null,
+        'priceCategoryId' => null,
 'count' => null,
 'tickets' => null    ];
 
@@ -97,7 +97,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'price_category_id' => 'priceCategoryId',
+        'priceCategoryId' => 'priceCategoryId',
 'count' => 'count',
 'tickets' => 'tickets'    ];
 
@@ -107,7 +107,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'price_category_id' => 'setPriceCategoryId',
+        'priceCategoryId' => 'setPriceCategoryId',
 'count' => 'setCount',
 'tickets' => 'setTickets'    ];
 
@@ -117,7 +117,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'price_category_id' => 'getPriceCategoryId',
+        'priceCategoryId' => 'getPriceCategoryId',
 'count' => 'getCount',
 'tickets' => 'getTickets'    ];
 
@@ -179,7 +179,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['price_category_id'] = isset($data['price_category_id']) ? $data['price_category_id'] : null;
+        $this->container['priceCategoryId'] = isset($data['priceCategoryId']) ? $data['priceCategoryId'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
         $this->container['tickets'] = isset($data['tickets']) ? $data['tickets'] : null;
     }
@@ -193,8 +193,8 @@ class OrderItem implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['price_category_id'] === null) {
-            $invalidProperties[] = "'price_category_id' can't be null";
+        if ($this->container['priceCategoryId'] === null) {
+            $invalidProperties[] = "'priceCategoryId' can't be null";
         }
         if ($this->container['count'] === null) {
             $invalidProperties[] = "'count' can't be null";
@@ -215,25 +215,25 @@ class OrderItem implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets price_category_id
+     * Gets priceCategoryId
      *
      * @return int
      */
     public function getPriceCategoryId()
     {
-        return $this->container['price_category_id'];
+        return $this->container['priceCategoryId'];
     }
 
     /**
-     * Sets price_category_id
+     * Sets priceCategoryId
      *
-     * @param int $price_category_id The price category the seats/tickets should be selected for.
+     * @param int $priceCategoryId The price category the seats/tickets should be selected for.
      *
      * @return $this
      */
-    public function setPriceCategoryId($price_category_id)
+    public function setPriceCategoryId($priceCategoryId)
     {
-        $this->container['price_category_id'] = $price_category_id;
+        $this->container['priceCategoryId'] = $priceCategoryId;
 
         return $this;
     }

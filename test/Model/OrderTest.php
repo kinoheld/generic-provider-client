@@ -83,7 +83,7 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "show_id"
+     * Test attribute "showId"
      */
     public function testPropertyShowId()
     {
@@ -111,7 +111,7 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "admission_code"
+     * Test attribute "admissionCode"
      */
     public function testPropertyAdmissionCode()
     {

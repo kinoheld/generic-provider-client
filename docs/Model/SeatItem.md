@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **name** | **string** |  | 
-**price_area_id** | **int** |  | 
+**priceAreaId** | **int** |  | 
 **type** | **string** |  | [default to 'NORMAL']
 **rank** | **string** |  | 
 **number** | **string** |  | 

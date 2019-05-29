@@ -90,14 +90,14 @@ class OrderItemTicketTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "admission_code"
+     * Test attribute "admissionCode"
      */
     public function testPropertyAdmissionCode()
     {
     }
 
     /**
-     * Test attribute "seat_id"
+     * Test attribute "seatId"
      */
     public function testPropertySeatId()
     {

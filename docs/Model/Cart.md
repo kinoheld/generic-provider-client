@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Cart ID | 
-**show_id** | **int** | Show ID the cart is attached to. | 
+**showId** | **int** | Show ID the cart is attached to. | 
 **items** | [**\kinoheld\GenericProviderClient\Model\CartItem[]**](CartItem.md) | Items added to the cart. | [optional] 
 **discounts** | [**\kinoheld\GenericProviderClient\Model\CartDiscount[]**](CartDiscount.md) | Discounts applied to the cart. | [optional] 
 **pricing** | [**\kinoheld\GenericProviderClient\Model\CartPricing**](CartPricing.md) |  | [optional] 

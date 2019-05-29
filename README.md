@@ -67,11 +67,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\BasicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | chain/company ID
-$cinema_id = 56; // int | pass a cinema id to retrieve the associated auditoriums
+$chainId = 56; // int | chain/company ID
+$cinemaId = 56; // int | pass a cinema id to retrieve the associated auditoriums
 
 try {
-    $result = $apiInstance->searchAuditoriums($chain_id, $cinema_id);
+    $result = $apiInstance->searchAuditoriums($chainId, $cinemaId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasicApi->searchAuditoriums: ', $e->getMessage(), PHP_EOL;
@@ -108,11 +108,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\BasicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | chain/company ID
+$chainId = 56; // int | chain/company ID
 $id = 56; // int | pass an optional cinema id to retrieve just the cinema details of the given cinema
 
 try {
-    $result = $apiInstance->searchCinemas($chain_id, $id);
+    $result = $apiInstance->searchCinemas($chainId, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasicApi->searchCinemas: ', $e->getMessage(), PHP_EOL;

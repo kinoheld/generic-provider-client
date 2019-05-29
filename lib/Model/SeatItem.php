@@ -58,7 +58,7 @@ class SeatItem implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
 'name' => 'string',
-'price_area_id' => 'int',
+'priceAreaId' => 'int',
 'type' => 'string',
 'rank' => 'string',
 'number' => 'string',
@@ -74,7 +74,7 @@ class SeatItem implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'name' => null,
-'price_area_id' => null,
+'priceAreaId' => null,
 'type' => null,
 'rank' => null,
 'number' => null,
@@ -111,7 +111,7 @@ class SeatItem implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'name' => 'name',
-'price_area_id' => 'priceAreaId',
+'priceAreaId' => 'priceAreaId',
 'type' => 'type',
 'rank' => 'rank',
 'number' => 'number',
@@ -127,7 +127,7 @@ class SeatItem implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'name' => 'setName',
-'price_area_id' => 'setPriceAreaId',
+'priceAreaId' => 'setPriceAreaId',
 'type' => 'setType',
 'rank' => 'setRank',
 'number' => 'setNumber',
@@ -143,7 +143,7 @@ class SeatItem implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'name' => 'getName',
-'price_area_id' => 'getPriceAreaId',
+'priceAreaId' => 'getPriceAreaId',
 'type' => 'getType',
 'rank' => 'getRank',
 'number' => 'getNumber',
@@ -249,7 +249,7 @@ self::STATUS_SOLD,        ];
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['price_area_id'] = isset($data['price_area_id']) ? $data['price_area_id'] : null;
+        $this->container['priceAreaId'] = isset($data['priceAreaId']) ? $data['priceAreaId'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : 'NORMAL';
         $this->container['rank'] = isset($data['rank']) ? $data['rank'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
@@ -273,8 +273,8 @@ self::STATUS_SOLD,        ];
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['price_area_id'] === null) {
-            $invalidProperties[] = "'price_area_id' can't be null";
+        if ($this->container['priceAreaId'] === null) {
+            $invalidProperties[] = "'priceAreaId' can't be null";
         }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
@@ -374,25 +374,25 @@ self::STATUS_SOLD,        ];
     }
 
     /**
-     * Gets price_area_id
+     * Gets priceAreaId
      *
      * @return int
      */
     public function getPriceAreaId()
     {
-        return $this->container['price_area_id'];
+        return $this->container['priceAreaId'];
     }
 
     /**
-     * Sets price_area_id
+     * Sets priceAreaId
      *
-     * @param int $price_area_id price_area_id
+     * @param int $priceAreaId priceAreaId
      *
      * @return $this
      */
-    public function setPriceAreaId($price_area_id)
+    public function setPriceAreaId($priceAreaId)
     {
-        $this->container['price_area_id'] = $price_area_id;
+        $this->container['priceAreaId'] = $priceAreaId;
 
         return $this;
     }

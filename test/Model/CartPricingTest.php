@@ -76,21 +76,21 @@ class CartPricingTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "total_amount"
+     * Test attribute "totalAmount"
      */
     public function testPropertyTotalAmount()
     {
     }
 
     /**
-     * Test attribute "discounted_amount"
+     * Test attribute "discountedAmount"
      */
     public function testPropertyDiscountedAmount()
     {
     }
 
     /**
-     * Test attribute "payment_amount"
+     * Test attribute "paymentAmount"
      */
     public function testPropertyPaymentAmount()
     {

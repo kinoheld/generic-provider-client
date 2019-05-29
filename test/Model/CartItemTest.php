@@ -76,7 +76,7 @@ class CartItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "price_category_id"
+     * Test attribute "priceCategoryId"
      */
     public function testPropertyPriceCategoryId()
     {
@@ -90,7 +90,7 @@ class CartItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "seat_ids"
+     * Test attribute "seatIds"
      */
     public function testPropertySeatIds()
     {

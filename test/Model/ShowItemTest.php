@@ -90,7 +90,7 @@ class ShowItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "movie_id"
+     * Test attribute "movieId"
      */
     public function testPropertyMovieId()
     {
@@ -111,56 +111,56 @@ class ShowItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "sale_start"
+     * Test attribute "saleStart"
      */
     public function testPropertySaleStart()
     {
     }
 
     /**
-     * Test attribute "sale_end"
+     * Test attribute "saleEnd"
      */
     public function testPropertySaleEnd()
     {
     }
 
     /**
-     * Test attribute "auditorium_id"
+     * Test attribute "auditoriumId"
      */
     public function testPropertyAuditoriumId()
     {
     }
 
     /**
-     * Test attribute "seat_selection_available"
+     * Test attribute "seatSelectionAvailable"
      */
     public function testPropertySeatSelectionAvailable()
     {
     }
 
     /**
-     * Test attribute "icaa_id"
+     * Test attribute "icaaId"
      */
     public function testPropertyIcaaId()
     {
     }
 
     /**
-     * Test attribute "language_audio"
+     * Test attribute "languageAudio"
      */
     public function testPropertyLanguageAudio()
     {
     }
 
     /**
-     * Test attribute "language_subtitle"
+     * Test attribute "languageSubtitle"
      */
     public function testPropertyLanguageSubtitle()
     {
     }
 
     /**
-     * Test attribute "price_areas"
+     * Test attribute "priceAreas"
      */
     public function testPropertyPriceAreas()
     {

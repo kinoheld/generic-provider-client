@@ -57,7 +57,7 @@ class Cart implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
-'show_id' => 'int',
+'showId' => 'int',
 'items' => '\kinoheld\GenericProviderClient\Model\CartItem[]',
 'discounts' => '\kinoheld\GenericProviderClient\Model\CartDiscount[]',
 'pricing' => '\kinoheld\GenericProviderClient\Model\CartPricing'    ];
@@ -69,7 +69,7 @@ class Cart implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'show_id' => null,
+'showId' => null,
 'items' => null,
 'discounts' => null,
 'pricing' => null    ];
@@ -102,7 +102,7 @@ class Cart implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'show_id' => 'showId',
+'showId' => 'showId',
 'items' => 'items',
 'discounts' => 'discounts',
 'pricing' => 'pricing'    ];
@@ -114,7 +114,7 @@ class Cart implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'show_id' => 'setShowId',
+'showId' => 'setShowId',
 'items' => 'setItems',
 'discounts' => 'setDiscounts',
 'pricing' => 'setPricing'    ];
@@ -126,7 +126,7 @@ class Cart implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'show_id' => 'getShowId',
+'showId' => 'getShowId',
 'items' => 'getItems',
 'discounts' => 'getDiscounts',
 'pricing' => 'getPricing'    ];
@@ -190,7 +190,7 @@ class Cart implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['show_id'] = isset($data['show_id']) ? $data['show_id'] : null;
+        $this->container['showId'] = isset($data['showId']) ? $data['showId'] : null;
         $this->container['items'] = isset($data['items']) ? $data['items'] : null;
         $this->container['discounts'] = isset($data['discounts']) ? $data['discounts'] : null;
         $this->container['pricing'] = isset($data['pricing']) ? $data['pricing'] : null;
@@ -208,8 +208,8 @@ class Cart implements ModelInterface, ArrayAccess
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['show_id'] === null) {
-            $invalidProperties[] = "'show_id' can't be null";
+        if ($this->container['showId'] === null) {
+            $invalidProperties[] = "'showId' can't be null";
         }
         return $invalidProperties;
     }
@@ -251,25 +251,25 @@ class Cart implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets show_id
+     * Gets showId
      *
      * @return int
      */
     public function getShowId()
     {
-        return $this->container['show_id'];
+        return $this->container['showId'];
     }
 
     /**
-     * Sets show_id
+     * Sets showId
      *
-     * @param int $show_id Show ID the cart is attached to.
+     * @param int $showId Show ID the cart is attached to.
      *
      * @return $this
      */
-    public function setShowId($show_id)
+    public function setShowId($showId)
     {
-        $this->container['show_id'] = $show_id;
+        $this->container['showId'] = $showId;
 
         return $this;
     }

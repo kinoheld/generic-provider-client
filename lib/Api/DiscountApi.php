@@ -91,17 +91,17 @@ class DiscountApi
      *
      * get the discount
      *
-     * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  int $cinema_id The cinema ID the show/event belongs to. (required)
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
+     * @param  int $cinemaId The cinema ID the show/event belongs to. (required)
      * @param  string $code discount code (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Discount
      */
-    public function discountGet($chain_id, $cinema_id, $code)
+    public function discountGet($chainId, $cinemaId, $code)
     {
-        list($response) = $this->discountGetWithHttpInfo($chain_id, $cinema_id, $code);
+        list($response) = $this->discountGetWithHttpInfo($chainId, $cinemaId, $code);
         return $response;
     }
 
@@ -110,18 +110,18 @@ class DiscountApi
      *
      * get the discount
      *
-     * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  int $cinema_id The cinema ID the show/event belongs to. (required)
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
+     * @param  int $cinemaId The cinema ID the show/event belongs to. (required)
      * @param  string $code discount code (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Discount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function discountGetWithHttpInfo($chain_id, $cinema_id, $code)
+    public function discountGetWithHttpInfo($chainId, $cinemaId, $code)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Discount';
-        $request = $this->discountGetRequest($chain_id, $cinema_id, $code);
+        $request = $this->discountGetRequest($chainId, $cinemaId, $code);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,16 +187,16 @@ class DiscountApi
      *
      * get the discount
      *
-     * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  int $cinema_id The cinema ID the show/event belongs to. (required)
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
+     * @param  int $cinemaId The cinema ID the show/event belongs to. (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function discountGetAsync($chain_id, $cinema_id, $code)
+    public function discountGetAsync($chainId, $cinemaId, $code)
     {
-        return $this->discountGetAsyncWithHttpInfo($chain_id, $cinema_id, $code)
+        return $this->discountGetAsyncWithHttpInfo($chainId, $cinemaId, $code)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -209,17 +209,17 @@ class DiscountApi
      *
      * get the discount
      *
-     * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  int $cinema_id The cinema ID the show/event belongs to. (required)
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
+     * @param  int $cinemaId The cinema ID the show/event belongs to. (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function discountGetAsyncWithHttpInfo($chain_id, $cinema_id, $code)
+    public function discountGetAsyncWithHttpInfo($chainId, $cinemaId, $code)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Discount';
-        $request = $this->discountGetRequest($chain_id, $cinema_id, $code);
+        $request = $this->discountGetRequest($chainId, $cinemaId, $code);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -261,25 +261,25 @@ class DiscountApi
     /**
      * Create request for operation 'discountGet'
      *
-     * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  int $cinema_id The cinema ID the show/event belongs to. (required)
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
+     * @param  int $cinemaId The cinema ID the show/event belongs to. (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function discountGetRequest($chain_id, $cinema_id, $code)
+    protected function discountGetRequest($chainId, $cinemaId, $code)
     {
-        // verify the required parameter 'chain_id' is set
-        if ($chain_id === null || (is_array($chain_id) && count($chain_id) === 0)) {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $chain_id when calling discountGet'
+                'Missing the required parameter $chainId when calling discountGet'
             );
         }
-        // verify the required parameter 'cinema_id' is set
-        if ($cinema_id === null || (is_array($cinema_id) && count($cinema_id) === 0)) {
+        // verify the required parameter 'cinemaId' is set
+        if ($cinemaId === null || (is_array($cinemaId) && count($cinemaId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cinema_id when calling discountGet'
+                'Missing the required parameter $cinemaId when calling discountGet'
             );
         }
         // verify the required parameter 'code' is set
@@ -297,12 +297,12 @@ class DiscountApi
         $multipart = false;
 
         // query params
-        if ($chain_id !== null) {
-            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chain_id);
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
         }
         // query params
-        if ($cinema_id !== null) {
-            $queryParams['cinemaId'] = ObjectSerializer::toQueryValue($cinema_id);
+        if ($cinemaId !== null) {
+            $queryParams['cinemaId'] = ObjectSerializer::toQueryValue($cinemaId);
         }
         // query params
         if ($code !== null) {

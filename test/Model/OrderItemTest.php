@@ -76,7 +76,7 @@ class OrderItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "price_category_id"
+     * Test attribute "priceCategoryId"
      */
     public function testPropertyPriceCategoryId()
     {

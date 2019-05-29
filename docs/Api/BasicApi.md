@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**searchCinemas**](BasicApi.md#searchCinemas) | **GET** /cinemas | list of cinemas
 
 # **searchAuditoriums**
-> \kinoheld\GenericProviderClient\Model\AuditoriumItem[] searchAuditoriums($chain_id, $cinema_id)
+> \kinoheld\GenericProviderClient\Model\AuditoriumItem[] searchAuditoriums($chainId, $cinemaId)
 
 list of auditoriums for the given cinema
 
@@ -30,11 +30,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\BasicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | chain/company ID
-$cinema_id = 56; // int | pass a cinema id to retrieve the associated auditoriums
+$chainId = 56; // int | chain/company ID
+$cinemaId = 56; // int | pass a cinema id to retrieve the associated auditoriums
 
 try {
-    $result = $apiInstance->searchAuditoriums($chain_id, $cinema_id);
+    $result = $apiInstance->searchAuditoriums($chainId, $cinemaId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasicApi->searchAuditoriums: ', $e->getMessage(), PHP_EOL;
@@ -46,8 +46,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chain_id** | **int**| chain/company ID |
- **cinema_id** | **int**| pass a cinema id to retrieve the associated auditoriums |
+ **chainId** | **int**| chain/company ID |
+ **cinemaId** | **int**| pass a cinema id to retrieve the associated auditoriums |
 
 ### Return type
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchCinemas**
-> \kinoheld\GenericProviderClient\Model\CinemaItem[] searchCinemas($chain_id, $id)
+> \kinoheld\GenericProviderClient\Model\CinemaItem[] searchCinemas($chainId, $id)
 
 list of cinemas
 
@@ -140,11 +140,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\BasicApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | chain/company ID
+$chainId = 56; // int | chain/company ID
 $id = 56; // int | pass an optional cinema id to retrieve just the cinema details of the given cinema
 
 try {
-    $result = $apiInstance->searchCinemas($chain_id, $id);
+    $result = $apiInstance->searchCinemas($chainId, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasicApi->searchCinemas: ', $e->getMessage(), PHP_EOL;
@@ -156,7 +156,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chain_id** | **int**| chain/company ID |
+ **chainId** | **int**| chain/company ID |
  **id** | **int**| pass an optional cinema id to retrieve just the cinema details of the given cinema | [optional]
 
 ### Return type

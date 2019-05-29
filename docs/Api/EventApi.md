@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**searchShows**](EventApi.md#searchShows) | **GET** /shows | list of shows for the given cinema
 
 # **searchMovie**
-> \kinoheld\GenericProviderClient\Model\MovieItem searchMovie($chain_id, $movie_id)
+> \kinoheld\GenericProviderClient\Model\MovieItem searchMovie($chainId, $movieId)
 
 movie details for the given movie id
 
@@ -30,11 +30,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | chain/company ID
-$movie_id = 56; // int | pass a movie id to retrieve the movie details
+$chainId = 56; // int | chain/company ID
+$movieId = 56; // int | pass a movie id to retrieve the movie details
 
 try {
-    $result = $apiInstance->searchMovie($chain_id, $movie_id);
+    $result = $apiInstance->searchMovie($chainId, $movieId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->searchMovie: ', $e->getMessage(), PHP_EOL;
@@ -46,8 +46,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chain_id** | **int**| chain/company ID |
- **movie_id** | **int**| pass a movie id to retrieve the movie details |
+ **chainId** | **int**| chain/company ID |
+ **movieId** | **int**| pass a movie id to retrieve the movie details |
 
 ### Return type
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchSeats**
-> \kinoheld\GenericProviderClient\Model\SeatItem[] searchSeats($chain_id, $show_id)
+> \kinoheld\GenericProviderClient\Model\SeatItem[] searchSeats($chainId, $showId)
 
 list of seats for the given show
 
@@ -86,11 +86,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | chain/company ID
-$show_id = 56; // int | pass a show id to retrieve the associated shows
+$chainId = 56; // int | chain/company ID
+$showId = 56; // int | pass a show id to retrieve the associated shows
 
 try {
-    $result = $apiInstance->searchSeats($chain_id, $show_id);
+    $result = $apiInstance->searchSeats($chainId, $showId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->searchSeats: ', $e->getMessage(), PHP_EOL;
@@ -102,8 +102,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chain_id** | **int**| chain/company ID |
- **show_id** | **int**| pass a show id to retrieve the associated shows |
+ **chainId** | **int**| chain/company ID |
+ **showId** | **int**| pass a show id to retrieve the associated shows |
 
 ### Return type
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **searchShows**
-> \kinoheld\GenericProviderClient\Model\ShowItem[] searchShows($chain_id, $cinema_id)
+> \kinoheld\GenericProviderClient\Model\ShowItem[] searchShows($chainId, $cinemaId)
 
 list of shows for the given cinema
 
@@ -142,11 +142,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\EventApi(
     new GuzzleHttp\Client(),
     $config
 );
-$chain_id = 56; // int | chain/company ID
-$cinema_id = 56; // int | pass a cinema id to retrieve the associated shows
+$chainId = 56; // int | chain/company ID
+$cinemaId = 56; // int | pass a cinema id to retrieve the associated shows
 
 try {
-    $result = $apiInstance->searchShows($chain_id, $cinema_id);
+    $result = $apiInstance->searchShows($chainId, $cinemaId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->searchShows: ', $e->getMessage(), PHP_EOL;
@@ -158,8 +158,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **chain_id** | **int**| chain/company ID |
- **cinema_id** | **int**| pass a cinema id to retrieve the associated shows |
+ **chainId** | **int**| chain/company ID |
+ **cinemaId** | **int**| pass a cinema id to retrieve the associated shows |
 
 ### Return type
 

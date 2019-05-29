@@ -97,7 +97,7 @@ class PriceAreaItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "price_categories"
+     * Test attribute "priceCategories"
      */
     public function testPropertyPriceCategories()
     {
