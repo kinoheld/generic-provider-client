@@ -63,7 +63,9 @@ class MovieItem implements ModelInterface, ArrayAccess
 'description' => 'string',
 'distributor' => 'string',
 'thumbUrl' => 'string',
-'trailerUrl' => 'string'    ];
+'trailerUrl' => 'string',
+'icaaId' => 'int',
+'rentrakId' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -78,7 +80,9 @@ class MovieItem implements ModelInterface, ArrayAccess
 'description' => null,
 'distributor' => null,
 'thumbUrl' => 'uri',
-'trailerUrl' => 'uri'    ];
+'trailerUrl' => 'uri',
+'icaaId' => null,
+'rentrakId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,7 +118,9 @@ class MovieItem implements ModelInterface, ArrayAccess
 'description' => 'description',
 'distributor' => 'distributor',
 'thumbUrl' => 'thumbUrl',
-'trailerUrl' => 'trailerUrl'    ];
+'trailerUrl' => 'trailerUrl',
+'icaaId' => 'icaaId',
+'rentrakId' => 'rentrakId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -129,7 +135,9 @@ class MovieItem implements ModelInterface, ArrayAccess
 'description' => 'setDescription',
 'distributor' => 'setDistributor',
 'thumbUrl' => 'setThumbUrl',
-'trailerUrl' => 'setTrailerUrl'    ];
+'trailerUrl' => 'setTrailerUrl',
+'icaaId' => 'setIcaaId',
+'rentrakId' => 'setRentrakId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -144,7 +152,9 @@ class MovieItem implements ModelInterface, ArrayAccess
 'description' => 'getDescription',
 'distributor' => 'getDistributor',
 'thumbUrl' => 'getThumbUrl',
-'trailerUrl' => 'getTrailerUrl'    ];
+'trailerUrl' => 'getTrailerUrl',
+'icaaId' => 'getIcaaId',
+'rentrakId' => 'getRentrakId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -212,6 +222,8 @@ class MovieItem implements ModelInterface, ArrayAccess
         $this->container['distributor'] = isset($data['distributor']) ? $data['distributor'] : null;
         $this->container['thumbUrl'] = isset($data['thumbUrl']) ? $data['thumbUrl'] : null;
         $this->container['trailerUrl'] = isset($data['trailerUrl']) ? $data['trailerUrl'] : null;
+        $this->container['icaaId'] = isset($data['icaaId']) ? $data['icaaId'] : null;
+        $this->container['rentrakId'] = isset($data['rentrakId']) ? $data['rentrakId'] : null;
     }
 
     /**
@@ -450,6 +462,54 @@ class MovieItem implements ModelInterface, ArrayAccess
     public function setTrailerUrl($trailerUrl)
     {
         $this->container['trailerUrl'] = $trailerUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets icaaId
+     *
+     * @return int
+     */
+    public function getIcaaId()
+    {
+        return $this->container['icaaId'];
+    }
+
+    /**
+     * Sets icaaId
+     *
+     * @param int $icaaId icaaId
+     *
+     * @return $this
+     */
+    public function setIcaaId($icaaId)
+    {
+        $this->container['icaaId'] = $icaaId;
+
+        return $this;
+    }
+
+    /**
+     * Gets rentrakId
+     *
+     * @return int
+     */
+    public function getRentrakId()
+    {
+        return $this->container['rentrakId'];
+    }
+
+    /**
+     * Sets rentrakId
+     *
+     * @param int $rentrakId rentrakId
+     *
+     * @return $this
+     */
+    public function setRentrakId($rentrakId)
+    {
+        $this->container['rentrakId'] = $rentrakId;
 
         return $this;
     }

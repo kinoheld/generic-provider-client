@@ -130,4 +130,18 @@ class MovieItemTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTrailerUrl()
     {
     }
+
+    /**
+     * Test attribute "icaaId"
+     */
+    public function testPropertyIcaaId()
+    {
+    }
+
+    /**
+     * Test attribute "rentrakId"
+     */
+    public function testPropertyRentrakId()
+    {
+    }
 }
