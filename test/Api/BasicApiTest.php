@@ -71,32 +71,32 @@ class BasicApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for searchAuditoriums
+     * Test case for getAuditoriums
      *
      * list of auditoriums for the given cinema.
      *
      */
-    public function testSearchAuditoriums()
+    public function testGetAuditoriums()
     {
     }
 
     /**
-     * Test case for searchChains
+     * Test case for getChains
      *
      * list of chains/companies.
      *
      */
-    public function testSearchChains()
+    public function testGetChains()
     {
     }
 
     /**
-     * Test case for searchCinemas
+     * Test case for getCinemas
      *
      * list of cinemas.
      *
      */
-    public function testSearchCinemas()
+    public function testGetCinemas()
     {
     }
 }

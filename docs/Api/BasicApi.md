@@ -4,12 +4,12 @@ All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**searchAuditoriums**](BasicApi.md#searchAuditoriums) | **GET** /auditoriums | list of auditoriums for the given cinema
-[**searchChains**](BasicApi.md#searchChains) | **GET** /chains | list of chains/companies
-[**searchCinemas**](BasicApi.md#searchCinemas) | **GET** /cinemas | list of cinemas
+[**getAuditoriums**](BasicApi.md#getAuditoriums) | **GET** /auditoriums | list of auditoriums for the given cinema
+[**getChains**](BasicApi.md#getChains) | **GET** /chains | list of chains/companies
+[**getCinemas**](BasicApi.md#getCinemas) | **GET** /cinemas | list of cinemas
 
-# **searchAuditoriums**
-> \kinoheld\GenericProviderClient\Model\AuditoriumItem[] searchAuditoriums($chainId, $cinemaId)
+# **getAuditoriums**
+> \kinoheld\GenericProviderClient\Model\AuditoriumItem[] getAuditoriums($chainId, $cinemaId)
 
 list of auditoriums for the given cinema
 
@@ -34,10 +34,10 @@ $chainId = 56; // int | chain/company ID
 $cinemaId = 56; // int | pass a cinema id to retrieve the associated auditoriums
 
 try {
-    $result = $apiInstance->searchAuditoriums($chainId, $cinemaId);
+    $result = $apiInstance->getAuditoriums($chainId, $cinemaId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BasicApi->searchAuditoriums: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BasicApi->getAuditoriums: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -64,8 +64,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **searchChains**
-> \kinoheld\GenericProviderClient\Model\ChainItem[] searchChains($id)
+# **getChains**
+> \kinoheld\GenericProviderClient\Model\ChainItem[] getChains($id)
 
 list of chains/companies
 
@@ -89,10 +89,10 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\BasicApi(
 $id = 56; // int | pass an optional chain id to retrieve just the chain details of the given chain
 
 try {
-    $result = $apiInstance->searchChains($id);
+    $result = $apiInstance->getChains($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BasicApi->searchChains: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BasicApi->getChains: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -118,8 +118,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **searchCinemas**
-> \kinoheld\GenericProviderClient\Model\CinemaItem[] searchCinemas($chainId, $id)
+# **getCinemas**
+> \kinoheld\GenericProviderClient\Model\CinemaItem[] getCinemas($chainId, $id)
 
 list of cinemas
 
@@ -144,10 +144,10 @@ $chainId = 56; // int | chain/company ID
 $id = 56; // int | pass an optional cinema id to retrieve just the cinema details of the given cinema
 
 try {
-    $result = $apiInstance->searchCinemas($chainId, $id);
+    $result = $apiInstance->getCinemas($chainId, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BasicApi->searchCinemas: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BasicApi->getCinemas: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

@@ -71,32 +71,42 @@ class EventApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for searchMovie
+     * Test case for getMovie
      *
      * movie details for the given movie id.
      *
      */
-    public function testSearchMovie()
+    public function testGetMovie()
     {
     }
 
     /**
-     * Test case for searchSeats
+     * Test case for getSeats
      *
      * list of seats for the given show.
      *
      */
-    public function testSearchSeats()
+    public function testGetSeats()
     {
     }
 
     /**
-     * Test case for searchShows
+     * Test case for getShow
+     *
+     * show info for the given cinema and show ID.
+     *
+     */
+    public function testGetShow()
+    {
+    }
+
+    /**
+     * Test case for getShows
      *
      * list of shows for the given cinema.
      *
      */
-    public function testSearchShows()
+    public function testGetShows()
     {
     }
 }

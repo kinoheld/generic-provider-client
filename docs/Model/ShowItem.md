@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **languageAudio** | **string** |  | 
 **languageSubtitle** | **string** |  | 
 **priceAreas** | [**\kinoheld\GenericProviderClient\Model\PriceAreaItem[]**](PriceAreaItem.md) |  | 
+**ticketsTotal** | **int** |  | [optional] 
+**ticketsSold** | **int** |  | [optional] 
+**ticketsFree** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

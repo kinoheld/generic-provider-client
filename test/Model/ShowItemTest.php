@@ -165,4 +165,25 @@ class ShowItemTest extends \PHPUnit_Framework_TestCase
     public function testPropertyPriceAreas()
     {
     }
+
+    /**
+     * Test attribute "ticketsTotal"
+     */
+    public function testPropertyTicketsTotal()
+    {
+    }
+
+    /**
+     * Test attribute "ticketsSold"
+     */
+    public function testPropertyTicketsSold()
+    {
+    }
+
+    /**
+     * Test attribute "ticketsFree"
+     */
+    public function testPropertyTicketsFree()
+    {
+    }
 }

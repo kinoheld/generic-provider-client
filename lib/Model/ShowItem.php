@@ -68,7 +68,10 @@ class ShowItem implements ModelInterface, ArrayAccess
 'icaaId' => 'int',
 'languageAudio' => 'string',
 'languageSubtitle' => 'string',
-'priceAreas' => '\kinoheld\GenericProviderClient\Model\PriceAreaItem[]'    ];
+'priceAreas' => '\kinoheld\GenericProviderClient\Model\PriceAreaItem[]',
+'ticketsTotal' => 'int',
+'ticketsSold' => 'int',
+'ticketsFree' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -88,7 +91,10 @@ class ShowItem implements ModelInterface, ArrayAccess
 'icaaId' => null,
 'languageAudio' => null,
 'languageSubtitle' => null,
-'priceAreas' => null    ];
+'priceAreas' => null,
+'ticketsTotal' => null,
+'ticketsSold' => null,
+'ticketsFree' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -129,7 +135,10 @@ class ShowItem implements ModelInterface, ArrayAccess
 'icaaId' => 'icaaId',
 'languageAudio' => 'languageAudio',
 'languageSubtitle' => 'languageSubtitle',
-'priceAreas' => 'priceAreas'    ];
+'priceAreas' => 'priceAreas',
+'ticketsTotal' => 'ticketsTotal',
+'ticketsSold' => 'ticketsSold',
+'ticketsFree' => 'ticketsFree'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -149,7 +158,10 @@ class ShowItem implements ModelInterface, ArrayAccess
 'icaaId' => 'setIcaaId',
 'languageAudio' => 'setLanguageAudio',
 'languageSubtitle' => 'setLanguageSubtitle',
-'priceAreas' => 'setPriceAreas'    ];
+'priceAreas' => 'setPriceAreas',
+'ticketsTotal' => 'setTicketsTotal',
+'ticketsSold' => 'setTicketsSold',
+'ticketsFree' => 'setTicketsFree'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -169,7 +181,10 @@ class ShowItem implements ModelInterface, ArrayAccess
 'icaaId' => 'getIcaaId',
 'languageAudio' => 'getLanguageAudio',
 'languageSubtitle' => 'getLanguageSubtitle',
-'priceAreas' => 'getPriceAreas'    ];
+'priceAreas' => 'getPriceAreas',
+'ticketsTotal' => 'getTicketsTotal',
+'ticketsSold' => 'getTicketsSold',
+'ticketsFree' => 'getTicketsFree'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -242,6 +257,9 @@ class ShowItem implements ModelInterface, ArrayAccess
         $this->container['languageAudio'] = isset($data['languageAudio']) ? $data['languageAudio'] : null;
         $this->container['languageSubtitle'] = isset($data['languageSubtitle']) ? $data['languageSubtitle'] : null;
         $this->container['priceAreas'] = isset($data['priceAreas']) ? $data['priceAreas'] : null;
+        $this->container['ticketsTotal'] = isset($data['ticketsTotal']) ? $data['ticketsTotal'] : null;
+        $this->container['ticketsSold'] = isset($data['ticketsSold']) ? $data['ticketsSold'] : null;
+        $this->container['ticketsFree'] = isset($data['ticketsFree']) ? $data['ticketsFree'] : null;
     }
 
     /**
@@ -615,6 +633,78 @@ class ShowItem implements ModelInterface, ArrayAccess
     public function setPriceAreas($priceAreas)
     {
         $this->container['priceAreas'] = $priceAreas;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketsTotal
+     *
+     * @return int
+     */
+    public function getTicketsTotal()
+    {
+        return $this->container['ticketsTotal'];
+    }
+
+    /**
+     * Sets ticketsTotal
+     *
+     * @param int $ticketsTotal ticketsTotal
+     *
+     * @return $this
+     */
+    public function setTicketsTotal($ticketsTotal)
+    {
+        $this->container['ticketsTotal'] = $ticketsTotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketsSold
+     *
+     * @return int
+     */
+    public function getTicketsSold()
+    {
+        return $this->container['ticketsSold'];
+    }
+
+    /**
+     * Sets ticketsSold
+     *
+     * @param int $ticketsSold ticketsSold
+     *
+     * @return $this
+     */
+    public function setTicketsSold($ticketsSold)
+    {
+        $this->container['ticketsSold'] = $ticketsSold;
+
+        return $this;
+    }
+
+    /**
+     * Gets ticketsFree
+     *
+     * @return int
+     */
+    public function getTicketsFree()
+    {
+        return $this->container['ticketsFree'];
+    }
+
+    /**
+     * Sets ticketsFree
+     *
+     * @param int $ticketsFree ticketsFree
+     *
+     * @return $this
+     */
+    public function setTicketsFree($ticketsFree)
+    {
+        $this->container['ticketsFree'] = $ticketsFree;
 
         return $this;
     }
