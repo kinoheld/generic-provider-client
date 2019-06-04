@@ -90,9 +90,9 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
-$cartId = 56; // int | cart ID
-$items = array(new \kinoheld\GenericProviderClient\Model\CartItem()); // \kinoheld\GenericProviderClient\Model\CartItem[] | items
-$reset = true; // bool | reset cart before adding items
+$cartId = 56; // int | 
+$items = array(new \kinoheld\GenericProviderClient\Model\CartItem()); // \kinoheld\GenericProviderClient\Model\CartItem[] | 
+$reset = true; // bool | 
 
 try {
     $result = $apiInstance->cartAddItems($cartId, $items, $reset);
@@ -107,9 +107,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **int**| cart ID |
- **items** | [**\kinoheld\GenericProviderClient\Model\CartItem[]**](../Model/\kinoheld\GenericProviderClient\Model\CartItem.md)| items |
- **reset** | **bool**| reset cart before adding items | [optional]
+ **cartId** | **int**|  |
+ **items** | [**\kinoheld\GenericProviderClient\Model\CartItem[]**](../Model/\kinoheld\GenericProviderClient\Model\CartItem.md)|  |
+ **reset** | **bool**|  |
 
 ### Return type
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

@@ -369,15 +369,15 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId cart ID (required)
+     * @param  int $cartId cartId (required)
      * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (required)
-     * @param  bool $reset reset cart before adding items (optional)
+     * @param  bool $reset reset (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartAddItems($cartId, $items, $reset = null)
+    public function cartAddItems($cartId, $items, $reset)
     {
         list($response) = $this->cartAddItemsWithHttpInfo($cartId, $items, $reset);
         return $response;
@@ -388,15 +388,15 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId cart ID (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (required)
-     * @param  bool $reset reset cart before adding items (optional)
+     * @param  int $cartId (required)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
+     * @param  bool $reset (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartAddItemsWithHttpInfo($cartId, $items, $reset = null)
+    public function cartAddItemsWithHttpInfo($cartId, $items, $reset)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartAddItemsRequest($cartId, $items, $reset);
@@ -465,14 +465,14 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId cart ID (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (required)
-     * @param  bool $reset reset cart before adding items (optional)
+     * @param  int $cartId (required)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
+     * @param  bool $reset (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsync($cartId, $items, $reset = null)
+    public function cartAddItemsAsync($cartId, $items, $reset)
     {
         return $this->cartAddItemsAsyncWithHttpInfo($cartId, $items, $reset)
             ->then(
@@ -487,14 +487,14 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId cart ID (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (required)
-     * @param  bool $reset reset cart before adding items (optional)
+     * @param  int $cartId (required)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
+     * @param  bool $reset (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsyncWithHttpInfo($cartId, $items, $reset = null)
+    public function cartAddItemsAsyncWithHttpInfo($cartId, $items, $reset)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartAddItemsRequest($cartId, $items, $reset);
@@ -539,14 +539,14 @@ class CartApi
     /**
      * Create request for operation 'cartAddItems'
      *
-     * @param  int $cartId cart ID (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (required)
-     * @param  bool $reset reset cart before adding items (optional)
+     * @param  int $cartId (required)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
+     * @param  bool $reset (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartAddItemsRequest($cartId, $items, $reset = null)
+    protected function cartAddItemsRequest($cartId, $items, $reset)
     {
         // verify the required parameter 'cartId' is set
         if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
@@ -560,6 +560,12 @@ class CartApi
                 'Missing the required parameter $items when calling cartAddItems'
             );
         }
+        // verify the required parameter 'reset' is set
+        if ($reset === null || (is_array($reset) && count($reset) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reset when calling cartAddItems'
+            );
+        }
 
         $resourcePath = '/cart/addItems';
         $formParams = [];
@@ -568,23 +574,20 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
+
+
+        // form params
         if ($cartId !== null) {
-            $queryParams['cartId'] = ObjectSerializer::toQueryValue($cartId);
+            $formParams['cartId'] = ObjectSerializer::toFormValue($cartId);
         }
-        // query params
-        if (is_array($items)) {
-            $items = ObjectSerializer::serializeCollection($items, 'multi', true);
-        }
+        // form params
         if ($items !== null) {
-            $queryParams['items'] = ObjectSerializer::toQueryValue($items);
+            $formParams['items'] = ObjectSerializer::toFormValue($items);
         }
-        // query params
+        // form params
         if ($reset !== null) {
-            $queryParams['reset'] = ObjectSerializer::toQueryValue($reset);
+            $formParams['reset'] = ObjectSerializer::toFormValue($reset);
         }
-
-
         // body params
         $_tempBody = null;
 
@@ -595,7 +598,7 @@ class CartApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                []
+                ['application/x-www-form-urlencoded']
             );
         }
 
