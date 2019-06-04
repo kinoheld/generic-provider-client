@@ -107,9 +107,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cartId** | **int**|  |
- **items** | [**\kinoheld\GenericProviderClient\Model\CartItem[]**](../Model/\kinoheld\GenericProviderClient\Model\CartItem.md)|  |
- **reset** | **bool**|  |
+ **cartId** | **int**|  | [optional]
+ **items** | [**\kinoheld\GenericProviderClient\Model\CartItem[]**](../Model/\kinoheld\GenericProviderClient\Model\CartItem.md)|  | [optional]
+ **reset** | **bool**|  | [optional]
 
 ### Return type
 

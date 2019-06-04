@@ -369,15 +369,15 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId cartId (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (required)
-     * @param  bool $reset reset (required)
+     * @param  int $cartId cartId (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (optional)
+     * @param  bool $reset reset (optional)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartAddItems($cartId, $items, $reset)
+    public function cartAddItems($cartId = null, $items = null, $reset = null)
     {
         list($response) = $this->cartAddItemsWithHttpInfo($cartId, $items, $reset);
         return $response;
@@ -388,15 +388,15 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
-     * @param  bool $reset (required)
+     * @param  int $cartId (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
+     * @param  bool $reset (optional)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartAddItemsWithHttpInfo($cartId, $items, $reset)
+    public function cartAddItemsWithHttpInfo($cartId = null, $items = null, $reset = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartAddItemsRequest($cartId, $items, $reset);
@@ -465,14 +465,14 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
-     * @param  bool $reset (required)
+     * @param  int $cartId (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
+     * @param  bool $reset (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsync($cartId, $items, $reset)
+    public function cartAddItemsAsync($cartId = null, $items = null, $reset = null)
     {
         return $this->cartAddItemsAsyncWithHttpInfo($cartId, $items, $reset)
             ->then(
@@ -487,14 +487,14 @@ class CartApi
      *
      * add items to the cart
      *
-     * @param  int $cartId (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
-     * @param  bool $reset (required)
+     * @param  int $cartId (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
+     * @param  bool $reset (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsyncWithHttpInfo($cartId, $items, $reset)
+    public function cartAddItemsAsyncWithHttpInfo($cartId = null, $items = null, $reset = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartAddItemsRequest($cartId, $items, $reset);
@@ -539,33 +539,15 @@ class CartApi
     /**
      * Create request for operation 'cartAddItems'
      *
-     * @param  int $cartId (required)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (required)
-     * @param  bool $reset (required)
+     * @param  int $cartId (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
+     * @param  bool $reset (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartAddItemsRequest($cartId, $items, $reset)
+    protected function cartAddItemsRequest($cartId = null, $items = null, $reset = null)
     {
-        // verify the required parameter 'cartId' is set
-        if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $cartId when calling cartAddItems'
-            );
-        }
-        // verify the required parameter 'items' is set
-        if ($items === null || (is_array($items) && count($items) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $items when calling cartAddItems'
-            );
-        }
-        // verify the required parameter 'reset' is set
-        if ($reset === null || (is_array($reset) && count($reset) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $reset when calling cartAddItems'
-            );
-        }
 
         $resourcePath = '/cart/addItems';
         $formParams = [];
