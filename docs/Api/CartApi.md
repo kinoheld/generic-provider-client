@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cartAddItems**
-> \kinoheld\GenericProviderClient\Model\Cart cartAddItems($chainId, $cartId, $items, $reset)
+> \kinoheld\GenericProviderClient\Model\Cart cartAddItems($chainId, $body)
 
 add items to the cart
 
@@ -93,12 +93,10 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     $config
 );
 $chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | 
-$items = array(new \kinoheld\GenericProviderClient\Model\CartItem()); // \kinoheld\GenericProviderClient\Model\CartItem[] | 
-$reset = true; // bool | 
+$body = new \kinoheld\GenericProviderClient\Model\Body(); // \kinoheld\GenericProviderClient\Model\Body | 
 
 try {
-    $result = $apiInstance->cartAddItems($chainId, $cartId, $items, $reset);
+    $result = $apiInstance->cartAddItems($chainId, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartAddItems: ', $e->getMessage(), PHP_EOL;
@@ -111,9 +109,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**|  | [optional]
- **items** | [**\kinoheld\GenericProviderClient\Model\CartItem[]**](../Model/\kinoheld\GenericProviderClient\Model\CartItem.md)|  | [optional]
- **reset** | **bool**|  | [optional]
+ **body** | [**\kinoheld\GenericProviderClient\Model\Body**](../Model/Body.md)|  | [optional]
 
 ### Return type
 
@@ -125,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

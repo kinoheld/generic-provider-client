@@ -385,17 +385,15 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId cartId (optional)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (optional)
-     * @param  bool $reset reset (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\Body $body body (optional)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartAddItems($chainId, $cartId = null, $items = null, $reset = null)
+    public function cartAddItems($chainId, $body = null)
     {
-        list($response) = $this->cartAddItemsWithHttpInfo($chainId, $cartId, $items, $reset);
+        list($response) = $this->cartAddItemsWithHttpInfo($chainId, $body);
         return $response;
     }
 
@@ -405,18 +403,16 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId (optional)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
-     * @param  bool $reset (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\Body $body (optional)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartAddItemsWithHttpInfo($chainId, $cartId = null, $items = null, $reset = null)
+    public function cartAddItemsWithHttpInfo($chainId, $body = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartAddItemsRequest($chainId, $cartId, $items, $reset);
+        $request = $this->cartAddItemsRequest($chainId, $body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -483,16 +479,14 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId (optional)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
-     * @param  bool $reset (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\Body $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsync($chainId, $cartId = null, $items = null, $reset = null)
+    public function cartAddItemsAsync($chainId, $body = null)
     {
-        return $this->cartAddItemsAsyncWithHttpInfo($chainId, $cartId, $items, $reset)
+        return $this->cartAddItemsAsyncWithHttpInfo($chainId, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -506,17 +500,15 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId (optional)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
-     * @param  bool $reset (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\Body $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsyncWithHttpInfo($chainId, $cartId = null, $items = null, $reset = null)
+    public function cartAddItemsAsyncWithHttpInfo($chainId, $body = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartAddItemsRequest($chainId, $cartId, $items, $reset);
+        $request = $this->cartAddItemsRequest($chainId, $body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -559,14 +551,12 @@ class CartApi
      * Create request for operation 'cartAddItems'
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId (optional)
-     * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
-     * @param  bool $reset (optional)
+     * @param  \kinoheld\GenericProviderClient\Model\Body $body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartAddItemsRequest($chainId, $cartId = null, $items = null, $reset = null)
+    protected function cartAddItemsRequest($chainId, $body = null)
     {
         // verify the required parameter 'chainId' is set
         if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
@@ -588,20 +578,11 @@ class CartApi
         }
 
 
-        // form params
-        if ($cartId !== null) {
-            $formParams['cartId'] = ObjectSerializer::toFormValue($cartId);
-        }
-        // form params
-        if ($items !== null) {
-            $formParams['items'] = ObjectSerializer::toFormValue($items);
-        }
-        // form params
-        if ($reset !== null) {
-            $formParams['reset'] = ObjectSerializer::toFormValue($reset);
-        }
         // body params
         $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -610,7 +591,7 @@ class CartApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/x-www-form-urlencoded']
+                ['application/json']
             );
         }
 
