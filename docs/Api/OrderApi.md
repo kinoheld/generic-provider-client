@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**orderGet**](OrderApi.md#orderGet) | **GET** /order | get the order
 
 # **orderCancel**
-> \kinoheld\GenericProviderClient\Model\Order orderCancel($orderId)
+> \kinoheld\GenericProviderClient\Model\Order orderCancel($chainId, $orderId)
 
 cancel the order
 
@@ -29,10 +29,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $orderId = 56; // int | order ID
 
 try {
-    $result = $apiInstance->orderCancel($orderId);
+    $result = $apiInstance->orderCancel($chainId, $orderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCancel: ', $e->getMessage(), PHP_EOL;
@@ -44,6 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **orderId** | **int**| order ID |
 
 ### Return type
@@ -62,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderGet**
-> \kinoheld\GenericProviderClient\Model\Order orderGet($orderId)
+> \kinoheld\GenericProviderClient\Model\Order orderGet($chainId, $orderId)
 
 get the order
 
@@ -83,10 +85,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $orderId = 56; // int | order ID
 
 try {
-    $result = $apiInstance->orderGet($orderId);
+    $result = $apiInstance->orderGet($chainId, $orderId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderGet: ', $e->getMessage(), PHP_EOL;
@@ -98,6 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **orderId** | **int**| order ID |
 
 ### Return type

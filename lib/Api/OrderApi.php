@@ -91,15 +91,16 @@ class OrderApi
      *
      * cancel the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Order
      */
-    public function orderCancel($orderId)
+    public function orderCancel($chainId, $orderId)
     {
-        list($response) = $this->orderCancelWithHttpInfo($orderId);
+        list($response) = $this->orderCancelWithHttpInfo($chainId, $orderId);
         return $response;
     }
 
@@ -108,16 +109,17 @@ class OrderApi
      *
      * cancel the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderCancelWithHttpInfo($orderId)
+    public function orderCancelWithHttpInfo($chainId, $orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderCancelRequest($orderId);
+        $request = $this->orderCancelRequest($chainId, $orderId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -183,14 +185,15 @@ class OrderApi
      *
      * cancel the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCancelAsync($orderId)
+    public function orderCancelAsync($chainId, $orderId)
     {
-        return $this->orderCancelAsyncWithHttpInfo($orderId)
+        return $this->orderCancelAsyncWithHttpInfo($chainId, $orderId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -203,15 +206,16 @@ class OrderApi
      *
      * cancel the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCancelAsyncWithHttpInfo($orderId)
+    public function orderCancelAsyncWithHttpInfo($chainId, $orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderCancelRequest($orderId);
+        $request = $this->orderCancelRequest($chainId, $orderId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -253,13 +257,20 @@ class OrderApi
     /**
      * Create request for operation 'orderCancel'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderCancelRequest($orderId)
+    protected function orderCancelRequest($chainId, $orderId)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling orderCancel'
+            );
+        }
         // verify the required parameter 'orderId' is set
         if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
@@ -274,6 +285,10 @@ class OrderApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
         // query params
         if ($orderId !== null) {
             $queryParams['orderId'] = ObjectSerializer::toQueryValue($orderId);
@@ -354,15 +369,16 @@ class OrderApi
      *
      * get the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Order
      */
-    public function orderGet($orderId)
+    public function orderGet($chainId, $orderId)
     {
-        list($response) = $this->orderGetWithHttpInfo($orderId);
+        list($response) = $this->orderGetWithHttpInfo($chainId, $orderId);
         return $response;
     }
 
@@ -371,16 +387,17 @@ class OrderApi
      *
      * get the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderGetWithHttpInfo($orderId)
+    public function orderGetWithHttpInfo($chainId, $orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderGetRequest($orderId);
+        $request = $this->orderGetRequest($chainId, $orderId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -446,14 +463,15 @@ class OrderApi
      *
      * get the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetAsync($orderId)
+    public function orderGetAsync($chainId, $orderId)
     {
-        return $this->orderGetAsyncWithHttpInfo($orderId)
+        return $this->orderGetAsyncWithHttpInfo($chainId, $orderId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -466,15 +484,16 @@ class OrderApi
      *
      * get the order
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderGetAsyncWithHttpInfo($orderId)
+    public function orderGetAsyncWithHttpInfo($chainId, $orderId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->orderGetRequest($orderId);
+        $request = $this->orderGetRequest($chainId, $orderId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -516,13 +535,20 @@ class OrderApi
     /**
      * Create request for operation 'orderGet'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $orderId order ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderGetRequest($orderId)
+    protected function orderGetRequest($chainId, $orderId)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling orderGet'
+            );
+        }
         // verify the required parameter 'orderId' is set
         if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
@@ -537,6 +563,10 @@ class OrderApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
         // query params
         if ($orderId !== null) {
             $queryParams['orderId'] = ObjectSerializer::toQueryValue($orderId);

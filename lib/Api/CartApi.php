@@ -91,6 +91,7 @@ class CartApi
      *
      * add discount to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
@@ -98,9 +99,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartAddDiscount($cartId, $code)
+    public function cartAddDiscount($chainId, $cartId, $code)
     {
-        list($response) = $this->cartAddDiscountWithHttpInfo($cartId, $code);
+        list($response) = $this->cartAddDiscountWithHttpInfo($chainId, $cartId, $code);
         return $response;
     }
 
@@ -109,6 +110,7 @@ class CartApi
      *
      * add discount to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
@@ -116,10 +118,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartAddDiscountWithHttpInfo($cartId, $code)
+    public function cartAddDiscountWithHttpInfo($chainId, $cartId, $code)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartAddDiscountRequest($cartId, $code);
+        $request = $this->cartAddDiscountRequest($chainId, $cartId, $code);
 
         try {
             $options = $this->createHttpClientOption();
@@ -185,15 +187,16 @@ class CartApi
      *
      * add discount to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddDiscountAsync($cartId, $code)
+    public function cartAddDiscountAsync($chainId, $cartId, $code)
     {
-        return $this->cartAddDiscountAsyncWithHttpInfo($cartId, $code)
+        return $this->cartAddDiscountAsyncWithHttpInfo($chainId, $cartId, $code)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -206,16 +209,17 @@ class CartApi
      *
      * add discount to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddDiscountAsyncWithHttpInfo($cartId, $code)
+    public function cartAddDiscountAsyncWithHttpInfo($chainId, $cartId, $code)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartAddDiscountRequest($cartId, $code);
+        $request = $this->cartAddDiscountRequest($chainId, $cartId, $code);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -257,14 +261,21 @@ class CartApi
     /**
      * Create request for operation 'cartAddDiscount'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartAddDiscountRequest($cartId, $code)
+    protected function cartAddDiscountRequest($chainId, $cartId, $code)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling cartAddDiscount'
+            );
+        }
         // verify the required parameter 'cartId' is set
         if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
             throw new \InvalidArgumentException(
@@ -285,6 +296,10 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
         // query params
         if ($cartId !== null) {
             $queryParams['cartId'] = ObjectSerializer::toQueryValue($cartId);
@@ -369,6 +384,7 @@ class CartApi
      *
      * add items to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cartId (optional)
      * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items items (optional)
      * @param  bool $reset reset (optional)
@@ -377,9 +393,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartAddItems($cartId = null, $items = null, $reset = null)
+    public function cartAddItems($chainId, $cartId = null, $items = null, $reset = null)
     {
-        list($response) = $this->cartAddItemsWithHttpInfo($cartId, $items, $reset);
+        list($response) = $this->cartAddItemsWithHttpInfo($chainId, $cartId, $items, $reset);
         return $response;
     }
 
@@ -388,6 +404,7 @@ class CartApi
      *
      * add items to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId (optional)
      * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
      * @param  bool $reset (optional)
@@ -396,10 +413,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartAddItemsWithHttpInfo($cartId = null, $items = null, $reset = null)
+    public function cartAddItemsWithHttpInfo($chainId, $cartId = null, $items = null, $reset = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartAddItemsRequest($cartId, $items, $reset);
+        $request = $this->cartAddItemsRequest($chainId, $cartId, $items, $reset);
 
         try {
             $options = $this->createHttpClientOption();
@@ -465,6 +482,7 @@ class CartApi
      *
      * add items to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId (optional)
      * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
      * @param  bool $reset (optional)
@@ -472,9 +490,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsync($cartId = null, $items = null, $reset = null)
+    public function cartAddItemsAsync($chainId, $cartId = null, $items = null, $reset = null)
     {
-        return $this->cartAddItemsAsyncWithHttpInfo($cartId, $items, $reset)
+        return $this->cartAddItemsAsyncWithHttpInfo($chainId, $cartId, $items, $reset)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -487,6 +505,7 @@ class CartApi
      *
      * add items to the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId (optional)
      * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
      * @param  bool $reset (optional)
@@ -494,10 +513,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsyncWithHttpInfo($cartId = null, $items = null, $reset = null)
+    public function cartAddItemsAsyncWithHttpInfo($chainId, $cartId = null, $items = null, $reset = null)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartAddItemsRequest($cartId, $items, $reset);
+        $request = $this->cartAddItemsRequest($chainId, $cartId, $items, $reset);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -539,6 +558,7 @@ class CartApi
     /**
      * Create request for operation 'cartAddItems'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId (optional)
      * @param  \kinoheld\GenericProviderClient\Model\CartItem[] $items (optional)
      * @param  bool $reset (optional)
@@ -546,8 +566,14 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartAddItemsRequest($cartId = null, $items = null, $reset = null)
+    protected function cartAddItemsRequest($chainId, $cartId = null, $items = null, $reset = null)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling cartAddItems'
+            );
+        }
 
         $resourcePath = '/cart/addItems';
         $formParams = [];
@@ -556,6 +582,10 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
 
 
         // form params
@@ -644,6 +674,7 @@ class CartApi
      *
      * checkout the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $email Email (required)
      *
@@ -651,9 +682,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Order
      */
-    public function cartCheckout($cartId, $email)
+    public function cartCheckout($chainId, $cartId, $email)
     {
-        list($response) = $this->cartCheckoutWithHttpInfo($cartId, $email);
+        list($response) = $this->cartCheckoutWithHttpInfo($chainId, $cartId, $email);
         return $response;
     }
 
@@ -662,6 +693,7 @@ class CartApi
      *
      * checkout the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $email Email (required)
      *
@@ -669,10 +701,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartCheckoutWithHttpInfo($cartId, $email)
+    public function cartCheckoutWithHttpInfo($chainId, $cartId, $email)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->cartCheckoutRequest($cartId, $email);
+        $request = $this->cartCheckoutRequest($chainId, $cartId, $email);
 
         try {
             $options = $this->createHttpClientOption();
@@ -738,15 +770,16 @@ class CartApi
      *
      * checkout the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $email Email (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCheckoutAsync($cartId, $email)
+    public function cartCheckoutAsync($chainId, $cartId, $email)
     {
-        return $this->cartCheckoutAsyncWithHttpInfo($cartId, $email)
+        return $this->cartCheckoutAsyncWithHttpInfo($chainId, $cartId, $email)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -759,16 +792,17 @@ class CartApi
      *
      * checkout the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $email Email (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCheckoutAsyncWithHttpInfo($cartId, $email)
+    public function cartCheckoutAsyncWithHttpInfo($chainId, $cartId, $email)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Order';
-        $request = $this->cartCheckoutRequest($cartId, $email);
+        $request = $this->cartCheckoutRequest($chainId, $cartId, $email);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -810,14 +844,21 @@ class CartApi
     /**
      * Create request for operation 'cartCheckout'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $email Email (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartCheckoutRequest($cartId, $email)
+    protected function cartCheckoutRequest($chainId, $cartId, $email)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling cartCheckout'
+            );
+        }
         // verify the required parameter 'cartId' is set
         if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
             throw new \InvalidArgumentException(
@@ -838,6 +879,10 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
         // query params
         if ($cartId !== null) {
             $queryParams['cartId'] = ObjectSerializer::toQueryValue($cartId);
@@ -1215,15 +1260,16 @@ class CartApi
      *
      * get the cart contents
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartGet($cartId)
+    public function cartGet($chainId, $cartId)
     {
-        list($response) = $this->cartGetWithHttpInfo($cartId);
+        list($response) = $this->cartGetWithHttpInfo($chainId, $cartId);
         return $response;
     }
 
@@ -1232,16 +1278,17 @@ class CartApi
      *
      * get the cart contents
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartGetWithHttpInfo($cartId)
+    public function cartGetWithHttpInfo($chainId, $cartId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartGetRequest($cartId);
+        $request = $this->cartGetRequest($chainId, $cartId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1307,14 +1354,15 @@ class CartApi
      *
      * get the cart contents
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGetAsync($cartId)
+    public function cartGetAsync($chainId, $cartId)
     {
-        return $this->cartGetAsyncWithHttpInfo($cartId)
+        return $this->cartGetAsyncWithHttpInfo($chainId, $cartId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1327,15 +1375,16 @@ class CartApi
      *
      * get the cart contents
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGetAsyncWithHttpInfo($cartId)
+    public function cartGetAsyncWithHttpInfo($chainId, $cartId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartGetRequest($cartId);
+        $request = $this->cartGetRequest($chainId, $cartId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1377,13 +1426,20 @@ class CartApi
     /**
      * Create request for operation 'cartGet'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartGetRequest($cartId)
+    protected function cartGetRequest($chainId, $cartId)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling cartGet'
+            );
+        }
         // verify the required parameter 'cartId' is set
         if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1398,6 +1454,10 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
         // query params
         if ($cartId !== null) {
             $queryParams['cartId'] = ObjectSerializer::toQueryValue($cartId);
@@ -1478,6 +1538,7 @@ class CartApi
      *
      * remove an already applied discount from the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
@@ -1485,9 +1546,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartRemoveDiscount($cartId, $code)
+    public function cartRemoveDiscount($chainId, $cartId, $code)
     {
-        list($response) = $this->cartRemoveDiscountWithHttpInfo($cartId, $code);
+        list($response) = $this->cartRemoveDiscountWithHttpInfo($chainId, $cartId, $code);
         return $response;
     }
 
@@ -1496,6 +1557,7 @@ class CartApi
      *
      * remove an already applied discount from the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
@@ -1503,10 +1565,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartRemoveDiscountWithHttpInfo($cartId, $code)
+    public function cartRemoveDiscountWithHttpInfo($chainId, $cartId, $code)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartRemoveDiscountRequest($cartId, $code);
+        $request = $this->cartRemoveDiscountRequest($chainId, $cartId, $code);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1572,15 +1634,16 @@ class CartApi
      *
      * remove an already applied discount from the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartRemoveDiscountAsync($cartId, $code)
+    public function cartRemoveDiscountAsync($chainId, $cartId, $code)
     {
-        return $this->cartRemoveDiscountAsyncWithHttpInfo($cartId, $code)
+        return $this->cartRemoveDiscountAsyncWithHttpInfo($chainId, $cartId, $code)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1593,16 +1656,17 @@ class CartApi
      *
      * remove an already applied discount from the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartRemoveDiscountAsyncWithHttpInfo($cartId, $code)
+    public function cartRemoveDiscountAsyncWithHttpInfo($chainId, $cartId, $code)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartRemoveDiscountRequest($cartId, $code);
+        $request = $this->cartRemoveDiscountRequest($chainId, $cartId, $code);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1644,14 +1708,21 @@ class CartApi
     /**
      * Create request for operation 'cartRemoveDiscount'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      * @param  string $code discount code (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartRemoveDiscountRequest($cartId, $code)
+    protected function cartRemoveDiscountRequest($chainId, $cartId, $code)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling cartRemoveDiscount'
+            );
+        }
         // verify the required parameter 'cartId' is set
         if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1672,6 +1743,10 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
         // query params
         if ($cartId !== null) {
             $queryParams['cartId'] = ObjectSerializer::toQueryValue($cartId);
@@ -1756,15 +1831,16 @@ class CartApi
      *
      * reset contents of the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartReset($cartId)
+    public function cartReset($chainId, $cartId)
     {
-        list($response) = $this->cartResetWithHttpInfo($cartId);
+        list($response) = $this->cartResetWithHttpInfo($chainId, $cartId);
         return $response;
     }
 
@@ -1773,16 +1849,17 @@ class CartApi
      *
      * reset contents of the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartResetWithHttpInfo($cartId)
+    public function cartResetWithHttpInfo($chainId, $cartId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartResetRequest($cartId);
+        $request = $this->cartResetRequest($chainId, $cartId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1848,14 +1925,15 @@ class CartApi
      *
      * reset contents of the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartResetAsync($cartId)
+    public function cartResetAsync($chainId, $cartId)
     {
-        return $this->cartResetAsyncWithHttpInfo($cartId)
+        return $this->cartResetAsyncWithHttpInfo($chainId, $cartId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1868,15 +1946,16 @@ class CartApi
      *
      * reset contents of the cart
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartResetAsyncWithHttpInfo($cartId)
+    public function cartResetAsyncWithHttpInfo($chainId, $cartId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\Cart';
-        $request = $this->cartResetRequest($cartId);
+        $request = $this->cartResetRequest($chainId, $cartId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1918,13 +1997,20 @@ class CartApi
     /**
      * Create request for operation 'cartReset'
      *
+     * @param  int $chainId The chain ID the cinema belongs to. (required)
      * @param  int $cartId cart ID (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartResetRequest($cartId)
+    protected function cartResetRequest($chainId, $cartId)
     {
+        // verify the required parameter 'chainId' is set
+        if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chainId when calling cartReset'
+            );
+        }
         // verify the required parameter 'cartId' is set
         if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1939,6 +2025,10 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($chainId !== null) {
+            $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
         // query params
         if ($cartId !== null) {
             $queryParams['cartId'] = ObjectSerializer::toQueryValue($cartId);

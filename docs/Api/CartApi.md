@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**cartReset**](CartApi.md#cartReset) | **POST** /cart/reset | reset contents of the cart
 
 # **cartAddDiscount**
-> \kinoheld\GenericProviderClient\Model\Cart cartAddDiscount($cartId, $code)
+> \kinoheld\GenericProviderClient\Model\Cart cartAddDiscount($chainId, $cartId, $code)
 
 add discount to the cart
 
@@ -34,11 +34,12 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $cartId = 56; // int | cart ID
 $code = "code_example"; // string | discount code
 
 try {
-    $result = $apiInstance->cartAddDiscount($cartId, $code);
+    $result = $apiInstance->cartAddDiscount($chainId, $cartId, $code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartAddDiscount: ', $e->getMessage(), PHP_EOL;
@@ -50,6 +51,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **cartId** | **int**| cart ID |
  **code** | **string**| discount code |
 
@@ -69,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cartAddItems**
-> \kinoheld\GenericProviderClient\Model\Cart cartAddItems($cartId, $items, $reset)
+> \kinoheld\GenericProviderClient\Model\Cart cartAddItems($chainId, $cartId, $items, $reset)
 
 add items to the cart
 
@@ -90,12 +92,13 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $cartId = 56; // int | 
 $items = array(new \kinoheld\GenericProviderClient\Model\CartItem()); // \kinoheld\GenericProviderClient\Model\CartItem[] | 
 $reset = true; // bool | 
 
 try {
-    $result = $apiInstance->cartAddItems($cartId, $items, $reset);
+    $result = $apiInstance->cartAddItems($chainId, $cartId, $items, $reset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartAddItems: ', $e->getMessage(), PHP_EOL;
@@ -107,6 +110,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **cartId** | **int**|  | [optional]
  **items** | [**\kinoheld\GenericProviderClient\Model\CartItem[]**](../Model/\kinoheld\GenericProviderClient\Model\CartItem.md)|  | [optional]
  **reset** | **bool**|  | [optional]
@@ -127,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cartCheckout**
-> \kinoheld\GenericProviderClient\Model\Order cartCheckout($cartId, $email)
+> \kinoheld\GenericProviderClient\Model\Order cartCheckout($chainId, $cartId, $email)
 
 checkout the cart
 
@@ -148,11 +152,12 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $cartId = 56; // int | cart ID
 $email = "email_example"; // string | Email
 
 try {
-    $result = $apiInstance->cartCheckout($cartId, $email);
+    $result = $apiInstance->cartCheckout($chainId, $cartId, $email);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartCheckout: ', $e->getMessage(), PHP_EOL;
@@ -164,6 +169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **cartId** | **int**| cart ID |
  **email** | **string**| Email |
 
@@ -241,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cartGet**
-> \kinoheld\GenericProviderClient\Model\Cart cartGet($cartId)
+> \kinoheld\GenericProviderClient\Model\Cart cartGet($chainId, $cartId)
 
 get the cart contents
 
@@ -262,10 +268,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $cartId = 56; // int | cart ID
 
 try {
-    $result = $apiInstance->cartGet($cartId);
+    $result = $apiInstance->cartGet($chainId, $cartId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartGet: ', $e->getMessage(), PHP_EOL;
@@ -277,6 +284,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **cartId** | **int**| cart ID |
 
 ### Return type
@@ -295,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cartRemoveDiscount**
-> \kinoheld\GenericProviderClient\Model\Cart cartRemoveDiscount($cartId, $code)
+> \kinoheld\GenericProviderClient\Model\Cart cartRemoveDiscount($chainId, $cartId, $code)
 
 remove an already applied discount from the cart
 
@@ -316,11 +324,12 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $cartId = 56; // int | cart ID
 $code = "code_example"; // string | discount code
 
 try {
-    $result = $apiInstance->cartRemoveDiscount($cartId, $code);
+    $result = $apiInstance->cartRemoveDiscount($chainId, $cartId, $code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartRemoveDiscount: ', $e->getMessage(), PHP_EOL;
@@ -332,6 +341,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **cartId** | **int**| cart ID |
  **code** | **string**| discount code |
 
@@ -351,7 +361,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cartReset**
-> \kinoheld\GenericProviderClient\Model\Cart cartReset($cartId)
+> \kinoheld\GenericProviderClient\Model\Cart cartReset($chainId, $cartId)
 
 reset contents of the cart
 
@@ -372,10 +382,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
+$chainId = 56; // int | The chain ID the cinema belongs to.
 $cartId = 56; // int | cart ID
 
 try {
-    $result = $apiInstance->cartReset($cartId);
+    $result = $apiInstance->cartReset($chainId, $cartId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartReset: ', $e->getMessage(), PHP_EOL;
@@ -387,6 +398,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **chainId** | **int**| The chain ID the cinema belongs to. |
  **cartId** | **int**| cart ID |
 
 ### Return type
