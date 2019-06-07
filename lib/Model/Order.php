@@ -54,11 +54,11 @@ class Order extends Cart
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => '',
-'showId' => '',
+        'id' => 'int',
+'showId' => 'int',
 'items' => '\kinoheld\GenericProviderClient\Model\OrderItem[]',
-'discounts' => '',
-'pricing' => '',
+'discounts' => '\kinoheld\GenericProviderClient\Model\CartDiscount[]',
+'pricing' => '\kinoheld\GenericProviderClient\Model\OrderPricing',
 'admissionCode' => 'string',
 'state' => 'string'    ];
 
@@ -256,7 +256,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Gets id
      *
-     * @return 
+     * @return int
      */
     public function getId()
     {
@@ -266,7 +266,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Sets id
      *
-     * @param  $id Order ID
+     * @param int $id Order ID
      *
      * @return $this
      */
@@ -280,7 +280,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Gets showId
      *
-     * @return 
+     * @return int
      */
     public function getShowId()
     {
@@ -290,7 +290,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Sets showId
      *
-     * @param  $showId Show ID the order is attached to.
+     * @param int $showId Show ID the order is attached to.
      *
      * @return $this
      */
@@ -328,7 +328,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Gets discounts
      *
-     * @return 
+     * @return \kinoheld\GenericProviderClient\Model\CartDiscount[]
      */
     public function getDiscounts()
     {
@@ -338,7 +338,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Sets discounts
      *
-     * @param  $discounts Discounts applied to the order.
+     * @param \kinoheld\GenericProviderClient\Model\CartDiscount[] $discounts Discounts applied to the order.
      *
      * @return $this
      */
@@ -352,7 +352,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Gets pricing
      *
-     * @return 
+     * @return \kinoheld\GenericProviderClient\Model\OrderPricing
      */
     public function getPricing()
     {
@@ -362,7 +362,7 @@ self::STATE_CANCELLED,        ];
     /**
      * Sets pricing
      *
-     * @param  $pricing Pricing information for the order.
+     * @param \kinoheld\GenericProviderClient\Model\OrderPricing $pricing pricing
      *
      * @return $this
      */
