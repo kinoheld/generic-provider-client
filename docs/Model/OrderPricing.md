@@ -7,5 +7,5 @@ Name | Type | Description | Notes
 **discountedAmount** | [**BigDecimal**](BigDecimal.md) | The amount discounted by attached discounts. | [optional] 
 **paymentAmount** | [**BigDecimal**](BigDecimal.md) | The amount to pay by user for this order. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

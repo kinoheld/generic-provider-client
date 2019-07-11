@@ -4,9 +4,9 @@ All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAuditoriums**](BasicApi.md#getAuditoriums) | **GET** /auditoriums | list of auditoriums for the given cinema
-[**getChains**](BasicApi.md#getChains) | **GET** /chains | list of chains/companies
-[**getCinemas**](BasicApi.md#getCinemas) | **GET** /cinemas | list of cinemas
+[**getAuditoriums**](BasicApi.md#getauditoriums) | **GET** /auditoriums | list of auditoriums for the given cinema
+[**getChains**](BasicApi.md#getchains) | **GET** /chains | list of chains/companies
+[**getCinemas**](BasicApi.md#getcinemas) | **GET** /cinemas | list of cinemas
 
 # **getAuditoriums**
 > \kinoheld\GenericProviderClient\Model\AuditoriumItem[] getAuditoriums($chainId, $cinemaId)

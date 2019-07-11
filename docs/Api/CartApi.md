@@ -4,13 +4,13 @@ All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cartAddDiscount**](CartApi.md#cartAddDiscount) | **POST** /cart/addDiscount | add discount to the cart
-[**cartAddItems**](CartApi.md#cartAddItems) | **POST** /cart/addItems | add items to the cart
-[**cartCheckout**](CartApi.md#cartCheckout) | **POST** /cart/checkout | checkout the cart
-[**cartCreate**](CartApi.md#cartCreate) | **POST** /cart/create | create a new cart
-[**cartGet**](CartApi.md#cartGet) | **GET** /cart | get the cart contents
-[**cartRemoveDiscount**](CartApi.md#cartRemoveDiscount) | **POST** /cart/removeDiscount | remove an already applied discount from the cart
-[**cartReset**](CartApi.md#cartReset) | **POST** /cart/reset | reset contents of the cart
+[**cartAddDiscount**](CartApi.md#cartadddiscount) | **POST** /cart/addDiscount | add discount to the cart
+[**cartAddItems**](CartApi.md#cartadditems) | **POST** /cart/addItems | add items to the cart
+[**cartCheckout**](CartApi.md#cartcheckout) | **POST** /cart/checkout | checkout the cart
+[**cartCreate**](CartApi.md#cartcreate) | **POST** /cart/create | create a new cart
+[**cartGet**](CartApi.md#cartget) | **GET** /cart | get the cart contents
+[**cartRemoveDiscount**](CartApi.md#cartremovediscount) | **POST** /cart/removeDiscount | remove an already applied discount from the cart
+[**cartReset**](CartApi.md#cartreset) | **POST** /cart/reset | reset contents of the cart
 
 # **cartAddDiscount**
 > \kinoheld\GenericProviderClient\Model\Cart cartAddDiscount($chainId, $cartId, $code)

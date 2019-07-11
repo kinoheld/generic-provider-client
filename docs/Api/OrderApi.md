@@ -4,8 +4,8 @@ All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**orderCancel**](OrderApi.md#orderCancel) | **POST** /order/cancel | cancel the order
-[**orderGet**](OrderApi.md#orderGet) | **GET** /order | get the order
+[**orderCancel**](OrderApi.md#ordercancel) | **POST** /order/cancel | cancel the order
+[**orderGet**](OrderApi.md#orderget) | **GET** /order | get the order
 
 # **orderCancel**
 > \kinoheld\GenericProviderClient\Model\Order orderCancel($chainId, $orderId)

@@ -4,10 +4,10 @@ All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getMovie**](EventApi.md#getMovie) | **GET** /movie | movie details for the given movie id
-[**getSeats**](EventApi.md#getSeats) | **GET** /seats | list of seats for the given show
-[**getShow**](EventApi.md#getShow) | **GET** /show | show info for the given cinema and show ID
-[**getShows**](EventApi.md#getShows) | **GET** /shows | list of shows for the given cinema
+[**getMovie**](EventApi.md#getmovie) | **GET** /movie | movie details for the given movie id
+[**getSeats**](EventApi.md#getseats) | **GET** /seats | list of seats for the given show
+[**getShow**](EventApi.md#getshow) | **GET** /show | show info for the given cinema and show ID
+[**getShows**](EventApi.md#getshows) | **GET** /shows | list of shows for the given cinema
 
 # **getMovie**
 > \kinoheld\GenericProviderClient\Model\MovieItem getMovie($chainId, $movieId)

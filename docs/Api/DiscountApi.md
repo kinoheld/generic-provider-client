@@ -4,7 +4,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**discountGet**](DiscountApi.md#discountGet) | **GET** /discount | get the discount
+[**discountGet**](DiscountApi.md#discountget) | **GET** /discount | get the discount
 
 # **discountGet**
 > \kinoheld\GenericProviderClient\Model\Discount discountGet($chainId, $cinemaId, $code)
