@@ -88,7 +88,7 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\EventApi(
     $config
 );
 $chainId = 56; // int | chain/company ID
-$showId = 56; // int | pass a show id to retrieve the associated shows
+$showId = 56; // int | Pass a show id to retrieve the associated shows.
 
 try {
     $result = $apiInstance->getSeats($chainId, $showId);
@@ -104,7 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chainId** | **int**| chain/company ID |
- **showId** | **int**| pass a show id to retrieve the associated shows |
+ **showId** | **int**| Pass a show id to retrieve the associated shows. |
 
 ### Return type
 

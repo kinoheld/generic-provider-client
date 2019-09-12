@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **name** | **string** |  | 
-**amount** | [**BigDecimal**](BigDecimal.md) |  | 
+**amount** | **float** |  | 
 **isDefaultPrice** | **bool** |  | 
 **salesChannels** | **string[]** |  | [optional] 
 **color** | **string** |  | [optional] 
