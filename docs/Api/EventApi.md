@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**getShows**](EventApi.md#getshows) | **GET** /shows | list of shows for the given cinema
 
 # **getMovie**
-> \kinoheld\GenericProviderClient\Model\MovieItem getMovie($chainId, $movieId)
+> \kinoheld\GenericProviderClient\Model\MovieItem getMovie($chainId, $cinemaId, $movieId)
 
 movie details for the given movie id
 
@@ -32,10 +32,11 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\EventApi(
     $config
 );
 $chainId = 56; // int | chain/company ID
+$cinemaId = 56; // int | pass a cinema id to retrieve the associated movie
 $movieId = 56; // int | pass a movie id to retrieve the movie details
 
 try {
-    $result = $apiInstance->getMovie($chainId, $movieId);
+    $result = $apiInstance->getMovie($chainId, $cinemaId, $movieId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EventApi->getMovie: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chainId** | **int**| chain/company ID |
+ **cinemaId** | **int**| pass a cinema id to retrieve the associated movie |
  **movieId** | **int**| pass a movie id to retrieve the movie details |
 
 ### Return type

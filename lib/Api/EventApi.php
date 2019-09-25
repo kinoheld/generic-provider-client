@@ -92,15 +92,16 @@ class EventApi
      * movie details for the given movie id
      *
      * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated movie (required)
      * @param  int $movieId pass a movie id to retrieve the movie details (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \kinoheld\GenericProviderClient\Model\MovieItem
      */
-    public function getMovie($chainId, $movieId)
+    public function getMovie($chainId, $cinemaId, $movieId)
     {
-        list($response) = $this->getMovieWithHttpInfo($chainId, $movieId);
+        list($response) = $this->getMovieWithHttpInfo($chainId, $cinemaId, $movieId);
         return $response;
     }
 
@@ -110,16 +111,17 @@ class EventApi
      * movie details for the given movie id
      *
      * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated movie (required)
      * @param  int $movieId pass a movie id to retrieve the movie details (required)
      *
      * @throws \kinoheld\GenericProviderClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \kinoheld\GenericProviderClient\Model\MovieItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMovieWithHttpInfo($chainId, $movieId)
+    public function getMovieWithHttpInfo($chainId, $cinemaId, $movieId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\MovieItem';
-        $request = $this->getMovieRequest($chainId, $movieId);
+        $request = $this->getMovieRequest($chainId, $cinemaId, $movieId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,14 +188,15 @@ class EventApi
      * movie details for the given movie id
      *
      * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated movie (required)
      * @param  int $movieId pass a movie id to retrieve the movie details (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMovieAsync($chainId, $movieId)
+    public function getMovieAsync($chainId, $cinemaId, $movieId)
     {
-        return $this->getMovieAsyncWithHttpInfo($chainId, $movieId)
+        return $this->getMovieAsyncWithHttpInfo($chainId, $cinemaId, $movieId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -207,15 +210,16 @@ class EventApi
      * movie details for the given movie id
      *
      * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated movie (required)
      * @param  int $movieId pass a movie id to retrieve the movie details (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMovieAsyncWithHttpInfo($chainId, $movieId)
+    public function getMovieAsyncWithHttpInfo($chainId, $cinemaId, $movieId)
     {
         $returnType = '\kinoheld\GenericProviderClient\Model\MovieItem';
-        $request = $this->getMovieRequest($chainId, $movieId);
+        $request = $this->getMovieRequest($chainId, $cinemaId, $movieId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -258,17 +262,24 @@ class EventApi
      * Create request for operation 'getMovie'
      *
      * @param  int $chainId chain/company ID (required)
+     * @param  int $cinemaId pass a cinema id to retrieve the associated movie (required)
      * @param  int $movieId pass a movie id to retrieve the movie details (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMovieRequest($chainId, $movieId)
+    protected function getMovieRequest($chainId, $cinemaId, $movieId)
     {
         // verify the required parameter 'chainId' is set
         if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $chainId when calling getMovie'
+            );
+        }
+        // verify the required parameter 'cinemaId' is set
+        if ($cinemaId === null || (is_array($cinemaId) && count($cinemaId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $cinemaId when calling getMovie'
             );
         }
         // verify the required parameter 'movieId' is set
@@ -288,6 +299,10 @@ class EventApi
         // query params
         if ($chainId !== null) {
             $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId);
+        }
+        // query params
+        if ($cinemaId !== null) {
+            $queryParams['cinemaId'] = ObjectSerializer::toQueryValue($cinemaId);
         }
         // query params
         if ($movieId !== null) {
