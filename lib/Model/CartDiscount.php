@@ -54,7 +54,8 @@ class CartDiscount extends Discount
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'appliedAmount' => 'float'    ];
+        'appliedAmount' => 'float',
+'message' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -62,7 +63,8 @@ class CartDiscount extends Discount
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'appliedAmount' => null    ];
+        'appliedAmount' => null,
+'message' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -91,7 +93,8 @@ class CartDiscount extends Discount
      * @var string[]
      */
     protected static $attributeMap = [
-        'appliedAmount' => 'appliedAmount'    ];
+        'appliedAmount' => 'appliedAmount',
+'message' => 'message'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -99,7 +102,8 @@ class CartDiscount extends Discount
      * @var string[]
      */
     protected static $setters = [
-        'appliedAmount' => 'setAppliedAmount'    ];
+        'appliedAmount' => 'setAppliedAmount',
+'message' => 'setMessage'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -107,7 +111,8 @@ class CartDiscount extends Discount
      * @var string[]
      */
     protected static $getters = [
-        'appliedAmount' => 'getAppliedAmount'    ];
+        'appliedAmount' => 'getAppliedAmount',
+'message' => 'getMessage'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -164,6 +169,7 @@ class CartDiscount extends Discount
         parent::__construct($data);
 
         $this->container['appliedAmount'] = isset($data['appliedAmount']) ? $data['appliedAmount'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
     /**
@@ -210,6 +216,30 @@ class CartDiscount extends Discount
     public function setAppliedAmount($appliedAmount)
     {
         $this->container['appliedAmount'] = $appliedAmount;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string $message The message to display to the user.
+     *
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
 
         return $this;
     }

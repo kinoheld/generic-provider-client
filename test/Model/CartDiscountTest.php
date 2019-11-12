@@ -81,4 +81,11 @@ class CartDiscountTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAppliedAmount()
     {
     }
+
+    /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
+    {
+    }
 }
