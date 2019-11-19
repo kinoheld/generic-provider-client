@@ -186,4 +186,11 @@ class ShowItemTest extends \PHPUnit_Framework_TestCase
     public function testPropertyTicketsFree()
     {
     }
+
+    /**
+     * Test attribute "flags"
+     */
+    public function testPropertyFlags()
+    {
+    }
 }

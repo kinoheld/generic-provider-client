@@ -71,7 +71,8 @@ class ShowItem implements ModelInterface, ArrayAccess
 'priceAreas' => '\kinoheld\GenericProviderClient\Model\PriceAreaItem[]',
 'ticketsTotal' => 'int',
 'ticketsSold' => 'int',
-'ticketsFree' => 'int'    ];
+'ticketsFree' => 'int',
+'flags' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -94,7 +95,8 @@ class ShowItem implements ModelInterface, ArrayAccess
 'priceAreas' => null,
 'ticketsTotal' => null,
 'ticketsSold' => null,
-'ticketsFree' => null    ];
+'ticketsFree' => null,
+'flags' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -138,7 +140,8 @@ class ShowItem implements ModelInterface, ArrayAccess
 'priceAreas' => 'priceAreas',
 'ticketsTotal' => 'ticketsTotal',
 'ticketsSold' => 'ticketsSold',
-'ticketsFree' => 'ticketsFree'    ];
+'ticketsFree' => 'ticketsFree',
+'flags' => 'flags'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -161,7 +164,8 @@ class ShowItem implements ModelInterface, ArrayAccess
 'priceAreas' => 'setPriceAreas',
 'ticketsTotal' => 'setTicketsTotal',
 'ticketsSold' => 'setTicketsSold',
-'ticketsFree' => 'setTicketsFree'    ];
+'ticketsFree' => 'setTicketsFree',
+'flags' => 'setFlags'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -184,7 +188,8 @@ class ShowItem implements ModelInterface, ArrayAccess
 'priceAreas' => 'getPriceAreas',
 'ticketsTotal' => 'getTicketsTotal',
 'ticketsSold' => 'getTicketsSold',
-'ticketsFree' => 'getTicketsFree'    ];
+'ticketsFree' => 'getTicketsFree',
+'flags' => 'getFlags'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -227,7 +232,32 @@ class ShowItem implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    
+    const FLAGS__3_D = 'FLAG_3D';
+const FLAGS_DIGITAL = 'FLAG_DIGITAL';
+const FLAGS__4_K = 'FLAG_4K';
+const FLAGS_HFR = 'FLAG_HFR';
+const FLAGS_DBOX = 'FLAG_DBOX';
+const FLAGS_IMAX = 'FLAG_IMAX';
+const FLAGS_ATMOS = 'FLAG_ATMOS';
+const FLAGS_LIVE = 'FLAG_LIVE';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getFlagsAllowableValues()
+    {
+        return [
+            self::FLAGS__3_D,
+self::FLAGS_DIGITAL,
+self::FLAGS__4_K,
+self::FLAGS_HFR,
+self::FLAGS_DBOX,
+self::FLAGS_IMAX,
+self::FLAGS_ATMOS,
+self::FLAGS_LIVE,        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -260,6 +290,7 @@ class ShowItem implements ModelInterface, ArrayAccess
         $this->container['ticketsTotal'] = isset($data['ticketsTotal']) ? $data['ticketsTotal'] : null;
         $this->container['ticketsSold'] = isset($data['ticketsSold']) ? $data['ticketsSold'] : null;
         $this->container['ticketsFree'] = isset($data['ticketsFree']) ? $data['ticketsFree'] : null;
+        $this->container['flags'] = isset($data['flags']) ? $data['flags'] : null;
     }
 
     /**
@@ -705,6 +736,39 @@ class ShowItem implements ModelInterface, ArrayAccess
     public function setTicketsFree($ticketsFree)
     {
         $this->container['ticketsFree'] = $ticketsFree;
+
+        return $this;
+    }
+
+    /**
+     * Gets flags
+     *
+     * @return string[]
+     */
+    public function getFlags()
+    {
+        return $this->container['flags'];
+    }
+
+    /**
+     * Sets flags
+     *
+     * @param string[] $flags flags
+     *
+     * @return $this
+     */
+    public function setFlags($flags)
+    {
+        $allowedValues = $this->getFlagsAllowableValues();
+        if (!is_null($flags) && array_diff($flags, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'flags', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['flags'] = $flags;
 
         return $this;
     }
