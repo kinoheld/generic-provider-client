@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **items** | [**\kinoheld\GenericProviderClient\Model\OrderItem[]**](OrderItem.md) | Items of the order. | [optional] 
 **products** | [**\kinoheld\GenericProviderClient\Model\OrderProduct[]**](OrderProduct.md) | Products of the order. | [optional] 
 **discounts** | [**\kinoheld\GenericProviderClient\Model\CartDiscount[]**](CartDiscount.md) | Discounts applied to the order. | [optional] 
+**loyalty** | [**\kinoheld\GenericProviderClient\Model\OrderLoyalty[]**](OrderLoyalty.md) | Loyalty cards applied to the order. | [optional] 
 **pricing** | [**\kinoheld\GenericProviderClient\Model\OrderPricing**](OrderPricing.md) |  | [optional] 
 **admissionCode** | **string** | The code that can be scanned by cinema staff to confirm entry to the show/event. | 
 **state** | **string** | The state of the order, either ORDER_STATE_CONFIRMED after cart checkout or ORDER_STATE_CANCELLED after order cancel. | [default to 'ORDER_STATE_CONFIRMED']
