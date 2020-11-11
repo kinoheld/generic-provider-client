@@ -1513,7 +1513,7 @@ class CartApi
      * confirm the successful checkout of the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId cart ID (required)
+     * @param  int $orderId order ID (required)
      * @param  string $email Email (required)
      * @param  string $orderNumber Order Number (required)
      *
@@ -1521,9 +1521,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function cartConfirmCheckout($chainId, $cartId, $email, $orderNumber)
+    public function cartConfirmCheckout($chainId, $orderId, $email, $orderNumber)
     {
-        $this->cartConfirmCheckoutWithHttpInfo($chainId, $cartId, $email, $orderNumber);
+        $this->cartConfirmCheckoutWithHttpInfo($chainId, $orderId, $email, $orderNumber);
     }
 
     /**
@@ -1532,7 +1532,7 @@ class CartApi
      * confirm the successful checkout of the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId cart ID (required)
+     * @param  int $orderId order ID (required)
      * @param  string $email Email (required)
      * @param  string $orderNumber Order Number (required)
      *
@@ -1540,10 +1540,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartConfirmCheckoutWithHttpInfo($chainId, $cartId, $email, $orderNumber)
+    public function cartConfirmCheckoutWithHttpInfo($chainId, $orderId, $email, $orderNumber)
     {
         $returnType = '';
-        $request = $this->cartConfirmCheckoutRequest($chainId, $cartId, $email, $orderNumber);
+        $request = $this->cartConfirmCheckoutRequest($chainId, $orderId, $email, $orderNumber);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1588,16 +1588,16 @@ class CartApi
      * confirm the successful checkout of the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId cart ID (required)
+     * @param  int $orderId order ID (required)
      * @param  string $email Email (required)
      * @param  string $orderNumber Order Number (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartConfirmCheckoutAsync($chainId, $cartId, $email, $orderNumber)
+    public function cartConfirmCheckoutAsync($chainId, $orderId, $email, $orderNumber)
     {
-        return $this->cartConfirmCheckoutAsyncWithHttpInfo($chainId, $cartId, $email, $orderNumber)
+        return $this->cartConfirmCheckoutAsyncWithHttpInfo($chainId, $orderId, $email, $orderNumber)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1611,17 +1611,17 @@ class CartApi
      * confirm the successful checkout of the cart
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId cart ID (required)
+     * @param  int $orderId order ID (required)
      * @param  string $email Email (required)
      * @param  string $orderNumber Order Number (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartConfirmCheckoutAsyncWithHttpInfo($chainId, $cartId, $email, $orderNumber)
+    public function cartConfirmCheckoutAsyncWithHttpInfo($chainId, $orderId, $email, $orderNumber)
     {
         $returnType = '';
-        $request = $this->cartConfirmCheckoutRequest($chainId, $cartId, $email, $orderNumber);
+        $request = $this->cartConfirmCheckoutRequest($chainId, $orderId, $email, $orderNumber);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1650,14 +1650,14 @@ class CartApi
      * Create request for operation 'cartConfirmCheckout'
      *
      * @param  int $chainId The chain ID the cinema belongs to. (required)
-     * @param  int $cartId cart ID (required)
+     * @param  int $orderId order ID (required)
      * @param  string $email Email (required)
      * @param  string $orderNumber Order Number (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cartConfirmCheckoutRequest($chainId, $cartId, $email, $orderNumber)
+    protected function cartConfirmCheckoutRequest($chainId, $orderId, $email, $orderNumber)
     {
         // verify the required parameter 'chainId' is set
         if ($chainId === null || (is_array($chainId) && count($chainId) === 0)) {
@@ -1665,10 +1665,10 @@ class CartApi
                 'Missing the required parameter $chainId when calling cartConfirmCheckout'
             );
         }
-        // verify the required parameter 'cartId' is set
-        if ($cartId === null || (is_array($cartId) && count($cartId) === 0)) {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cartId when calling cartConfirmCheckout'
+                'Missing the required parameter $orderId when calling cartConfirmCheckout'
             );
         }
         // verify the required parameter 'email' is set
@@ -1696,8 +1696,8 @@ class CartApi
             $queryParams['chainId'] = ObjectSerializer::toQueryValue($chainId, null);
         }
         // query params
-        if ($cartId !== null) {
-            $queryParams['cartId'] = ObjectSerializer::toQueryValue($cartId, null);
+        if ($orderId !== null) {
+            $queryParams['orderId'] = ObjectSerializer::toQueryValue($orderId, null);
         }
         // query params
         if ($email !== null) {

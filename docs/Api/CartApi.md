@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cartConfirmCheckout**
-> cartConfirmCheckout($chainId, $cartId, $email, $orderNumber)
+> cartConfirmCheckout($chainId, $orderId, $email, $orderNumber)
 
 confirm the successful checkout of the cart
 
@@ -326,12 +326,12 @@ $apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
     $config
 );
 $chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
+$orderId = 56; // int | order ID
 $email = "email_example"; // string | Email
 $orderNumber = "orderNumber_example"; // string | Order Number
 
 try {
-    $apiInstance->cartConfirmCheckout($chainId, $cartId, $email, $orderNumber);
+    $apiInstance->cartConfirmCheckout($chainId, $orderId, $email, $orderNumber);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartConfirmCheckout: ', $e->getMessage(), PHP_EOL;
 }
@@ -343,7 +343,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
+ **orderId** | **int**| order ID |
  **email** | **string**| Email |
  **orderNumber** | **string**| Order Number |
 
