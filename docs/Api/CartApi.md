@@ -1,68 +1,76 @@
-# kinoheld\GenericProviderClient\CartApi
+# OpenAPI\Client\CartApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0*
+All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**cartAddDiscount**](CartApi.md#cartadddiscount) | **POST** /cart/addDiscount | add discount to the cart
-[**cartAddItems**](CartApi.md#cartadditems) | **POST** /cart/addItems | add items to the cart
-[**cartAddLoyalty**](CartApi.md#cartaddloyalty) | **POST** /cart/addLoyalty | add loyalty card to the cart
-[**cartAddProduct**](CartApi.md#cartaddproduct) | **POST** /cart/addProduct | add product to the cart
-[**cartCheckout**](CartApi.md#cartcheckout) | **POST** /cart/checkout | checkout the cart
-[**cartConfirmCheckout**](CartApi.md#cartconfirmcheckout) | **POST** /cart/confirmCheckout | confirm the successful checkout of the cart
-[**cartCreate**](CartApi.md#cartcreate) | **POST** /cart/create | create a new cart
-[**cartGet**](CartApi.md#cartget) | **GET** /cart | get the cart contents
-[**cartRemoveDiscount**](CartApi.md#cartremovediscount) | **POST** /cart/removeDiscount | remove an already applied discount from the cart
-[**cartRemoveLoyalty**](CartApi.md#cartremoveloyalty) | **POST** /cart/removeLoyalty | remove an already applied loyalty card from the cart
-[**cartRemoveProducts**](CartApi.md#cartremoveproducts) | **POST** /cart/removeProducts | remove all product from the cart
-[**cartReset**](CartApi.md#cartreset) | **POST** /cart/reset | reset contents of the cart
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**cartAddDiscount()**](CartApi.md#cartAddDiscount) | **POST** /cart/addDiscount | add discount to the cart |
+| [**cartAddItems()**](CartApi.md#cartAddItems) | **POST** /cart/addItems | add items to the cart |
+| [**cartAddLoyalty()**](CartApi.md#cartAddLoyalty) | **POST** /cart/addLoyalty | add loyalty card to the cart |
+| [**cartAddProduct()**](CartApi.md#cartAddProduct) | **POST** /cart/addProduct | add product to the cart |
+| [**cartCheckout()**](CartApi.md#cartCheckout) | **POST** /cart/checkout | checkout the cart |
+| [**cartConfirmCheckout()**](CartApi.md#cartConfirmCheckout) | **POST** /cart/confirmCheckout | confirm the successful checkout of the cart |
+| [**cartCreate()**](CartApi.md#cartCreate) | **POST** /cart/create | create a new cart |
+| [**cartGet()**](CartApi.md#cartGet) | **GET** /cart | get the cart contents |
+| [**cartRemoveDiscount()**](CartApi.md#cartRemoveDiscount) | **POST** /cart/removeDiscount | remove an already applied discount from the cart |
+| [**cartRemoveItems()**](CartApi.md#cartRemoveItems) | **POST** /cart/removeItems | remove all items from the cart |
+| [**cartRemoveLoyalty()**](CartApi.md#cartRemoveLoyalty) | **POST** /cart/removeLoyalty | remove an already applied loyalty card from the cart |
+| [**cartRemoveProducts()**](CartApi.md#cartRemoveProducts) | **POST** /cart/removeProducts | remove all product from the cart |
+| [**cartReset()**](CartApi.md#cartReset) | **POST** /cart/reset | reset contents of the cart |
 
-# **cartAddDiscount**
-> \kinoheld\GenericProviderClient\Model\Cart cartAddDiscount($chainId, $cartId, $code)
+
+## `cartAddDiscount()`
+
+```php
+cartAddDiscount($chain_id, $cart_id, $code): \OpenAPI\Client\Model\Cart
+```
 
 add discount to the cart
 
 Add a discount to the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
-$code = "code_example"; // string | discount code
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
+$code = SummerSale25Off; // string | discount code
 
 try {
-    $result = $apiInstance->cartAddDiscount($chainId, $cartId, $code);
+    $result = $apiInstance->cartAddDiscount($chain_id, $cart_id, $code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartAddDiscount: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
- **code** | **string**| discount code |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
+| **code** | **string**| discount code | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -70,55 +78,63 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartAddItems**
-> \kinoheld\GenericProviderClient\Model\Cart cartAddItems($chainId, $body)
+## `cartAddItems()`
+
+```php
+cartAddItems($chain_id, $cart_add_items_body): \OpenAPI\Client\Model\Cart
+```
 
 add items to the cart
 
 Add seats/tickets to the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$body = new \kinoheld\GenericProviderClient\Model\Body(); // \kinoheld\GenericProviderClient\Model\Body | 
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_add_items_body = new \OpenAPI\Client\Model\CartAddItemsBody(); // \OpenAPI\Client\Model\CartAddItemsBody
 
 try {
-    $result = $apiInstance->cartAddItems($chainId, $body);
+    $result = $apiInstance->cartAddItems($chain_id, $cart_add_items_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartAddItems: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **body** | [**\kinoheld\GenericProviderClient\Model\Body**](../Model/Body.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_add_items_body** | [**\OpenAPI\Client\Model\CartAddItemsBody**](../Model/CartAddItemsBody.md)|  | [optional] |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -126,57 +142,65 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartAddLoyalty**
-> \kinoheld\GenericProviderClient\Model\Cart cartAddLoyalty($chainId, $cartId, $cardNumber)
+## `cartAddLoyalty()`
+
+```php
+cartAddLoyalty($chain_id, $cart_id, $card_number): \OpenAPI\Client\Model\Cart
+```
 
 add loyalty card to the cart
 
 Add a loyalty card to the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
-$cardNumber = "cardNumber_example"; // string | loyalty card number
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
+$card_number = LOYALTY12345000; // string | loyalty card number
 
 try {
-    $result = $apiInstance->cartAddLoyalty($chainId, $cartId, $cardNumber);
+    $result = $apiInstance->cartAddLoyalty($chain_id, $cart_id, $card_number);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartAddLoyalty: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
- **cardNumber** | **string**| loyalty card number |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
+| **card_number** | **string**| loyalty card number | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -184,55 +208,63 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartAddProduct**
-> \kinoheld\GenericProviderClient\Model\Cart cartAddProduct($chainId, $body)
+## `cartAddProduct()`
+
+```php
+cartAddProduct($chain_id, $cart_add_product_body): \OpenAPI\Client\Model\Cart
+```
 
 add product to the cart
 
 Add product to the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$body = new \kinoheld\GenericProviderClient\Model\Body1(); // \kinoheld\GenericProviderClient\Model\Body1 | 
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_add_product_body = new \OpenAPI\Client\Model\CartAddProductBody(); // \OpenAPI\Client\Model\CartAddProductBody
 
 try {
-    $result = $apiInstance->cartAddProduct($chainId, $body);
+    $result = $apiInstance->cartAddProduct($chain_id, $cart_add_product_body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartAddProduct: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **body** | [**\kinoheld\GenericProviderClient\Model\Body1**](../Model/Body1.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_add_product_body** | [**\OpenAPI\Client\Model\CartAddProductBody**](../Model/CartAddProductBody.md)|  | [optional] |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -240,57 +272,65 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartCheckout**
-> \kinoheld\GenericProviderClient\Model\Order cartCheckout($chainId, $cartId, $email)
+## `cartCheckout()`
+
+```php
+cartCheckout($chain_id, $cart_id, $email): \OpenAPI\Client\Model\Order
+```
 
 checkout the cart
 
 Checkout the cart and transform it into a confirmed transaction.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
-$email = "email_example"; // string | Email
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
+$email = 'email_example'; // string | Email
 
 try {
-    $result = $apiInstance->cartCheckout($chainId, $cartId, $email);
+    $result = $apiInstance->cartCheckout($chain_id, $cart_id, $email);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartCheckout: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
- **email** | **string**| Email |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
+| **email** | **string**| Email | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Order**](../Model/Order.md)
+[**\OpenAPI\Client\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -298,54 +338,62 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartConfirmCheckout**
-> cartConfirmCheckout($chainId, $orderId, $email, $orderNumber)
+## `cartConfirmCheckout()`
+
+```php
+cartConfirmCheckout($chain_id, $order_id, $email, $order_number)
+```
 
 confirm the successful checkout of the cart
 
 Receive the order number that has been generated by kinoheld.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$orderId = 56; // int | order ID
-$email = "email_example"; // string | Email
-$orderNumber = "orderNumber_example"; // string | Order Number
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$order_id = 56; // int | order ID
+$email = 'email_example'; // string | Email
+$order_number = 'order_number_example'; // string | Order Number
 
 try {
-    $apiInstance->cartConfirmCheckout($chainId, $orderId, $email, $orderNumber);
+    $apiInstance->cartConfirmCheckout($chain_id, $order_id, $email, $order_number);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartConfirmCheckout: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **orderId** | **int**| order ID |
- **email** | **string**| Email |
- **orderNumber** | **string**| Order Number |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **order_id** | **int**| order ID | |
+| **email** | **string**| Email | |
+| **order_number** | **string**| Order Number | |
 
 ### Return type
 
@@ -357,57 +405,65 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartCreate**
-> \kinoheld\GenericProviderClient\Model\Cart cartCreate($chainId, $cinemaId, $showId)
+## `cartCreate()`
+
+```php
+cartCreate($chain_id, $cinema_id, $show_id): \OpenAPI\Client\Model\Cart
+```
 
 create a new cart
 
 Create a new cart
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cinemaId = 56; // int | The cinema ID the show/event belongs to.
-$showId = 56; // int | The show/event this cart belongs to.
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cinema_id = 56; // int | The cinema ID the show/event belongs to.
+$show_id = 56; // int | The show/event this cart belongs to.
 
 try {
-    $result = $apiInstance->cartCreate($chainId, $cinemaId, $showId);
+    $result = $apiInstance->cartCreate($chain_id, $cinema_id, $show_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartCreate: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cinemaId** | **int**| The cinema ID the show/event belongs to. |
- **showId** | **int**| The show/event this cart belongs to. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cinema_id** | **int**| The cinema ID the show/event belongs to. | |
+| **show_id** | **int**| The show/event this cart belongs to. | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -415,55 +471,63 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartGet**
-> \kinoheld\GenericProviderClient\Model\Cart cartGet($chainId, $cartId)
+## `cartGet()`
+
+```php
+cartGet($chain_id, $cart_id): \OpenAPI\Client\Model\Cart
+```
 
 get the cart contents
 
 Get the content (seats / tickets / discounts) of the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
 
 try {
-    $result = $apiInstance->cartGet($chainId, $cartId);
+    $result = $apiInstance->cartGet($chain_id, $cart_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartGet: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -471,57 +535,65 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartRemoveDiscount**
-> \kinoheld\GenericProviderClient\Model\Cart cartRemoveDiscount($chainId, $cartId, $code)
+## `cartRemoveDiscount()`
+
+```php
+cartRemoveDiscount($chain_id, $cart_id, $code): \OpenAPI\Client\Model\Cart
+```
 
 remove an already applied discount from the cart
 
 Remove an already applied discount from the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
-$code = "code_example"; // string | discount code
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
+$code = SummerSale25Off; // string | discount code
 
 try {
-    $result = $apiInstance->cartRemoveDiscount($chainId, $cartId, $code);
+    $result = $apiInstance->cartRemoveDiscount($chain_id, $cart_id, $code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartRemoveDiscount: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
- **code** | **string**| discount code |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
+| **code** | **string**| discount code | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -529,57 +601,129 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartRemoveLoyalty**
-> \kinoheld\GenericProviderClient\Model\Cart cartRemoveLoyalty($chainId, $cartId, $cardNumber)
+## `cartRemoveItems()`
+
+```php
+cartRemoveItems($chain_id, $cart_id): \OpenAPI\Client\Model\Cart
+```
+
+remove all items from the cart
+
+Remove all items from the cart.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
+
+try {
+    $result = $apiInstance->cartRemoveItems($chain_id, $cart_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CartApi->cartRemoveItems: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `cartRemoveLoyalty()`
+
+```php
+cartRemoveLoyalty($chain_id, $cart_id, $card_number): \OpenAPI\Client\Model\Cart
+```
 
 remove an already applied loyalty card from the cart
 
 Remove an already applied loyalty card from the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
-$cardNumber = "cardNumber_example"; // string | loyalty card number
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
+$card_number = LOYALTY12345000; // string | loyalty card number
 
 try {
-    $result = $apiInstance->cartRemoveLoyalty($chainId, $cartId, $cardNumber);
+    $result = $apiInstance->cartRemoveLoyalty($chain_id, $cart_id, $card_number);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartRemoveLoyalty: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
- **cardNumber** | **string**| loyalty card number |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
+| **card_number** | **string**| loyalty card number | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -587,55 +731,63 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartRemoveProducts**
-> \kinoheld\GenericProviderClient\Model\Cart cartRemoveProducts($chainId, $cartId)
+## `cartRemoveProducts()`
+
+```php
+cartRemoveProducts($chain_id, $cart_id): \OpenAPI\Client\Model\Cart
+```
 
 remove all product from the cart
 
 Remove all products from the cart.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
 
 try {
-    $result = $apiInstance->cartRemoveProducts($chainId, $cartId);
+    $result = $apiInstance->cartRemoveProducts($chain_id, $cart_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartRemoveProducts: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -643,55 +795,63 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
-# **cartReset**
-> \kinoheld\GenericProviderClient\Model\Cart cartReset($chainId, $cartId)
+## `cartReset()`
+
+```php
+cartReset($chain_id, $cart_id): \OpenAPI\Client\Model\Cart
+```
 
 reset contents of the cart
 
 Reset the cart and remove all seats/tickets, products and discounts attached to it. If seats were blocked, they need to be unblocked now so they can be booked again.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: ApiKeyAuth
-$config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
-$apiInstance = new kinoheld\GenericProviderClient\Api\CartApi(
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CartApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$chainId = 56; // int | The chain ID the cinema belongs to.
-$cartId = 56; // int | cart ID
+$chain_id = 56; // int | The chain ID the cinema belongs to.
+$cart_id = 56; // int | cart ID
 
 try {
-    $result = $apiInstance->cartReset($chainId, $cartId);
+    $result = $apiInstance->cartReset($chain_id, $cart_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartReset: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **chainId** | **int**| The chain ID the cinema belongs to. |
- **cartId** | **int**| cart ID |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **chain_id** | **int**| The chain ID the cinema belongs to. | |
+| **cart_id** | **int**| cart ID | |
 
 ### Return type
 
-[**\kinoheld\GenericProviderClient\Model\Cart**](../Model/Cart.md)
+[**\OpenAPI\Client\Model\Cart**](../Model/Cart.md)
 
 ### Authorization
 
@@ -699,8 +859,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
