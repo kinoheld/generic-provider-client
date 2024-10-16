@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Kinoheld\GenericProviderClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Kinoheld\GenericProviderClient\ApiException;
+use Kinoheld\GenericProviderClient\Configuration;
+use Kinoheld\GenericProviderClient\HeaderSelector;
+use Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * EventApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -142,9 +142,9 @@ class EventApi
      * @param  int $movie_id pass a movie id to retrieve the movie details (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMovie'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\MovieItem
+     * @return \Kinoheld\GenericProviderClient\Model\MovieItem
      */
     public function getMovie($chain_id, $cinema_id, $movie_id, string $contentType = self::contentTypes['getMovie'][0])
     {
@@ -162,9 +162,9 @@ class EventApi
      * @param  int $movie_id pass a movie id to retrieve the movie details (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMovie'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\MovieItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\MovieItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMovieWithHttpInfo($chain_id, $cinema_id, $movie_id, string $contentType = self::contentTypes['getMovie'][0])
     {
@@ -207,11 +207,11 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\MovieItem' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\MovieItem' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\MovieItem' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\MovieItem' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -229,13 +229,13 @@ class EventApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\MovieItem', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\MovieItem', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\MovieItem';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\MovieItem';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -268,7 +268,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\MovieItem',
+                        '\Kinoheld\GenericProviderClient\Model\MovieItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -316,7 +316,7 @@ class EventApi
      */
     public function getMovieAsyncWithHttpInfo($chain_id, $cinema_id, $movie_id, string $contentType = self::contentTypes['getMovie'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\MovieItem';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\MovieItem';
         $request = $this->getMovieRequest($chain_id, $cinema_id, $movie_id, $contentType);
 
         return $this->client
@@ -496,9 +496,9 @@ class EventApi
      * @param  int $show_id Pass a show id to retrieve the associated shows. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSeats'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\SeatItem[]
+     * @return \Kinoheld\GenericProviderClient\Model\SeatItem[]
      */
     public function getSeats($chain_id, $show_id, string $contentType = self::contentTypes['getSeats'][0])
     {
@@ -515,9 +515,9 @@ class EventApi
      * @param  int $show_id Pass a show id to retrieve the associated shows. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSeats'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\SeatItem[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\SeatItem[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSeatsWithHttpInfo($chain_id, $show_id, string $contentType = self::contentTypes['getSeats'][0])
     {
@@ -560,11 +560,11 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\SeatItem[]' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\SeatItem[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\SeatItem[]' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\SeatItem[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -582,13 +582,13 @@ class EventApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\SeatItem[]', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\SeatItem[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\SeatItem[]';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\SeatItem[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -621,7 +621,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\SeatItem[]',
+                        '\Kinoheld\GenericProviderClient\Model\SeatItem[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -667,7 +667,7 @@ class EventApi
      */
     public function getSeatsAsyncWithHttpInfo($chain_id, $show_id, string $contentType = self::contentTypes['getSeats'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\SeatItem[]';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\SeatItem[]';
         $request = $this->getSeatsRequest($chain_id, $show_id, $contentType);
 
         return $this->client
@@ -831,9 +831,9 @@ class EventApi
      * @param  int $show_id show ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getShow'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ShowItem
+     * @return \Kinoheld\GenericProviderClient\Model\ShowItem
      */
     public function getShow($chain_id, $cinema_id, $show_id, string $contentType = self::contentTypes['getShow'][0])
     {
@@ -851,9 +851,9 @@ class EventApi
      * @param  int $show_id show ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getShow'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ShowItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\ShowItem, HTTP status code, HTTP response headers (array of strings)
      */
     public function getShowWithHttpInfo($chain_id, $cinema_id, $show_id, string $contentType = self::contentTypes['getShow'][0])
     {
@@ -896,11 +896,11 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ShowItem' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\ShowItem' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ShowItem' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\ShowItem' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -918,13 +918,13 @@ class EventApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ShowItem', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\ShowItem', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ShowItem';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\ShowItem';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -957,7 +957,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ShowItem',
+                        '\Kinoheld\GenericProviderClient\Model\ShowItem',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1005,7 +1005,7 @@ class EventApi
      */
     public function getShowAsyncWithHttpInfo($chain_id, $cinema_id, $show_id, string $contentType = self::contentTypes['getShow'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ShowItem';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\ShowItem';
         $request = $this->getShowRequest($chain_id, $cinema_id, $show_id, $contentType);
 
         return $this->client
@@ -1185,9 +1185,9 @@ class EventApi
      * @param  int $cinema_id pass a cinema id to retrieve the associated shows (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getShows'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ShowItem[]
+     * @return \Kinoheld\GenericProviderClient\Model\ShowItem[]
      */
     public function getShows($chain_id, $cinema_id, string $contentType = self::contentTypes['getShows'][0])
     {
@@ -1204,9 +1204,9 @@ class EventApi
      * @param  int $cinema_id pass a cinema id to retrieve the associated shows (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getShows'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ShowItem[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\ShowItem[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getShowsWithHttpInfo($chain_id, $cinema_id, string $contentType = self::contentTypes['getShows'][0])
     {
@@ -1249,11 +1249,11 @@ class EventApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ShowItem[]' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\ShowItem[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ShowItem[]' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\ShowItem[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1271,13 +1271,13 @@ class EventApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ShowItem[]', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\ShowItem[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\ShowItem[]';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\ShowItem[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1310,7 +1310,7 @@ class EventApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ShowItem[]',
+                        '\Kinoheld\GenericProviderClient\Model\ShowItem[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1356,7 +1356,7 @@ class EventApi
      */
     public function getShowsAsyncWithHttpInfo($chain_id, $cinema_id, string $contentType = self::contentTypes['getShows'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ShowItem[]';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\ShowItem[]';
         $request = $this->getShowsRequest($chain_id, $cinema_id, $contentType);
 
         return $this->client

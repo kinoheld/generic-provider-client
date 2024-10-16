@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * PriceAreaItem Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'name' => 'string',
         'color' => 'string',
-        'price_categories' => '\OpenAPI\Client\Model\PriceCategoryItem[]'
+        'price_categories' => '\Kinoheld\GenericProviderClient\Model\PriceCategoryItem[]'
     ];
 
     /**
@@ -404,7 +404,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets price_categories
      *
-     * @return \OpenAPI\Client\Model\PriceCategoryItem[]
+     * @return \Kinoheld\GenericProviderClient\Model\PriceCategoryItem[]
      */
     public function getPriceCategories()
     {
@@ -414,7 +414,7 @@ class PriceAreaItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_categories
      *
-     * @param \OpenAPI\Client\Model\PriceCategoryItem[] $price_categories price_categories
+     * @param \Kinoheld\GenericProviderClient\Model\PriceCategoryItem[] $price_categories price_categories
      *
      * @return self
      */

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **email** | **string** |  | [optional]
 **points** | **int** | The points balance for this loyalty card. | [optional]
 **free_entries_count** | **int** | How many tickets can be reduced to 0EUR. | [optional]
-**history** | [**\OpenAPI\Client\Model\LoyaltyHistory[]**](LoyaltyHistory.md) |  | [optional]
+**history** | [**\Kinoheld\GenericProviderClient\Model\LoyaltyHistory[]**](LoyaltyHistory.md) |  | [optional]
 **collected_points** | **int** | The collected points for this order. | [optional]
 **message** | **string** | The message to display to the user. | [optional]
 

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Kinoheld\GenericProviderClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Kinoheld\GenericProviderClient\ApiException;
+use Kinoheld\GenericProviderClient\Configuration;
+use Kinoheld\GenericProviderClient\HeaderSelector;
+use Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * LoyaltyApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -134,9 +134,9 @@ class LoyaltyApi
      * @param  string $email loyalty card email (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['loyaltyGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Loyalty
+     * @return \Kinoheld\GenericProviderClient\Model\Loyalty
      */
     public function loyaltyGet($chain_id, $cinema_id, $card_number, $email = null, string $contentType = self::contentTypes['loyaltyGet'][0])
     {
@@ -155,9 +155,9 @@ class LoyaltyApi
      * @param  string $email loyalty card email (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['loyaltyGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Loyalty, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Loyalty, HTTP status code, HTTP response headers (array of strings)
      */
     public function loyaltyGetWithHttpInfo($chain_id, $cinema_id, $card_number, $email = null, string $contentType = self::contentTypes['loyaltyGet'][0])
     {
@@ -200,11 +200,11 @@ class LoyaltyApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Loyalty' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Loyalty' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Loyalty' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Loyalty' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -222,13 +222,13 @@ class LoyaltyApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Loyalty', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Loyalty', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Loyalty';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Loyalty';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -261,7 +261,7 @@ class LoyaltyApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Loyalty',
+                        '\Kinoheld\GenericProviderClient\Model\Loyalty',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -311,7 +311,7 @@ class LoyaltyApi
      */
     public function loyaltyGetAsyncWithHttpInfo($chain_id, $cinema_id, $card_number, $email = null, string $contentType = self::contentTypes['loyaltyGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Loyalty';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Loyalty';
         $request = $this->loyaltyGetRequest($chain_id, $cinema_id, $card_number, $email, $contentType);
 
         return $this->client

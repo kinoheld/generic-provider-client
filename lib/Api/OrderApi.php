@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Kinoheld\GenericProviderClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Kinoheld\GenericProviderClient\ApiException;
+use Kinoheld\GenericProviderClient\Configuration;
+use Kinoheld\GenericProviderClient\HeaderSelector;
+use Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * OrderApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -135,9 +135,9 @@ class OrderApi
      * @param  int $order_id order ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCancel'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Order
+     * @return \Kinoheld\GenericProviderClient\Model\Order
      */
     public function orderCancel($chain_id, $order_id, string $contentType = self::contentTypes['orderCancel'][0])
     {
@@ -154,9 +154,9 @@ class OrderApi
      * @param  int $order_id order ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCancel'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderCancelWithHttpInfo($chain_id, $order_id, string $contentType = self::contentTypes['orderCancel'][0])
     {
@@ -199,11 +199,11 @@ class OrderApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Order' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Order' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Order' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Order' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -221,13 +221,13 @@ class OrderApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Order', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Order', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Order';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Order';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -260,7 +260,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Order',
+                        '\Kinoheld\GenericProviderClient\Model\Order',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -306,7 +306,7 @@ class OrderApi
      */
     public function orderCancelAsyncWithHttpInfo($chain_id, $order_id, string $contentType = self::contentTypes['orderCancel'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Order';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Order';
         $request = $this->orderCancelRequest($chain_id, $order_id, $contentType);
 
         return $this->client
@@ -469,9 +469,9 @@ class OrderApi
      * @param  int $order_id order ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Order
+     * @return \Kinoheld\GenericProviderClient\Model\Order
      */
     public function orderGet($chain_id, $order_id, string $contentType = self::contentTypes['orderGet'][0])
     {
@@ -488,9 +488,9 @@ class OrderApi
      * @param  int $order_id order ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderGetWithHttpInfo($chain_id, $order_id, string $contentType = self::contentTypes['orderGet'][0])
     {
@@ -533,11 +533,11 @@ class OrderApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Order' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Order' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Order' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Order' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -555,13 +555,13 @@ class OrderApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Order', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Order', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Order';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Order';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -594,7 +594,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Order',
+                        '\Kinoheld\GenericProviderClient\Model\Order',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -640,7 +640,7 @@ class OrderApi
      */
     public function orderGetAsyncWithHttpInfo($chain_id, $order_id, string $contentType = self::contentTypes['orderGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Order';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Order';
         $request = $this->orderGetRequest($chain_id, $order_id, $contentType);
 
         return $this->client

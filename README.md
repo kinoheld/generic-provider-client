@@ -50,12 +50,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+// $config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\BasicApi(
+$apiInstance = new Kinoheld\GenericProviderClient\Api\BasicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -75,7 +75,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/mezmer/kinoheld/2.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -109,8 +109,8 @@ Class | Method | HTTP request | Description
 
 - [AuditoriumItem](docs/Model/AuditoriumItem.md)
 - [Cart](docs/Model/Cart.md)
-- [CartAddItemsBody](docs/Model/CartAddItemsBody.md)
-- [CartAddProductBody](docs/Model/CartAddProductBody.md)
+- [CartAddItemsRequest](docs/Model/CartAddItemsRequest.md)
+- [CartAddProductRequest](docs/Model/CartAddProductRequest.md)
 - [CartDiscount](docs/Model/CartDiscount.md)
 - [CartItem](docs/Model/CartItem.md)
 - [CartLoyalty](docs/Model/CartLoyalty.md)
@@ -124,10 +124,10 @@ Class | Method | HTTP request | Description
 - [LoyaltyHistory](docs/Model/LoyaltyHistory.md)
 - [MovieItem](docs/Model/MovieItem.md)
 - [Order](docs/Model/Order.md)
+- [OrderAllOfPricing](docs/Model/OrderAllOfPricing.md)
 - [OrderItem](docs/Model/OrderItem.md)
 - [OrderItemTicket](docs/Model/OrderItemTicket.md)
 - [OrderLoyalty](docs/Model/OrderLoyalty.md)
-- [OrderPricing](docs/Model/OrderPricing.md)
 - [OrderProduct](docs/Model/OrderProduct.md)
 - [PriceAreaItem](docs/Model/PriceAreaItem.md)
 - [PriceCategoryItem](docs/Model/PriceCategoryItem.md)

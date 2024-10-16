@@ -1,6 +1,6 @@
-# OpenAPI\Client\LoyaltyApi
+# Kinoheld\GenericProviderClient\LoyaltyApi
 
-All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0, except if the operation defines another base path.
+All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/2.0.0, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -10,7 +10,7 @@ All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0
 ## `loyaltyGet()`
 
 ```php
-loyaltyGet($chain_id, $cinema_id, $card_number, $email): \OpenAPI\Client\Model\Loyalty
+loyaltyGet($chain_id, $cinema_id, $card_number, $email): \Kinoheld\GenericProviderClient\Model\Loyalty
 ```
 
 get the loyalty card
@@ -25,12 +25,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+// $config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\LoyaltyApi(
+$apiInstance = new Kinoheld\GenericProviderClient\Api\LoyaltyApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -60,7 +60,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Loyalty**](../Model/Loyalty.md)
+[**\Kinoheld\GenericProviderClient\Model\Loyalty**](../Model/Loyalty.md)
 
 ### Authorization
 

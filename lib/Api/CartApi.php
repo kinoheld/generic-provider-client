@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Kinoheld\GenericProviderClient\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Kinoheld\GenericProviderClient\ApiException;
+use Kinoheld\GenericProviderClient\Configuration;
+use Kinoheld\GenericProviderClient\HeaderSelector;
+use Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * CartApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -169,9 +169,9 @@ class CartApi
      * @param  string $code discount code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddDiscount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartAddDiscount($chain_id, $cart_id, $code, string $contentType = self::contentTypes['cartAddDiscount'][0])
     {
@@ -189,9 +189,9 @@ class CartApi
      * @param  string $code discount code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddDiscount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartAddDiscountWithHttpInfo($chain_id, $cart_id, $code, string $contentType = self::contentTypes['cartAddDiscount'][0])
     {
@@ -234,11 +234,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -256,13 +256,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -295,7 +295,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -343,7 +343,7 @@ class CartApi
      */
     public function cartAddDiscountAsyncWithHttpInfo($chain_id, $cart_id, $code, string $contentType = self::contentTypes['cartAddDiscount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartAddDiscountRequest($chain_id, $cart_id, $code, $contentType);
 
         return $this->client
@@ -520,16 +520,16 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddItemsBody $cart_add_items_body cart_add_items_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddItemsRequest $cart_add_items_request cart_add_items_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartAddItems($chain_id, $cart_add_items_body = null, string $contentType = self::contentTypes['cartAddItems'][0])
+    public function cartAddItems($chain_id, $cart_add_items_request = null, string $contentType = self::contentTypes['cartAddItems'][0])
     {
-        list($response) = $this->cartAddItemsWithHttpInfo($chain_id, $cart_add_items_body, $contentType);
+        list($response) = $this->cartAddItemsWithHttpInfo($chain_id, $cart_add_items_request, $contentType);
         return $response;
     }
 
@@ -539,16 +539,16 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddItemsBody $cart_add_items_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddItemsRequest $cart_add_items_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartAddItemsWithHttpInfo($chain_id, $cart_add_items_body = null, string $contentType = self::contentTypes['cartAddItems'][0])
+    public function cartAddItemsWithHttpInfo($chain_id, $cart_add_items_request = null, string $contentType = self::contentTypes['cartAddItems'][0])
     {
-        $request = $this->cartAddItemsRequest($chain_id, $cart_add_items_body, $contentType);
+        $request = $this->cartAddItemsRequest($chain_id, $cart_add_items_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -587,11 +587,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -609,13 +609,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -648,7 +648,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -664,15 +664,15 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddItemsBody $cart_add_items_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddItemsRequest $cart_add_items_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddItems'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsync($chain_id, $cart_add_items_body = null, string $contentType = self::contentTypes['cartAddItems'][0])
+    public function cartAddItemsAsync($chain_id, $cart_add_items_request = null, string $contentType = self::contentTypes['cartAddItems'][0])
     {
-        return $this->cartAddItemsAsyncWithHttpInfo($chain_id, $cart_add_items_body, $contentType)
+        return $this->cartAddItemsAsyncWithHttpInfo($chain_id, $cart_add_items_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -686,16 +686,16 @@ class CartApi
      * add items to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddItemsBody $cart_add_items_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddItemsRequest $cart_add_items_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddItems'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddItemsAsyncWithHttpInfo($chain_id, $cart_add_items_body = null, string $contentType = self::contentTypes['cartAddItems'][0])
+    public function cartAddItemsAsyncWithHttpInfo($chain_id, $cart_add_items_request = null, string $contentType = self::contentTypes['cartAddItems'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
-        $request = $this->cartAddItemsRequest($chain_id, $cart_add_items_body, $contentType);
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
+        $request = $this->cartAddItemsRequest($chain_id, $cart_add_items_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -737,13 +737,13 @@ class CartApi
      * Create request for operation 'cartAddItems'
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddItemsBody $cart_add_items_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddItemsRequest $cart_add_items_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddItems'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartAddItemsRequest($chain_id, $cart_add_items_body = null, string $contentType = self::contentTypes['cartAddItems'][0])
+    public function cartAddItemsRequest($chain_id, $cart_add_items_request = null, string $contentType = self::contentTypes['cartAddItems'][0])
     {
 
         // verify the required parameter 'chain_id' is set
@@ -782,12 +782,12 @@ class CartApi
         );
 
         // for model (json/xml)
-        if (isset($cart_add_items_body)) {
+        if (isset($cart_add_items_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($cart_add_items_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($cart_add_items_request));
             } else {
-                $httpBody = $cart_add_items_body;
+                $httpBody = $cart_add_items_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -850,9 +850,9 @@ class CartApi
      * @param  string $card_number loyalty card number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddLoyalty'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartAddLoyalty($chain_id, $cart_id, $card_number, string $contentType = self::contentTypes['cartAddLoyalty'][0])
     {
@@ -870,9 +870,9 @@ class CartApi
      * @param  string $card_number loyalty card number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddLoyalty'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartAddLoyaltyWithHttpInfo($chain_id, $cart_id, $card_number, string $contentType = self::contentTypes['cartAddLoyalty'][0])
     {
@@ -915,11 +915,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -937,13 +937,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -976,7 +976,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1024,7 +1024,7 @@ class CartApi
      */
     public function cartAddLoyaltyAsyncWithHttpInfo($chain_id, $cart_id, $card_number, string $contentType = self::contentTypes['cartAddLoyalty'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartAddLoyaltyRequest($chain_id, $cart_id, $card_number, $contentType);
 
         return $this->client
@@ -1201,16 +1201,16 @@ class CartApi
      * add product to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddProductBody $cart_add_product_body cart_add_product_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddProductRequest $cart_add_product_request cart_add_product_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddProduct'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
-    public function cartAddProduct($chain_id, $cart_add_product_body = null, string $contentType = self::contentTypes['cartAddProduct'][0])
+    public function cartAddProduct($chain_id, $cart_add_product_request = null, string $contentType = self::contentTypes['cartAddProduct'][0])
     {
-        list($response) = $this->cartAddProductWithHttpInfo($chain_id, $cart_add_product_body, $contentType);
+        list($response) = $this->cartAddProductWithHttpInfo($chain_id, $cart_add_product_request, $contentType);
         return $response;
     }
 
@@ -1220,16 +1220,16 @@ class CartApi
      * add product to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddProductBody $cart_add_product_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddProductRequest $cart_add_product_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddProduct'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartAddProductWithHttpInfo($chain_id, $cart_add_product_body = null, string $contentType = self::contentTypes['cartAddProduct'][0])
+    public function cartAddProductWithHttpInfo($chain_id, $cart_add_product_request = null, string $contentType = self::contentTypes['cartAddProduct'][0])
     {
-        $request = $this->cartAddProductRequest($chain_id, $cart_add_product_body, $contentType);
+        $request = $this->cartAddProductRequest($chain_id, $cart_add_product_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1268,11 +1268,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1290,13 +1290,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1329,7 +1329,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1345,15 +1345,15 @@ class CartApi
      * add product to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddProductBody $cart_add_product_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddProductRequest $cart_add_product_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddProductAsync($chain_id, $cart_add_product_body = null, string $contentType = self::contentTypes['cartAddProduct'][0])
+    public function cartAddProductAsync($chain_id, $cart_add_product_request = null, string $contentType = self::contentTypes['cartAddProduct'][0])
     {
-        return $this->cartAddProductAsyncWithHttpInfo($chain_id, $cart_add_product_body, $contentType)
+        return $this->cartAddProductAsyncWithHttpInfo($chain_id, $cart_add_product_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1367,16 +1367,16 @@ class CartApi
      * add product to the cart
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddProductBody $cart_add_product_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddProductRequest $cart_add_product_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartAddProductAsyncWithHttpInfo($chain_id, $cart_add_product_body = null, string $contentType = self::contentTypes['cartAddProduct'][0])
+    public function cartAddProductAsyncWithHttpInfo($chain_id, $cart_add_product_request = null, string $contentType = self::contentTypes['cartAddProduct'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
-        $request = $this->cartAddProductRequest($chain_id, $cart_add_product_body, $contentType);
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
+        $request = $this->cartAddProductRequest($chain_id, $cart_add_product_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1418,13 +1418,13 @@ class CartApi
      * Create request for operation 'cartAddProduct'
      *
      * @param  int $chain_id The chain ID the cinema belongs to. (required)
-     * @param  \OpenAPI\Client\Model\CartAddProductBody $cart_add_product_body (optional)
+     * @param  \Kinoheld\GenericProviderClient\Model\CartAddProductRequest $cart_add_product_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartAddProduct'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartAddProductRequest($chain_id, $cart_add_product_body = null, string $contentType = self::contentTypes['cartAddProduct'][0])
+    public function cartAddProductRequest($chain_id, $cart_add_product_request = null, string $contentType = self::contentTypes['cartAddProduct'][0])
     {
 
         // verify the required parameter 'chain_id' is set
@@ -1463,12 +1463,12 @@ class CartApi
         );
 
         // for model (json/xml)
-        if (isset($cart_add_product_body)) {
+        if (isset($cart_add_product_request)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($cart_add_product_body));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($cart_add_product_request));
             } else {
-                $httpBody = $cart_add_product_body;
+                $httpBody = $cart_add_product_request;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1531,9 +1531,9 @@ class CartApi
      * @param  string $email Email (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCheckout'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Order
+     * @return \Kinoheld\GenericProviderClient\Model\Order
      */
     public function cartCheckout($chain_id, $cart_id, $email, string $contentType = self::contentTypes['cartCheckout'][0])
     {
@@ -1551,9 +1551,9 @@ class CartApi
      * @param  string $email Email (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCheckout'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartCheckoutWithHttpInfo($chain_id, $cart_id, $email, string $contentType = self::contentTypes['cartCheckout'][0])
     {
@@ -1596,11 +1596,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Order' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Order' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Order' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Order' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1618,13 +1618,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Order', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Order', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Order';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Order';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1657,7 +1657,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Order',
+                        '\Kinoheld\GenericProviderClient\Model\Order',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1705,7 +1705,7 @@ class CartApi
      */
     public function cartCheckoutAsyncWithHttpInfo($chain_id, $cart_id, $email, string $contentType = self::contentTypes['cartCheckout'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Order';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Order';
         $request = $this->cartCheckoutRequest($chain_id, $cart_id, $email, $contentType);
 
         return $this->client
@@ -1887,7 +1887,7 @@ class CartApi
      * @param  string $order_number Order Number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartConfirmCheckout'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1907,7 +1907,7 @@ class CartApi
      * @param  string $order_number Order Number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartConfirmCheckout'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2184,9 +2184,9 @@ class CartApi
      * @param  int $show_id The show/event this cart belongs to. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCreate'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartCreate($chain_id, $cinema_id, $show_id, string $contentType = self::contentTypes['cartCreate'][0])
     {
@@ -2204,9 +2204,9 @@ class CartApi
      * @param  int $show_id The show/event this cart belongs to. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCreate'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartCreateWithHttpInfo($chain_id, $cinema_id, $show_id, string $contentType = self::contentTypes['cartCreate'][0])
     {
@@ -2249,11 +2249,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2271,13 +2271,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2310,7 +2310,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2358,7 +2358,7 @@ class CartApi
      */
     public function cartCreateAsyncWithHttpInfo($chain_id, $cinema_id, $show_id, string $contentType = self::contentTypes['cartCreate'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartCreateRequest($chain_id, $cinema_id, $show_id, $contentType);
 
         return $this->client
@@ -2538,9 +2538,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartGet($chain_id, $cart_id, string $contentType = self::contentTypes['cartGet'][0])
     {
@@ -2557,9 +2557,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGet'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartGetWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartGet'][0])
     {
@@ -2602,11 +2602,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2624,13 +2624,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2663,7 +2663,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2709,7 +2709,7 @@ class CartApi
      */
     public function cartGetAsyncWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartGetRequest($chain_id, $cart_id, $contentType);
 
         return $this->client
@@ -2873,9 +2873,9 @@ class CartApi
      * @param  string $code discount code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveDiscount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartRemoveDiscount($chain_id, $cart_id, $code, string $contentType = self::contentTypes['cartRemoveDiscount'][0])
     {
@@ -2893,9 +2893,9 @@ class CartApi
      * @param  string $code discount code (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveDiscount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartRemoveDiscountWithHttpInfo($chain_id, $cart_id, $code, string $contentType = self::contentTypes['cartRemoveDiscount'][0])
     {
@@ -2938,11 +2938,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2960,13 +2960,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2999,7 +2999,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3047,7 +3047,7 @@ class CartApi
      */
     public function cartRemoveDiscountAsyncWithHttpInfo($chain_id, $cart_id, $code, string $contentType = self::contentTypes['cartRemoveDiscount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartRemoveDiscountRequest($chain_id, $cart_id, $code, $contentType);
 
         return $this->client
@@ -3227,9 +3227,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartRemoveItems($chain_id, $cart_id, string $contentType = self::contentTypes['cartRemoveItems'][0])
     {
@@ -3246,9 +3246,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveItems'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartRemoveItemsWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartRemoveItems'][0])
     {
@@ -3291,11 +3291,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3313,13 +3313,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3352,7 +3352,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3398,7 +3398,7 @@ class CartApi
      */
     public function cartRemoveItemsAsyncWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartRemoveItems'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartRemoveItemsRequest($chain_id, $cart_id, $contentType);
 
         return $this->client
@@ -3562,9 +3562,9 @@ class CartApi
      * @param  string $card_number loyalty card number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveLoyalty'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartRemoveLoyalty($chain_id, $cart_id, $card_number, string $contentType = self::contentTypes['cartRemoveLoyalty'][0])
     {
@@ -3582,9 +3582,9 @@ class CartApi
      * @param  string $card_number loyalty card number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveLoyalty'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartRemoveLoyaltyWithHttpInfo($chain_id, $cart_id, $card_number, string $contentType = self::contentTypes['cartRemoveLoyalty'][0])
     {
@@ -3627,11 +3627,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3649,13 +3649,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3688,7 +3688,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3736,7 +3736,7 @@ class CartApi
      */
     public function cartRemoveLoyaltyAsyncWithHttpInfo($chain_id, $cart_id, $card_number, string $contentType = self::contentTypes['cartRemoveLoyalty'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartRemoveLoyaltyRequest($chain_id, $cart_id, $card_number, $contentType);
 
         return $this->client
@@ -3916,9 +3916,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveProducts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartRemoveProducts($chain_id, $cart_id, string $contentType = self::contentTypes['cartRemoveProducts'][0])
     {
@@ -3935,9 +3935,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartRemoveProducts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartRemoveProductsWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartRemoveProducts'][0])
     {
@@ -3980,11 +3980,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4002,13 +4002,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4041,7 +4041,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4087,7 +4087,7 @@ class CartApi
      */
     public function cartRemoveProductsAsyncWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartRemoveProducts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartRemoveProductsRequest($chain_id, $cart_id, $contentType);
 
         return $this->client
@@ -4250,9 +4250,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartReset'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Cart
+     * @return \Kinoheld\GenericProviderClient\Model\Cart
      */
     public function cartReset($chain_id, $cart_id, string $contentType = self::contentTypes['cartReset'][0])
     {
@@ -4269,9 +4269,9 @@ class CartApi
      * @param  int $cart_id cart ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartReset'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Kinoheld\GenericProviderClient\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Cart, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Kinoheld\GenericProviderClient\Model\Cart, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartResetWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartReset'][0])
     {
@@ -4314,11 +4314,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Cart' === '\SplFileObject') {
+                    if ('\Kinoheld\GenericProviderClient\Model\Cart' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Cart' !== 'string') {
+                        if ('\Kinoheld\GenericProviderClient\Model\Cart' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4336,13 +4336,13 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Cart', []),
+                        ObjectSerializer::deserialize($content, '\Kinoheld\GenericProviderClient\Model\Cart', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\OpenAPI\Client\Model\Cart';
+            $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4375,7 +4375,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Cart',
+                        '\Kinoheld\GenericProviderClient\Model\Cart',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4421,7 +4421,7 @@ class CartApi
      */
     public function cartResetAsyncWithHttpInfo($chain_id, $cart_id, string $contentType = self::contentTypes['cartReset'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Cart';
+        $returnType = '\Kinoheld\GenericProviderClient\Model\Cart';
         $request = $this->cartResetRequest($chain_id, $cart_id, $contentType);
 
         return $this->client

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * CartAddItemsRequest Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class CartAddItemsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'cart_id' => 'int',
-        'items' => '\OpenAPI\Client\Model\CartItem[]',
+        'items' => '\Kinoheld\GenericProviderClient\Model\CartItem[]',
         'reset' => 'bool'
     ];
 
@@ -340,7 +340,7 @@ class CartAddItemsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets items
      *
-     * @return \OpenAPI\Client\Model\CartItem[]
+     * @return \Kinoheld\GenericProviderClient\Model\CartItem[]
      */
     public function getItems()
     {
@@ -350,7 +350,7 @@ class CartAddItemsRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\CartItem[] $items items
+     * @param \Kinoheld\GenericProviderClient\Model\CartItem[] $items items
      *
      * @return self
      */

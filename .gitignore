@@ -13,14 +13,3 @@ composer.phar
 
 # PHPUnit cache
 .phpunit.result.cache
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/.gitignore
-/.idea/generic-provider-client.iml
-/.idea/modules.xml
-/.idea/php.xml
-/.idea/phpunit.xml
-/.idea/vcs.xml
-/.openapi-generator/FILES
-/.openapi-generator/VERSION
-/composer.lock
-/mezmer-kinoheld-1.0.0-resolved.yaml

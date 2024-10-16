@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * Cart Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,11 +60,11 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'show_id' => 'int',
-        'items' => '\OpenAPI\Client\Model\CartItem[]',
-        'products' => '\OpenAPI\Client\Model\CartProduct[]',
-        'discounts' => '\OpenAPI\Client\Model\CartDiscount[]',
-        'loyalty' => '\OpenAPI\Client\Model\CartLoyalty[]',
-        'pricing' => '\OpenAPI\Client\Model\CartPricing'
+        'items' => '\Kinoheld\GenericProviderClient\Model\CartItem[]',
+        'products' => '\Kinoheld\GenericProviderClient\Model\CartProduct[]',
+        'discounts' => '\Kinoheld\GenericProviderClient\Model\CartDiscount[]',
+        'loyalty' => '\Kinoheld\GenericProviderClient\Model\CartLoyalty[]',
+        'pricing' => '\Kinoheld\GenericProviderClient\Model\CartPricing'
     ];
 
     /**
@@ -395,7 +395,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return \OpenAPI\Client\Model\CartItem[]|null
+     * @return \Kinoheld\GenericProviderClient\Model\CartItem[]|null
      */
     public function getItems()
     {
@@ -405,7 +405,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param \OpenAPI\Client\Model\CartItem[]|null $items Items added to the cart.
+     * @param \Kinoheld\GenericProviderClient\Model\CartItem[]|null $items Items added to the cart.
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets products
      *
-     * @return \OpenAPI\Client\Model\CartProduct[]|null
+     * @return \Kinoheld\GenericProviderClient\Model\CartProduct[]|null
      */
     public function getProducts()
     {
@@ -432,7 +432,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets products
      *
-     * @param \OpenAPI\Client\Model\CartProduct[]|null $products Products added to the cart.
+     * @param \Kinoheld\GenericProviderClient\Model\CartProduct[]|null $products Products added to the cart.
      *
      * @return self
      */
@@ -449,7 +449,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets discounts
      *
-     * @return \OpenAPI\Client\Model\CartDiscount[]|null
+     * @return \Kinoheld\GenericProviderClient\Model\CartDiscount[]|null
      */
     public function getDiscounts()
     {
@@ -459,7 +459,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets discounts
      *
-     * @param \OpenAPI\Client\Model\CartDiscount[]|null $discounts Discounts applied to the cart.
+     * @param \Kinoheld\GenericProviderClient\Model\CartDiscount[]|null $discounts Discounts applied to the cart.
      *
      * @return self
      */
@@ -476,7 +476,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets loyalty
      *
-     * @return \OpenAPI\Client\Model\CartLoyalty[]|null
+     * @return \Kinoheld\GenericProviderClient\Model\CartLoyalty[]|null
      */
     public function getLoyalty()
     {
@@ -486,7 +486,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets loyalty
      *
-     * @param \OpenAPI\Client\Model\CartLoyalty[]|null $loyalty Loyalty cards applied to the cart.
+     * @param \Kinoheld\GenericProviderClient\Model\CartLoyalty[]|null $loyalty Loyalty cards applied to the cart.
      *
      * @return self
      */
@@ -503,7 +503,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets pricing
      *
-     * @return \OpenAPI\Client\Model\CartPricing|null
+     * @return \Kinoheld\GenericProviderClient\Model\CartPricing|null
      */
     public function getPricing()
     {
@@ -513,7 +513,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pricing
      *
-     * @param \OpenAPI\Client\Model\CartPricing|null $pricing pricing
+     * @param \Kinoheld\GenericProviderClient\Model\CartPricing|null $pricing pricing
      *
      * @return self
      */

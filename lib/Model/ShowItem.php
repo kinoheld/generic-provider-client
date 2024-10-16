@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * ShowItem Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -70,7 +70,7 @@ class ShowItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'icaa_id' => 'int',
         'language_audio' => 'string',
         'language_subtitle' => 'string',
-        'price_areas' => '\OpenAPI\Client\Model\PriceAreaItem[]',
+        'price_areas' => '\Kinoheld\GenericProviderClient\Model\PriceAreaItem[]',
         'tickets_total' => 'int',
         'tickets_sold' => 'int',
         'tickets_free' => 'int',
@@ -823,7 +823,7 @@ class ShowItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets price_areas
      *
-     * @return \OpenAPI\Client\Model\PriceAreaItem[]
+     * @return \Kinoheld\GenericProviderClient\Model\PriceAreaItem[]
      */
     public function getPriceAreas()
     {
@@ -833,7 +833,7 @@ class ShowItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_areas
      *
-     * @param \OpenAPI\Client\Model\PriceAreaItem[] $price_areas price_areas
+     * @param \Kinoheld\GenericProviderClient\Model\PriceAreaItem[] $price_areas price_areas
      *
      * @return self
      */

@@ -1,6 +1,6 @@
-# OpenAPI\Client\DiscountApi
+# Kinoheld\GenericProviderClient\DiscountApi
 
-All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0, except if the operation defines another base path.
+All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/2.0.0, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -10,7 +10,7 @@ All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0
 ## `discountGet()`
 
 ```php
-discountGet($chain_id, $cinema_id, $code): \OpenAPI\Client\Model\Discount
+discountGet($chain_id, $cinema_id, $code): \Kinoheld\GenericProviderClient\Model\Discount
 ```
 
 get the discount
@@ -25,12 +25,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+// $config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\DiscountApi(
+$apiInstance = new Kinoheld\GenericProviderClient\Api\DiscountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -58,7 +58,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Discount**](../Model/Discount.md)
+[**\Kinoheld\GenericProviderClient\Model\Discount**](../Model/Discount.md)
 
 ### Authorization
 

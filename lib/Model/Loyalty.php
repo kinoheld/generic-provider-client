@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * Loyalty Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class Loyalty implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'string',
         'points' => 'int',
         'free_entries_count' => 'int',
-        'history' => '\OpenAPI\Client\Model\LoyaltyHistory[]'
+        'history' => '\Kinoheld\GenericProviderClient\Model\LoyaltyHistory[]'
     ];
 
     /**
@@ -432,7 +432,7 @@ class Loyalty implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets history
      *
-     * @return \OpenAPI\Client\Model\LoyaltyHistory[]|null
+     * @return \Kinoheld\GenericProviderClient\Model\LoyaltyHistory[]|null
      */
     public function getHistory()
     {
@@ -442,7 +442,7 @@ class Loyalty implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets history
      *
-     * @param \OpenAPI\Client\Model\LoyaltyHistory[]|null $history history
+     * @param \Kinoheld\GenericProviderClient\Model\LoyaltyHistory[]|null $history history
      *
      * @return self
      */

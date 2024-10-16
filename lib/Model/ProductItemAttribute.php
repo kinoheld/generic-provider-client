@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * ProductItemAttribute Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class ProductItemAttribute implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'id' => 'int',
         'name' => 'string',
-        'options' => '\OpenAPI\Client\Model\ProductItemAttributeOption[]'
+        'options' => '\Kinoheld\GenericProviderClient\Model\ProductItemAttributeOption[]'
     ];
 
     /**
@@ -367,7 +367,7 @@ class ProductItemAttribute implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets options
      *
-     * @return \OpenAPI\Client\Model\ProductItemAttributeOption[]|null
+     * @return \Kinoheld\GenericProviderClient\Model\ProductItemAttributeOption[]|null
      */
     public function getOptions()
     {
@@ -377,7 +377,7 @@ class ProductItemAttribute implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets options
      *
-     * @param \OpenAPI\Client\Model\ProductItemAttributeOption[]|null $options options
+     * @param \Kinoheld\GenericProviderClient\Model\ProductItemAttributeOption[]|null $options options
      *
      * @return self
      */

@@ -1,6 +1,6 @@
-# OpenAPI\Client\BasicApi
+# Kinoheld\GenericProviderClient\BasicApi
 
-All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0, except if the operation defines another base path.
+All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/2.0.0, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -13,7 +13,7 @@ All URIs are relative to https://virtserver.swaggerhub.com/mezmer/kinoheld/1.0.0
 ## `getAuditoriums()`
 
 ```php
-getAuditoriums($chain_id, $cinema_id): \OpenAPI\Client\Model\AuditoriumItem[]
+getAuditoriums($chain_id, $cinema_id): \Kinoheld\GenericProviderClient\Model\AuditoriumItem[]
 ```
 
 list of auditoriums for the given cinema
@@ -28,12 +28,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+// $config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\BasicApi(
+$apiInstance = new Kinoheld\GenericProviderClient\Api\BasicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -59,7 +59,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AuditoriumItem[]**](../Model/AuditoriumItem.md)
+[**\Kinoheld\GenericProviderClient\Model\AuditoriumItem[]**](../Model/AuditoriumItem.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ try {
 ## `getChains()`
 
 ```php
-getChains($id): \OpenAPI\Client\Model\ChainItem[]
+getChains($id): \Kinoheld\GenericProviderClient\Model\ChainItem[]
 ```
 
 list of chains/companies
@@ -92,12 +92,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+// $config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\BasicApi(
+$apiInstance = new Kinoheld\GenericProviderClient\Api\BasicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -121,7 +121,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ChainItem[]**](../Model/ChainItem.md)
+[**\Kinoheld\GenericProviderClient\Model\ChainItem[]**](../Model/ChainItem.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ try {
 ## `getCinemas()`
 
 ```php
-getCinemas($chain_id, $id): \OpenAPI\Client\Model\CinemaItem[]
+getCinemas($chain_id, $id): \Kinoheld\GenericProviderClient\Model\CinemaItem[]
 ```
 
 list of cinemas
@@ -154,12 +154,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+// $config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\BasicApi(
+$apiInstance = new Kinoheld\GenericProviderClient\Api\BasicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -185,7 +185,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CinemaItem[]**](../Model/CinemaItem.md)
+[**\Kinoheld\GenericProviderClient\Model\CinemaItem[]**](../Model/CinemaItem.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ try {
 ## `getProducts()`
 
 ```php
-getProducts($chain_id, $cinema_id): \OpenAPI\Client\Model\ProductItem[]
+getProducts($chain_id, $cinema_id): \Kinoheld\GenericProviderClient\Model\ProductItem[]
 ```
 
 list of products for the given cinema
@@ -218,12 +218,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
+$config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKey('X-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
+// $config = Kinoheld\GenericProviderClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-Key', 'Bearer');
 
 
-$apiInstance = new OpenAPI\Client\Api\BasicApi(
+$apiInstance = new Kinoheld\GenericProviderClient\Api\BasicApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -249,7 +249,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductItem[]**](../Model/ProductItem.md)
+[**\Kinoheld\GenericProviderClient\Model\ProductItem[]**](../Model/ProductItem.md)
 
 ### Authorization
 

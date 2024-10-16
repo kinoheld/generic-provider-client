@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * CartProduct Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class CartProduct implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'int',
         'quantity' => 'int',
-        'attributes' => '\OpenAPI\Client\Model\CartProductAttribute[]'
+        'attributes' => '\Kinoheld\GenericProviderClient\Model\CartProductAttribute[]'
     ];
 
     /**
@@ -367,7 +367,7 @@ class CartProduct implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attributes
      *
-     * @return \OpenAPI\Client\Model\CartProductAttribute[]|null
+     * @return \Kinoheld\GenericProviderClient\Model\CartProductAttribute[]|null
      */
     public function getAttributes()
     {
@@ -377,7 +377,7 @@ class CartProduct implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attributes
      *
-     * @param \OpenAPI\Client\Model\CartProductAttribute[]|null $attributes attributes
+     * @param \Kinoheld\GenericProviderClient\Model\CartProductAttribute[]|null $attributes attributes
      *
      * @return self
      */

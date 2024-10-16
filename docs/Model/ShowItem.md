@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **icaa_id** | **int** |  |
 **language_audio** | **string** |  |
 **language_subtitle** | **string** |  |
-**price_areas** | [**\OpenAPI\Client\Model\PriceAreaItem[]**](PriceAreaItem.md) |  |
+**price_areas** | [**\Kinoheld\GenericProviderClient\Model\PriceAreaItem[]**](PriceAreaItem.md) |  |
 **tickets_total** | **int** |  | [optional]
 **tickets_sold** | **int** |  | [optional]
 **tickets_free** | **int** |  | [optional]
