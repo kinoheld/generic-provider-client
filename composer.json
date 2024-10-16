@@ -1,4 +1,5 @@
 {
+    "name": "kinoheld/generic-provider-client",
     "description": "cinema movie",
     "keywords": [
         "openapitools",
@@ -30,9 +31,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "OpenAPI\\Client\\" : "lib/" }
+        "psr-4": { "kinoheld\\GenericProviderClient\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "OpenAPI\\Client\\Test\\" : "test/" }
+        "psr-4": { "kinoheld\\GenericProviderClient\\" : "test/" }
     }
 }
