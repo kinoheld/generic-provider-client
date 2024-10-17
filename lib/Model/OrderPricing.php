@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Kinoheld\GenericProviderClient\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Kinoheld\GenericProviderClient\ObjectSerializer;
 
 /**
  * OrderPricing Class Doc Comment
  *
  * @category Class
  * @description Pricing information for the order.
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>

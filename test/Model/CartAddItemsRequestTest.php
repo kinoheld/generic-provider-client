@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Kinoheld\GenericProviderClient
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace OpenAPI\Client\Test\Model;
+namespace Kinoheld\GenericProviderClient\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 
@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @category    Class
  * @description CartAddItemsRequest
- * @package     OpenAPI\Client
+ * @package     Kinoheld\GenericProviderClient
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
